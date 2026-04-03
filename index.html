@@ -290,6 +290,39 @@
     font-family: var(--font);
   }
   .abstract-toggle:hover { border-color: tomato; }
+  .yt-toggle {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #fff;
+    padding: 3px 10px;
+    border: 1px solid #c0392b;
+    border-radius: 3px;
+    background: #c0392b;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+    font-family: var(--font);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .yt-toggle:hover { background: #a93226; border-color: #a93226; }
+  .yt-toggle svg { width: 14px; height: 14px; fill: #fff; }
+  .yt-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, margin 0.4s ease;
+  }
+  .yt-content.open {
+    max-height: 500px;
+    margin-top: 12px;
+  }
+  .yt-content iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 4px;
+  }
   .abstract-content {
     max-height: 0;
     overflow: hidden;
@@ -471,8 +504,11 @@
       <a href="https://doi.org/10.1016/j.jdeveco.2025.103650">Published</a>
       <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535938">SSRN</a>
       <a href="https://www.thehindu.com/news/national/bihar/caste-identity-influences-how-teachers-judge-students-in-bihar-public-schools-iimb-study/article70298670.ece" class="media-link">The Hindu</a>
+      <a href="https://www.dropbox.com/scl/fi/rwl5ndc3zlri190yo5v3q/BiharBiasClassroomIE.png?rlkey=xysf82lvkwlhnqfoq7j1tz2zz&dl=0" class="media-link">The Indian Express</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/mKSeZRIreLk"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
     </div>
+    <div class="yt-content"></div>
     <div class="abstract-content">
       <p>This paper investigates whether caste identity shapes teachers' expectations of student performance in public schools in Bihar, India. Using data that pairs students' test-based rankings with teachers' subjective assessments, we find that the gap between objective and perceived performance is systematically larger for backward caste students assigned to forward caste teachers.</p>
     </div>
@@ -488,7 +524,9 @@
       <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5258078">SSRN</a>
       <a href="https://www.dropbox.com/s/elutu1cti9x6oqc/Social_Recognition_2_0_Slides.pdf?dl=0">Slides</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/Burjh2eFIWE?start=21"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
     </div>
+    <div class="yt-content"></div>
     <div class="abstract-content">
       <p>We use a modified version of the volunteer's dilemma game to examine if non-monetary interventions, particularly social recognition, can be used to reduce the gender gap associated with low-promotability tasks. We conduct a lab experiment with three treatments where a) a volunteer receives positive social recognition, b) a non-volunteer receives negative social recognition, and c) a volunteer receives positive, but a non-volunteer receives negative social recognition. Our results indicate that social recognition increases the overall probability that an individual volunteers. Positive social recognition reduces the gender gap observed in the baseline treatment, and so does the combination of positive and negative social recognition. These findings suggest that public recognition of volunteering for such tasks can change the default gender norms in organizations and increase efficiency simultaneously.</p>
     </div>
@@ -731,7 +769,9 @@
     <div class="paper-links">
       <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5240293">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/eNmpXZ611d0"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
     </div>
+    <div class="yt-content"></div>
     <div class="abstract-content">
       <p>The effect of peer interactions on student learning remains inconclusive. To investigate, we randomly assigned 10,000 middle school students in 37 schools in Karnataka, India, to different peer-learning treatments in Math and English. Teamwork with co-coaching improved Math scores by 0.25 standard deviations, especially for lower-ability students, while unstructured teamwork and incentive treatments had weaker effects. These findings highlight the importance of structured peer interactions in enhancing learning outcomes. We develop theoretical conditions under which teamwork with co-coaching outperforms unstructured teamwork as a peer-learning method, emphasizing the role of institutional design in maximizing peer effects in education.</p>
     </div>
@@ -838,6 +878,16 @@ function toggleAbstract(btn) {
   const content = btn.closest('.paper').querySelector('.abstract-content');
   content.classList.toggle('open');
   btn.textContent = content.classList.contains('open') ? 'Abstract ▴' : 'Abstract ▾';
+}
+function toggleYT(btn) {
+  const container = btn.closest('.paper').querySelector('.yt-content');
+  if (container.classList.contains('open')) {
+    container.classList.remove('open');
+    container.innerHTML = '';
+  } else {
+    container.innerHTML = '<iframe src="' + btn.dataset.yt + '?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+    container.classList.add('open');
+  }
 }
 </script>
 
