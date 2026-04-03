@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREW-ESA 2024 Conference Program</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f1ee;
+    color: #2c2c2c;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+  }
+
+  /* ---- Header ---- */
+  .header {
+    background: linear-gradient(135deg, #b01116 0%, #7a0b0f 60%, #4a0609 100%);
+    color: #fff;
+    text-align: center;
+    padding: 48px 20px 40px;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 2.4rem; letter-spacing: 1px; margin-bottom: 6px; }
+  .header .subtitle { font-size: 1.15rem; opacity: .92; margin-bottom: 18px; font-weight: 400; }
+  .header .meta { font-size: .95rem; opacity: .82; line-height: 1.7; }
+  .header .meta strong { opacity: 1; }
+
+  /* ---- Day Banner ---- */
+  .day-banner {
+    background: linear-gradient(90deg, #b01116, #8a0d11);
+    color: #fff;
+    border-radius: 10px;
+    padding: 16px 24px;
+    margin: 36px 0 20px;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .day-banner .day-date { font-weight: 400; font-size: 1rem; opacity: .88; }
+
+  /* ---- Cards ---- */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.07);
+    border-left: 5px solid #b01116;
+  }
+  .card .time {
+    font-size: .85rem;
+    font-weight: 700;
+    color: #b01116;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .card .title { font-size: 1.05rem; font-weight: 700; }
+  .card .location { font-size: .85rem; color: #777; margin-top: 2px; }
+  .card .talk-title {
+    font-style: italic;
+    margin-top: 6px;
+    color: #444;
+  }
+  .card .speaker { color: #555; margin-top: 2px; }
+
+  /* Break cards */
+  .card.break {
+    background: #f0efed;
+    border-left-color: #aaa;
+    padding: 14px 24px;
+  }
+  .card.break .title { font-weight: 600; color: #666; font-size: .95rem; }
+  .card.break .time { color: #888; }
+  .card.break .location { color: #999; }
+
+  /* Keynote / special cards */
+  .card.keynote {
+    background: linear-gradient(135deg, #1e1e1e, #2d1a1b);
+    color: #fff;
+    border-left-color: #e8c44a;
+  }
+  .card.keynote .time { color: #e8c44a; }
+  .card.keynote .title { color: #fff; }
+  .card.keynote .location { color: #bbb; }
+  .card.keynote .talk-title { color: #ddd; }
+  .card.keynote .speaker { color: #ccc; }
+
+  .card.special {
+    background: linear-gradient(135deg, #232323, #2d1f20);
+    color: #fff;
+    border-left-color: #c27a3a;
+  }
+  .card.special .time { color: #e8a84a; }
+  .card.special .title { color: #fff; }
+  .card.special .location { color: #bbb; }
+  .card.special .talk-title { color: #ddd; }
+  .card.special .speaker { color: #ccc; }
+
+  /* Panel card */
+  .card.panel {
+    background: linear-gradient(135deg, #1a2330, #1e2a2a);
+    color: #fff;
+    border-left-color: #4a9ec2;
+  }
+  .card.panel .time { color: #6bb8d6; }
+  .card.panel .title { color: #fff; }
+  .card.panel .location { color: #bbb; }
+  .card.panel .speaker { color: #ccc; }
+
+  /* Mentoring card */
+  .card.mentoring {
+    background: linear-gradient(135deg, #2a2330, #2d1e2a);
+    color: #fff;
+    border-left-color: #9a6abf;
+  }
+  .card.mentoring .time { color: #c49ae0; }
+  .card.mentoring .title { color: #fff; }
+  .card.mentoring .location { color: #bbb; }
+  .card.mentoring .speaker { color: #ccc; }
+
+  /* ---- Parallel session wrapper ---- */
+  .parallel-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #b01116;
+    margin: 22px 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #b01116;
+    display: inline-block;
+  }
+
+  .parallel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 740px) {
+    .parallel-grid { grid-template-columns: 1fr; }
+  }
+
+  .session-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 18px 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.07);
+    border-top: 4px solid #b01116;
+  }
+  .session-card.track-a { border-top-color: #b01116; }
+  .session-card.track-b { border-top-color: #1a6b8a; }
+  .session-card.track-c { border-top-color: #5a7a2a; }
+
+  .session-card .session-name {
+    font-weight: 700;
+    font-size: .95rem;
+    margin-bottom: 4px;
+  }
+  .session-card.track-a .session-name { color: #b01116; }
+  .session-card.track-b .session-name { color: #1a6b8a; }
+  .session-card.track-c .session-name { color: #5a7a2a; }
+
+  .session-card .session-room {
+    font-size: .8rem;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .paper {
+    border-top: 1px solid #eee;
+    padding: 8px 0 6px;
+    font-size: .85rem;
+    line-height: 1.5;
+  }
+  .paper:first-of-type { border-top: none; }
+  .paper .paper-title { font-style: italic; color: #444; }
+  .paper .paper-authors { color: #666; }
+  .paper .paper-authors .presenter { font-weight: 700; color: #333; }
+
+  /* Overview session cards (Days 2 & 3 without paper details) */
+  .session-card.overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80px;
+  }
+  .session-card.overview .session-name { font-size: 1rem; }
+
+  /* ---- Footer ---- */
+  .footer {
+    text-align: center;
+    padding: 30px 20px 20px;
+    margin-top: 20px;
+    font-size: .88rem;
+    color: #888;
+    border-top: 1px solid #ddd;
+  }
+  .footer a {
+    color: #b01116;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<div class="header">
+  <h1>BREW-ESA 2024</h1>
+  <div class="subtitle">Behavioral Research in Economics Workshop</div>
+  <div class="meta">
+    <strong>December 15&ndash;17, 2024</strong><br>
+    Ashoka University, India<br>
+    Hosted by Department of Economics &amp; Centre for Social and Behaviour Change, Ashoka University<br>
+    Co-organized with the Economic Science Association (ESA)
+  </div>
+</div>
+
+<div class="container">
+
+<!-- =========================================================== -->
+<!--                       DAY 1                                  -->
+<!-- =========================================================== -->
+<div class="day-banner">Day 1 <span class="day-date">&mdash; Sunday, December 15, 2024</span></div>
+
+<div class="card break">
+  <div class="time">12:00 &ndash; 13:30</div>
+  <div class="title">Registration and Lunch</div>
+  <div class="location">Black Box Theater Foyer, AC04, 4th Floor</div>
+</div>
+
+<div class="card">
+  <div class="time">13:30 &ndash; 13:45</div>
+  <div class="title">Welcome Address</div>
+  <div class="speaker">Somak Raychaudhury, Vice-Chancellor, Ashoka University</div>
+</div>
+
+<!-- Keynote 1 -->
+<div class="card keynote">
+  <div class="time">13:45 &ndash; 14:45 &bull; Keynote</div>
+  <div class="title">Prof. Anandi Mani</div>
+  <div class="speaker">University of Oxford</div>
+  <div class="location">AC 04, 301</div>
+  <div class="talk-title">&ldquo;Welfare Revisited: Harnessing Behavioral Economics to Strengthen Social Protection&rdquo;</div>
+</div>
+
+<div class="card break">
+  <div class="time">14:45 &ndash; 15:00</div>
+  <div class="title">Tea / Coffee Break</div>
+</div>
+
+<!-- ---- Parallel Session 1 ---- -->
+<div class="parallel-label">Parallel Session 1 &mdash; 15:00 &ndash; 16:20</div>
+<div class="parallel-grid">
+
+  <!-- 1A -->
+  <div class="session-card track-a">
+    <div class="session-name">Session 1A: Gender and Labor Markets</div>
+    <div class="session-room">AC 04, 301</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Sowmya Dhanaraj</span>, Achyuta Adhvaryu, Smit Gade, Anant Nyshadham, Apoorv Soomanchi (Good Business Lab)</div>
+      <div class="paper-title">&ldquo;Breaking the paycycle: Impact of flexible Salary on women factory workers&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Bimala Thami</span> (South Asian University, New Delhi)</div>
+      <div class="paper-title">&ldquo;Navigating Gender Norm Beliefs, Caste Dynamics, and Neighborhood Influences in Nepal&rsquo;s Educational Landscapes&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Shubham Ojha</span>, Somdeep Chatterjee, Ralitza Dimova (IIM Calcutta)</div>
+      <div class="paper-title">&ldquo;Labor Market Penalty for Single Mothers&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Puneet Arora</span> (Management Development Institute Gurgaon)</div>
+      <div class="paper-title">&ldquo;Gender Bias in Workplace Evaluations&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- 1B -->
+  <div class="session-card track-b">
+    <div class="session-name">Session 1B: Information and Decision Making</div>
+    <div class="session-room">AC 04, 302</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Rishab Lodh</span>, Oindrila Dey (Indian Institute of Foreign Trade)</div>
+      <div class="paper-title">&ldquo;Who Consumes Fake news?&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Jimmy Narang</span> (University of Southern California)</div>
+      <div class="paper-title">&ldquo;Receiving vs. Believing (mis)information from friends&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Guy Yanay</span>, Moses Shayo, Ro&rsquo;ee Levy (Hebrew University of Jerusalem)</div>
+      <div class="paper-title">&ldquo;Paying Not to Know: News Avoidance in Times of War&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Anand Murugesan</span>, Jean-Robert Tyran (Central European University, University of Vienna)</div>
+      <div class="paper-title">&ldquo;Fighting Cash-For-Votes: Information Interventions at a Political Discontinuity&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- 1C -->
+  <div class="session-card track-c">
+    <div class="session-name">Session 1C: Markets and Auctions</div>
+    <div class="session-room">AC 04, 308</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Mahima Mukhija</span> (Ashoka University)</div>
+      <div class="paper-title">&ldquo;Incentive to Innovate under Consumer Inattention&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Claudia Keser</span>, Holger Rau, Anne Schacht (University of Goettingen)</div>
+      <div class="paper-title">&ldquo;The Economic Effects of Remote-Bargaining&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Jeevant Rampal</span>, Charles Noussair, Rahul Sharma (IIM Ahmedabad)</div>
+      <div class="paper-title">&ldquo;Lottery-based auctions&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Bradley Ruffle</span> (McMaster University)</div>
+      <div class="paper-title">&ldquo;Matching in cooperative education programs&rdquo;</div>
+    </div>
+  </div>
+
+</div><!-- /parallel-grid -->
+
+<div class="card break">
+  <div class="time">16:20 &ndash; 16:30</div>
+  <div class="title">Tea / Coffee Break</div>
+</div>
+
+<!-- ---- Parallel Session 2 ---- -->
+<div class="parallel-label">Parallel Session 2 &mdash; 16:30 &ndash; 17:50</div>
+<div class="parallel-grid">
+
+  <!-- 2A -->
+  <div class="session-card track-a">
+    <div class="session-name">Session 2A: Education and Gender</div>
+    <div class="session-room">AC 04, 301</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Swati Sharma</span>, Nandana Sengupta, Sumitava Mukherjee (IIT Delhi)</div>
+      <div class="paper-title">&ldquo;Does negative marking lead to gendered exam taking behavior&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Japneet Kaur</span> (Indira Gandhi Institute of Development Research)</div>
+      <div class="paper-title">&ldquo;Do Boys Struggle To Keep Up Academically? Evidence from a Longitudinal Study&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Deepshikha Batheja</span>, Sarojini Hirshleifer, Opinder Kaur (One Health Trust)</div>
+      <div class="paper-title">&ldquo;Does signaling college quality matter?&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- 2B -->
+  <div class="session-card track-b">
+    <div class="session-name">Session 2B: Preferences</div>
+    <div class="session-room">AC 04, 302</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Aditi Gautam</span>, Sudha Narayanan (International Food Policy Research Institute)</div>
+      <div class="paper-title">&ldquo;Time preference and discounting: farmer storage decisions&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Aiko Amano</span>, Sobei H. Oda (Graduate School of Economics, Kyoto Sangyo University)</div>
+      <div class="paper-title">&ldquo;Time Preferences and Uncertainty&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Samyuktha Kannan</span>, Francesco Cecchi, Dahyeong Jeong (Wageningen University)</div>
+      <div class="paper-title">&ldquo;Do commitment timing and flexibility matter in the adoption of crop insurance? Evidence from a randomized trial in Kenya&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Shagata Mukherjee</span>, Sharon Barnhardt, Pavan Mamidi, Selva Swetha (Ashoka University)</div>
+      <div class="paper-title">&ldquo;Increasing Household Demand for Water Quality Testing in India&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- 2C -->
+  <div class="session-card track-c">
+    <div class="session-name">Session 2C: Behavioral Games</div>
+    <div class="session-room">AC 04, 308</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Moumita Roy</span>, Jian Song, Daniel Houser (Ahmedabad University)</div>
+      <div class="paper-title">&ldquo;Effectiveness of conflict-resolution mechanisms in contests with identity-dependent externalities&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Saumya Deojain</span>, Vasudha Chopra (Thapar School of Liberal Arts and Sciences)</div>
+      <div class="paper-title">&ldquo;How Influence and Risk Shapes Compromise&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Anmol Ratan</span> (Thapar School of Liberal Arts and Sciences)</div>
+      <div class="paper-title">&ldquo;Tests of Distributional outcomes in (field) Double Auction markets&rdquo;</div>
+    </div>
+  </div>
+
+</div><!-- /parallel-grid -->
+
+<div class="card break">
+  <div class="time">17:50 &ndash; 18:10</div>
+  <div class="title">High Tea</div>
+</div>
+
+<!-- ---- Parallel Session 3 ---- -->
+<div class="parallel-label">Parallel Session 3 &mdash; 18:10 &ndash; 19:30</div>
+<div class="parallel-grid">
+
+  <!-- 3A -->
+  <div class="session-card track-a">
+    <div class="session-name">Session 3A: Discrimination and Inequality</div>
+    <div class="session-room">AC 04, 301</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Zeev Shtudiner</span>, Arthur Fishman (Ariel University, Israel)</div>
+      <div class="paper-title">&ldquo;Ethnicity-Based Discrimination in Assessment&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Ritwik Banerjee</span>, Joseph Gomes, Amma Panin, Emmy Lindstam (IIM Bangalore)</div>
+      <div class="paper-title">&ldquo;Do exclusionary policies reduce cognitive bandwidth?&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Ankush Asri</span>, Urs Fischbacher, Jan Hausfeld, Yvette Lambi (Chr. Michelsen Institute)</div>
+      <div class="paper-title">&ldquo;Affirmative action: Within-group inequality&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Nishat Anjum</span>, Sujoy Chakravarty, Takashi Kurosaki (Jawaharlal Nehru University)</div>
+      <div class="paper-title">&ldquo;Colorism, confidence, and productivity&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- 3B -->
+  <div class="session-card track-b">
+    <div class="session-name">Session 3B: Public Goods and Cooperation</div>
+    <div class="session-room">AC 04, 302</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Ananish Chaudhuri</span>, Scott Claessens, Michalis Drouvelis, Abhijit Ramalingam, Brock Stoddard, Quentin Atkinson (University of Auckland)</div>
+      <div class="paper-title">&ldquo;Luck or merit: Implications for cooperation&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Moumita Deb</span>, Siddhartha Bandyopadhyay, Johannes Lohse, Rebecca McDonald (University of Heidelberg)</div>
+      <div class="paper-title">&ldquo;Information Acquisition in Threshold Public Goods Game&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Ravi Ashok Satpute</span>, Sourav Bhattacharya, Tapas Kundu (IIM Calcutta)</div>
+      <div class="paper-title">&ldquo;Group Specific Public Goods and Political Competition&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- 3C -->
+  <div class="session-card track-c">
+    <div class="session-name">Session 3C: Development Interventions</div>
+    <div class="session-room">AC 04, 308</div>
+
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Abhishek Tripathy</span>, Jeevant Rampal, Vidhi Shah (IIM Ahmedabad)</div>
+      <div class="paper-title">&ldquo;Network-based interventions for financial literacy&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Bhavya Shrivastava</span>, Michael King, Billy Jack (Trinity College Dublin)</div>
+      <div class="paper-title">&ldquo;Financing Female Micro-entrepreneurs&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Soumyajit Ray</span>, Katrina Kosec, Jordan Kyle, Sudha Narayanan, Kalyani Raghunathan (IFPRI)</div>
+      <div class="paper-title">&ldquo;Role Models and Skills Training in Village Governance&rdquo;</div>
+    </div>
+    <div class="paper">
+      <div class="paper-authors"><span class="presenter">Kartikeya Batra</span>, Avantika Prabhakar (The Centre for Effective Governance of Indian States)</div>
+      <div class="paper-title">&ldquo;Divine Intervention? Religious Organizations and Service Delivery&rdquo;</div>
+    </div>
+  </div>
+
+</div><!-- /parallel-grid -->
+
+<div class="card break">
+  <div class="time">19:30 &ndash; 21:30</div>
+  <div class="title">Dinner</div>
+  <div class="location">FH2, Dining Hall</div>
+</div>
+
+
+<!-- =========================================================== -->
+<!--                       DAY 2                                  -->
+<!-- =========================================================== -->
+<div class="day-banner">Day 2 <span class="day-date">&mdash; Monday, December 16, 2024</span></div>
+
+<!-- ---- Parallel Session 4 ---- -->
+<div class="parallel-label">Parallel Session 4 &mdash; 09:30 &ndash; 10:50</div>
+<div class="parallel-grid">
+  <div class="session-card track-a overview">
+    <div class="session-name">Session 4A: Gender and Policy</div>
+    <div class="session-room">AC 04, 301</div>
+  </div>
+  <div class="session-card track-b overview">
+    <div class="session-name">Session 4B: Markets and Finance</div>
+    <div class="session-room">AC 04, 302</div>
+  </div>
+  <div class="session-card track-c overview">
+    <div class="session-name">Session 4C: Communication and Credibility</div>
+    <div class="session-room">AC 04, 308</div>
+  </div>
+</div>
+
+<div class="card break">
+  <div class="time">10:50 &ndash; 11:00</div>
+  <div class="title">Tea / Coffee Break</div>
+</div>
+
+<!-- ---- Parallel Session 5 ---- -->
+<div class="parallel-label">Parallel Session 5 &mdash; 11:00 &ndash; 12:40</div>
+<div class="parallel-grid">
+  <div class="session-card track-a overview">
+    <div class="session-name">Session 5A: Decision Making</div>
+    <div class="session-room">AC 04, 301</div>
+  </div>
+  <div class="session-card track-b overview">
+    <div class="session-name">Session 5B: Health and Education</div>
+    <div class="session-room">AC 04, 302</div>
+  </div>
+  <div class="session-card track-c overview">
+    <div class="session-name">Session 5C: Environmental Economics</div>
+    <div class="session-room">AC 04, 308</div>
+  </div>
+</div>
+
+<!-- Mentoring Session -->
+<div class="card mentoring">
+  <div class="time">12:45 &ndash; 14:15 &bull; Lunch &amp; Mentoring Session</div>
+  <div class="title">Mentoring Session</div>
+  <div class="location">AC 04, 301</div>
+  <div class="speaker" style="margin-top:8px;">
+    Mentors: Ashwini Deshpande (Ashoka University), Charles Noussair (University of Arizona), Lata Gangadharan (Monash University)
+  </div>
+</div>
+
+<div class="card break">
+  <div class="time">14:20 &ndash; 16:30</div>
+  <div class="title">Bus to India Habitat Centre</div>
+</div>
+
+<div class="card break">
+  <div class="time">16:30 &ndash; 17:00</div>
+  <div class="title">High Tea</div>
+  <div class="location">India Habitat Centre</div>
+</div>
+
+<!-- Special Lecture -->
+<div class="card special">
+  <div class="time">17:00 &ndash; 18:00 &bull; Special Lecture</div>
+  <div class="title">Prof. Sanjit Dhami</div>
+  <div class="speaker">University of Leicester</div>
+  <div class="location">India Habitat Centre</div>
+  <div class="talk-title">&ldquo;Social Norms, Emotions, Conditional Reciprocity, and Human Behaviour&rdquo;</div>
+</div>
+
+<!-- Panel Discussion -->
+<div class="card panel">
+  <div class="time">18:15 &ndash; 19:30 &bull; Panel Discussion</div>
+  <div class="title">Behavioural Economics and Policy</div>
+  <div class="location">India Habitat Centre</div>
+  <div class="speaker" style="margin-top:8px;">
+    Panelists: Lata Gangadharan (Monash University), Ananish Chaudhuri (University of Auckland), Prachi Mishra (Ashoka University), Aastha Bhakhri (Ashoka University), Urvashi Wattal (J-PAL), Nirat Bhatnagar (Dalberg)
+  </div>
+</div>
+
+<div class="card break">
+  <div class="time">19:30 &ndash; 22:30</div>
+  <div class="title">Gala Dinner</div>
+  <div class="location">India Habitat Centre</div>
+</div>
+
+
+<!-- =========================================================== -->
+<!--                       DAY 3                                  -->
+<!-- =========================================================== -->
+<div class="day-banner">Day 3 <span class="day-date">&mdash; Wednesday, December 17, 2024</span></div>
+
+<!-- ---- Parallel Session 6 ---- -->
+<div class="parallel-label">Parallel Session 6 &mdash; 09:30 &ndash; 10:50</div>
+<div class="parallel-grid">
+  <div class="session-card track-a overview">
+    <div class="session-name">Session 6A: Politics and Governance</div>
+    <div class="session-room">AC 04, 301</div>
+  </div>
+  <div class="session-card track-b overview">
+    <div class="session-name">Session 6B: Risk, Trust and Lying</div>
+    <div class="session-room">AC 04, 302</div>
+  </div>
+  <div class="session-card track-c overview">
+    <div class="session-name">Session 6C: Applied Behavioral Economics</div>
+    <div class="session-room">AC 04, 308</div>
+  </div>
+</div>
+
+<div class="card break">
+  <div class="time">10:50 &ndash; 11:00</div>
+  <div class="title">Tea / Coffee Break</div>
+</div>
+
+<!-- Keynote 2 -->
+<div class="card keynote">
+  <div class="time">11:00 &ndash; 12:20 &bull; Keynote</div>
+  <div class="title">Prof. Andy Schotter</div>
+  <div class="speaker">New York University</div>
+  <div class="location">AC 04, 301</div>
+  <div class="talk-title">&ldquo;The Evolution of Conventions and Culture: An Experimental Approach&rdquo;</div>
+</div>
+
+<div class="card">
+  <div class="time">12:20 &ndash; 12:30</div>
+  <div class="title">Vote of Thanks</div>
+</div>
+
+<div class="card break">
+  <div class="time">12:30 &ndash; 14:00</div>
+  <div class="title">Lunch</div>
+  <div class="location">Black Box Theater Foyer</div>
+</div>
+
+</div><!-- /container -->
+
+<!-- ---- Footer ---- -->
+<div class="footer">
+  BREW-ESA 2024 &mdash; Behavioral Research in Economics Workshop<br>
+  <a href="https://sites.google.com/view/brewindia/" target="_blank">sites.google.com/view/brewindia</a>
+</div>
+
+</body>
+</html>

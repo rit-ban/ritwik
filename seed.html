@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEED — Ritwik Banerjee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f6; --bg-alt: #f2f0eb; --text: #1a1a1a;
+    --text-secondary: #555; --text-muted: #888;
+    --border: #ddd; --border-light: #e8e6e1;
+    --font: 'Source Serif 4', Georgia, serif; --max-width: 900px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.65; font-size: 15.5px; -webkit-font-smoothing: antialiased; }
+  a { color: tomato; font-weight: 700; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+  nav .nav-inner { max-width: 860px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  nav .nav-name { font-weight: 700; font-size: 18px; letter-spacing: 0.02em; color: var(--text); text-decoration: none; }
+  nav .nav-links { display: flex; align-items: center; gap: 28px; }
+  nav .nav-links a { font-size: 13.5px; font-weight: 600; color: var(--text-secondary); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+  nav .nav-links a:hover, nav .nav-links a.active { color: tomato; text-decoration: none; }
+  .nav-dropdown { position: relative; display: flex; align-items: center; }
+  .nav-dropdown-btn { font-size: 13.5px; font-weight: 600; color: var(--text-secondary); background: none; border: none; cursor: pointer; padding: 0; font-family: var(--font); letter-spacing: 0.03em; transition: color 0.2s; display: flex; align-items: center; gap: 3px; }
+  .nav-dropdown-btn:hover { color: tomato; }
+  .nav-dropdown-menu { display: none; position: absolute; top: calc(100% + 14px); left: -14px; background: #fff; border: 1px solid var(--border-light); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.09); min-width: 172px; z-index: 200; padding: 6px 0; }
+  .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu a { display: block; padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--text-secondary); letter-spacing: 0.02em; transition: color 0.15s; }
+  .nav-dropdown-menu a:hover { color: tomato; background: var(--bg-alt); text-decoration: none; }
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger svg { width: 22px; height: 22px; stroke: var(--text); }
+  .mobile-section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); padding: 4px 0 2px; }
+  .mobile-sub { padding-left: 12px !important; font-size: 13px !important; }
+  .nav-links.mobile { display: none !important; }
+
+  .page-header { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 28px; }
+  .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+  .breadcrumb a { color: var(--text-muted); font-weight: 400; }
+  .breadcrumb a:hover { color: tomato; }
+  .page-header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+  .page-header .tagline { font-size: 14.5px; color: var(--text-secondary); max-width: 600px; line-height: 1.6; }
+
+  .tabs-wrapper { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 2px solid var(--border-light); }
+  .tab-btn {
+    font-family: var(--font); font-size: 13.5px; font-weight: 600;
+    color: var(--text-secondary); background: none; border: none;
+    padding: 10px 16px; cursor: pointer; border-bottom: 2px solid transparent;
+    margin-bottom: -2px; transition: color 0.2s; letter-spacing: 0.02em;
+  }
+  .tab-btn:hover { color: tomato; }
+  .tab-btn.active { color: tomato; border-bottom-color: tomato; }
+
+  .program-container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 48px; }
+  .program-frame { width: 100%; border: 1px solid var(--border-light); border-radius: 8px; margin-top: 24px; overflow: hidden; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+  .program-frame iframe { width: 100%; border: none; display: block; min-height: 2400px; }
+
+  .site-footer { text-align: center; padding: 24px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border-light); }
+  .site-footer a { color: var(--text-muted); font-weight: 400; }
+
+  @media (max-width: 600px) {
+    .nav-links.desktop { display: none; }
+    .hamburger { display: block; }
+    .nav-links.mobile { display: none; flex-direction: column; position: absolute; top: 56px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border-light); padding: 8px 0; }
+    .nav-links.mobile.open { display: flex; }
+    .nav-links.mobile a { padding: 10px 24px; font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-name">Ritwik Banerjee</a>
+    <div class="nav-links desktop">
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn">Research ▾</button>
+        <div class="nav-dropdown-menu">
+          <a href="index.html#working-papers">Working Papers</a>
+          <a href="index.html#publications">Publications</a>
+          <a href="index.html#other">Other Writings</a>
+          <a href="index.html#cases">Cases</a>
+        </div>
+      </div>
+      <a href="teaching.html">Teaching</a>
+      <a href="conferences.html" class="active">Conferences</a>
+      <a href="#">et elia</a>
+    </div>
+    <button class="hamburger" onclick="document.querySelector('.nav-links.mobile').classList.toggle('open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links mobile">
+      <span class="mobile-section-label">Research</span>
+      <a href="index.html#working-papers" class="mobile-sub">Working Papers</a>
+      <a href="index.html#publications" class="mobile-sub">Publications</a>
+      <a href="index.html#other" class="mobile-sub">Other Writings</a>
+      <a href="index.html#cases" class="mobile-sub">Cases</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="conferences.html">Conferences</a>
+      <a href="#">et elia</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="breadcrumb"><a href="conferences.html">Conferences</a> › SEED</div>
+  <h1>SEED</h1>
+  <p class="tagline">Symposium on Evidence of Economic Development. A focused symposium on development economics, bringing together researchers working on empirical and experimental questions in development.</p>
+</div>
+
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn" data-edition="2025" onclick="switchTab('2025')">2025</button>
+    <button class="tab-btn" data-edition="2024" onclick="switchTab('2024')">2024</button>
+  </div>
+</div>
+
+<div class="program-container">
+  <div class="program-frame">
+    <iframe id="program-iframe" src="seed-2025-program.html" title="SEED Program"></iframe>
+  </div>
+</div>
+
+<div class="site-footer">
+  <a href="conferences.html">← All conferences</a>
+</div>
+
+<script>
+const programFiles = {
+  '2025': 'seed-2025-program.html',
+  '2024': 'seed-2024-program.html'
+};
+
+function switchTab(edition) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.tab-btn[data-edition="${edition}"]`).classList.add('active');
+  document.getElementById('program-iframe').src = programFiles[edition];
+  history.replaceState(null, '', `?edition=${edition}`);
+}
+
+const params = new URLSearchParams(window.location.search);
+const initial = params.get('edition') || '2025';
+switchTab(initial);
+</script>
+
+</body>
+</html>

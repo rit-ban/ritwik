@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ritwik Banerjee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf9f6;
+    --bg-alt: #f2f0eb;
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --accent: tomato;
+    --border: #ddd;
+    --border-light: #e8e6e1;
+    --font: 'Source Serif 4', Georgia, serif;
+    --max-width: 820px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 15.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: tomato;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+  }
+  nav .nav-inner {
+    max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between; height: 56px;
+  }
+  nav .nav-name {
+    font-weight: 700; font-size: 18px; letter-spacing: 0.02em;
+    color: var(--text); text-decoration: none;
+  }
+  nav .nav-links { display: flex; align-items: center; gap: 28px; }
+  nav .nav-links a {
+    font-size: 13.5px; font-weight: 600; color: var(--text-secondary);
+    text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s;
+  }
+  nav .nav-links a:hover { color: tomato; text-decoration: none; }
+
+  /* dropdown */
+  .nav-dropdown { position: relative; display: flex; align-items: center; }
+  .nav-dropdown-btn {
+    font-size: 13.5px; font-weight: 600; color: var(--text-secondary);
+    background: none; border: none; cursor: pointer; padding: 0;
+    font-family: var(--font); letter-spacing: 0.03em; transition: color 0.2s;
+    display: flex; align-items: center; gap: 3px;
+  }
+  .nav-dropdown-btn:hover { color: tomato; }
+  .nav-dropdown-menu {
+    display: none; position: absolute; top: calc(100% + 14px); left: -14px;
+    background: #fff; border: 1px solid var(--border-light);
+    border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    min-width: 172px; z-index: 200; padding: 6px 0;
+  }
+  .nav-dropdown-menu::before {
+    content: ''; position: absolute; top: -14px; left: 0; right: 0; height: 14px;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu a {
+    display: block; padding: 8px 16px; font-size: 13px; font-weight: 600;
+    color: var(--text-secondary); letter-spacing: 0.02em; transition: color 0.15s;
+  }
+  .nav-dropdown-menu a:hover { color: tomato; background: var(--bg-alt); text-decoration: none; }
+
+  /* mobile hamburger */
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .hamburger svg { width: 22px; height: 22px; stroke: var(--text); }
+  .mobile-section-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-muted); padding: 4px 0 2px;
+  }
+  .mobile-sub { padding-left: 12px !important; font-size: 13px !important; }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 64px 24px 48px;
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+  }
+  .hero-photo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    min-width: 200px;
+  }
+  .hero-photo {
+    width: 200px;
+    height: 240px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: linear-gradient(135deg, var(--bg-alt) 0%, #d5cdbd 100%);
+  }
+  .hero-contact-mini {
+    width: 200px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    text-align: center;
+  }
+  .hero-contact-mini a { color: tomato; font-weight: 600; font-size: 12.5px; }
+  .hero-text { flex: 1; }
+  .hero-text h1 {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .hero-text .affiliation {
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+  }
+  .hero-text .bio {
+    font-size: 15.5px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .hero-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hero-links a {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: tomato;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+    letter-spacing: 0.01em;
+  }
+  .hero-links a:hover { border-bottom-color: tomato; text-decoration: none; }
+  .hero-links .sep { color: var(--border); font-size: 12px; font-weight: 400; }
+
+  /* ── NEWS ── */
+  .news-bar {
+    max-width: var(--max-width);
+    margin: 0 auto 0;
+    padding: 0 24px 48px;
+  }
+  .news-bar h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: tomato;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+  .news-item {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    padding: 6px 0;
+  }
+  .news-item + .news-item { border-top: 1px solid var(--border-light); }
+
+  /* ── SECTIONS ── */
+  .section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px 56px;
+  }
+  .section-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--text);
+    letter-spacing: -0.005em;
+  }
+
+  /* ── PAPER CARD ── */
+  .paper {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .paper:last-child { border-bottom: none; }
+  .paper-title {
+    font-size: 18.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+  .paper-title a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .paper-title a:hover { color: tomato; }
+  .paper-journal {
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    color: tomato;
+    margin-bottom: 4px;
+  }
+  .paper-authors {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+  }
+  .paper-authors a {
+    color: tomato;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(255,99,71,0.4);
+    text-underline-offset: 2px;
+  }
+  .paper-authors a:hover { text-decoration-color: tomato; }
+  .paper-oneliner {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 6px;
+    line-height: 1.55;
+  }
+  .paper-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .paper-links a {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: tomato;
+    text-decoration: none;
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .paper-links a:hover {
+    border-color: tomato;
+    text-decoration: none;
+  }
+  .paper-links a.media-link {
+    background: var(--bg-alt);
+  }
+
+  /* abstract toggle */
+  .abstract-toggle {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: tomato;
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+    font-family: var(--font);
+  }
+  .abstract-toggle:hover { border-color: tomato; }
+  .abstract-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, margin 0.35s ease;
+  }
+  .abstract-content.open {
+    max-height: 500px;
+    margin-top: 12px;
+  }
+  .abstract-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding: 14px 16px;
+    background: var(--bg-alt);
+    border-radius: 4px;
+    border-left: 3px solid tomato;
+  }
+
+  /* ── CONFERENCES ── */
+  .conf-list { list-style: none; }
+  .conf-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 15px;
+  }
+  .conf-list li:last-child { border-bottom: none; }
+  .conf-list .conf-desc { color: var(--text-secondary); font-size: 14px; margin-top: 2px; }
+
+  /* ── CONTACT ── */
+  .contact {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    display: flex;
+    gap: 48px;
+    border-top: 2px solid var(--text);
+  }
+  .contact-col { flex: 1; }
+  .contact-col h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .contact-col p {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .hero { flex-direction: column; gap: 24px; padding-top: 40px; }
+    .hero-photo { width: 140px; min-width: 140px; height: 170px; }
+    .hero-text h1 { font-size: 30px; }
+    .section-title { font-size: 22px; }
+    .nav-links.desktop { display: none; }
+    .hamburger { display: block; }
+    .nav-links.mobile {
+      display: none;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      right: 0;
+      background: rgba(250,249,246,0.97);
+      backdrop-filter: blur(12px);
+      flex-direction: column;
+      padding: 16px 24px 20px;
+      gap: 14px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .nav-links.mobile.open { display: flex; }
+    .contact { flex-direction: column; gap: 24px; }
+  }
+  @media (min-width: 701px) {
+    .nav-links.mobile { display: none !important; }
+    .hamburger { display: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-name">Ritwik Banerjee</a>
+    <div class="nav-links desktop">
+      <div class="nav-dropdown">
+        <a href="#publications" class="nav-dropdown-btn">Research ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="#working-papers">Working Papers</a>
+          <a href="#publications">Publications</a>
+          <a href="#other">Other Writings</a>
+          <a href="#cases">Cases</a>
+        </div>
+      </div>
+      <a href="teaching.html">Teaching</a>
+      <a href="conferences.html" target="_blank">Conferences</a>
+      <div class="nav-dropdown">
+        <a href="et-elia.html" class="nav-dropdown-btn">et elia ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="et-elia.html#media">Media</a>
+          <a href="et-elia.html#treks">Treks</a>
+          <a href="et-elia.html#readings">Essential Readings</a>
+        </div>
+      </div>
+    </div>
+    <button class="hamburger" onclick="document.querySelector('.nav-links.mobile').classList.toggle('open')" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links mobile">
+      <span class="mobile-section-label">Research</span>
+      <a href="#working-papers" class="mobile-sub">Working Papers</a>
+      <a href="#publications" class="mobile-sub">Publications</a>
+      <a href="#other" class="mobile-sub">Other Writings</a>
+      <a href="#cases" class="mobile-sub">Cases</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="conferences.html" target="_blank">Conferences</a>
+      <span class="mobile-section-label">et elia</span>
+      <a href="et-elia.html#media" class="mobile-sub">Media</a>
+      <a href="et-elia.html#treks" class="mobile-sub">Treks</a>
+      <a href="et-elia.html#readings" class="mobile-sub">Essential Readings</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-photo-col">
+    <img class="hero-photo" src="photo.jpg" alt="Ritwik Banerjee">
+    <div class="hero-contact-mini">
+      <a href="mailto:ritwikbanerjee@iimb.ac.in">ritwikbanerjee@iimb.ac.in</a><br>
+      A 201, Main Building<br>
+      IIM Bangalore<br>
+      Bannerghatta Road, Bengaluru 560076
+    </div>
+  </div>
+  <div class="hero-text">
+    <h1>Ritwik Banerjee</h1>
+    <div class="affiliation">
+      Professor of Economics<br>
+      Indian Institute of Management Bangalore
+    </div>
+    <p class="bio">
+      I work at the intersection of behavioral economics, public economics, and development economics. My research uses insights from psychology and related disciplines to illuminate economic issues relevant in developing countries — corruption, social norms, intolerance, discrimination and affirmative action, among others. Of particular interest to me are the various forms of social identity: gender, caste, religion, and race. I primarily use experimental tools of varied forms to understand human behavior.
+    </p>
+    <div class="hero-links">
+      <a href="https://www.iimb.ac.in/user/53/ritwik-banerjee" target="_blank">IIMB Homepage</a>
+      <span class="sep">·</span>
+      <a href="https://scholar.google.com/citations?user=chDrbKAAAAAJ&hl=nl&oi=ao" target="_blank">Google Scholar</a>
+      <span class="sep">·</span>
+      <a href="https://twitter.com/rit_ban" target="_blank">Twitter</a>
+      <span class="sep">·</span>
+      <a href="https://www.linkedin.com/in/ritwik-banerjee-6029abba/" target="_blank">LinkedIn</a>
+      <span class="sep">·</span>
+      <a href="https://www.dropbox.com/s/s42iflqsxwfnozq/CV_Ritwik.pdf?dl=0" target="_blank">CV</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS -->
+<div class="news-bar">
+  <h3>Recent Update</h3>
+  <div class="news-item">"Caste Identity and Teachers' Biased Expectations" accepted at <em>Journal of Development Economics</em> (2026). <a href="https://doi.org/10.1016/j.jdeveco.2025.103650">Link →</a></div>
+  <div class="news-item">"Using Social Recognition to Address the Gender Difference in Volunteering for Low Promotability Tasks" accepted at <em>Management Science</em>. <a href="https://doi.org/10.1287/mnsc.2022.04017">Link →</a></div>
+  <div class="news-item">BREW-ESA 2026 will be held at JNU, New Delhi from 14th to 16th December.</div>
+</div>
+
+<!-- PUBLICATIONS -->
+<div class="section" id="publications">
+  <h2 class="section-title">Publications</h2>
+
+  <div class="paper">
+    <div class="paper-title">Caste Identity and Teachers' Biased Expectations: Evidence from Bihar, India</div>
+    <div class="paper-journal">Journal of Development Economics, 2026</div>
+    <div class="paper-authors">with <a href="https://www.tapmi.edu.in/faculty_profile/satarupa-mitra-assistant-professor/">Satarupa Mitra</a>, <a href="https://sites.google.com/site/sohamsahoo/">Soham Sahoo</a>, and <a href="https://www.adriindia.org/adri/dr-ashmita-gupta">Ashmita Gupta</a></div>
+    <div class="paper-oneliner">Teachers' evaluation bias is higher for backward caste students when taught by forward caste teachers.</div>
+    <div class="paper-links">
+      <a href="https://doi.org/10.1016/j.jdeveco.2025.103650">Published</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535938">SSRN</a>
+      <a href="https://www.thehindu.com/news/national/bihar/caste-identity-influences-how-teachers-judge-students-in-bihar-public-schools-iimb-study/article70298670.ece" class="media-link">The Hindu</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>This paper investigates whether caste identity shapes teachers' expectations of student performance in public schools in Bihar, India. Using data that pairs students' test-based rankings with teachers' subjective assessments, we find that the gap between objective and perceived performance is systematically larger for backward caste students assigned to forward caste teachers.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Using Social Recognition to Address the Gender Difference in Volunteering for Low Promotability Tasks</div>
+    <div class="paper-journal">Management Science, forthcoming</div>
+    <div class="paper-authors">with <a href="https://sites.google.com/view/priyomamustafi/home">Priyoma Mustafi</a></div>
+    <div class="paper-oneliner">Women volunteer more for low-promotability tasks than men, but this gender gap disappears when people are rewarded with social recognition.</div>
+    <div class="paper-links">
+      <a href="https://doi.org/10.1287/mnsc.2022.04017">Published</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5258078">SSRN</a>
+      <a href="https://www.dropbox.com/s/elutu1cti9x6oqc/Social_Recognition_2_0_Slides.pdf?dl=0">Slides</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>We use a modified version of the volunteer's dilemma game to examine if non-monetary interventions, particularly social recognition, can be used to reduce the gender gap associated with low-promotability tasks. We conduct a lab experiment with three treatments where a) a volunteer receives positive social recognition, b) a non-volunteer receives negative social recognition, and c) a volunteer receives positive, but a non-volunteer receives negative social recognition. Our results indicate that social recognition increases the overall probability that an individual volunteers. Positive social recognition reduces the gender gap observed in the baseline treatment, and so does the combination of positive and negative social recognition. These findings suggest that public recognition of volunteering for such tasks can change the default gender norms in organizations and increase efficiency simultaneously.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Do Workers Discriminate Against Their Out-Group Employers? Evidence from an Online Labor Market</div>
+    <div class="paper-journal">Journal of Economic Behavior and Organization, 2023</div>
+    <div class="paper-authors">with <a href="https://sherafghanasad.com/">Sher Afghan Asad</a> and <a href="https://sites.google.com/view/joydeep100/home">Joydeep Bhattacharya</a></div>
+    <div class="paper-links">
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167268123003566">Published</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3544269">SSRN</a>
+      <a href="https://www.dropbox.com/s/y6bvuus7dm6cwj0/Discrimination_Uploaded.pdf?dl=0">Slides</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>We study possible labor market discrimination by workers towards their out-group employers as manifested via social preferences (altruism and reciprocity). We run a well-powered, model-based, lab-in-the-field experiment, recruiting 6,000 white American worker subjects from Amazon's M-Turk platform for a real effort task. We also hire trainer subjects, our stand-in for employers, from a university. To worker subjects, we randomly (and unobtrusively) reveal the racial identity of the trainers, who may be white or black. We find evidence that white workers may discriminate against white employers based on altruism (working harder due to concern for the employer's well-being). However, they may discriminate based on reciprocity in favor of their white employers (working harder because of a small gift). From the perspective of black (white) employers, altruism evokes a stronger (weaker) effort response, but gift-giving has no (positive) effect. The combined effect of altruism and reciprocity on worker effort is the same for black and white employers.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Exponential Growth Bias in the Prediction of COVID-19 Spread and Economic Expectation</div>
+    <div class="paper-journal">Economica, 2023</div>
+    <div class="paper-authors">with Priyama Majumdar</div>
+    <div class="paper-links">
+      <a href="https://doi.org/10.1111/ecca.12463">Published</a>
+      <a href="http://ftp.iza.org/dp13664.pdf">IZA</a>
+      <a href="https://www.dropbox.com/s/wor2vxc69cr6bey/EGB.pdf?dl=0">Slides</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>Exponential growth bias (EGB) is the pervasive tendency of people to perceive a growth process as linear when in fact it is exponential. We document that people exhibit EGB when asked to predict the number of COVID-19 positive cases in the future. Using four experimental interventions, we examine the effect of EGB on expectations about future macroeconomic conditions, and investment choices in risky assets. In the first intervention (Step), participants make predictions in several short steps; in the second and third treatments (Feedback-N and Feedback-G), participants are given feedback about their prediction errors in the form of either numbers or graphs; and in the fourth treatment (Forecast), participants are offered a forecast range of the future number of cases, based on a statistical model. We find that Feedback-N, Feedback-G and Forecast significantly reduce EGB relative to Step. A reduction in the bias, through the interventions, also decreases risky investment and helps to moderate future economic expectations. The results suggest that nudges, such as behaviourally informed communication strategies, that correct EGB can also help to rationalize economic expectations.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Anti-Tax Evasion, Anti-Corruption and Public Good Provision: An Experimental Analysis of Policy Spillovers</div>
+    <div class="paper-journal">Journal of Economic Behavior &amp; Organization, 2022</div>
+    <div class="paper-authors">with <a href="https://sites.google.com/site/amaboly/">Amadou Boly</a> and <a href="https://business.dcu.ie/staff/dr-robert-gillanders/">Robert Gillanders</a></div>
+    <div class="paper-links">
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167268122000889">Published</a>
+      <a href="http://ssrn.com/abstract=3652411">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>Our framed laboratory experiment analyses the causal relationship between corruption and tax evasion and explores whether deterring one may have desirable spillover effects on the other. We find that the possibility of corruption causally increases tax evasion. The data offers weak evidence that tax evasion leads to more corruption. Introducing a policy to detect and punish public officials who embezzle from tax revenues significantly reduces tax evasion on the part of citizens. However, auditing and punishing tax-evading citizens do not deter embezzlement on the part of public officials. The public good provision increases in all deterrence treatments compared to a baseline, with a "Big bang" treatment in which both tax evasion and corruption are liable to be detected and punished being the most effective. A standalone anti-corruption monitoring and punishment strategy is the next most effective policy followed by tax auditing. Thus, when faced with two "evils" regarding public good provision, allocating more resources to fight corruption may be a better policy response.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Just Another Cost of Doing Business? Experimental Evidence of a Lack of Distaste for Corruption</div>
+    <div class="paper-journal">Public Choice, 2021</div>
+    <div class="paper-authors">with Amadou Boly and Robert Gillanders</div>
+    <div class="paper-links">
+      <a href="https://doi.org/10.1007/s11127-021-00913-x">Published</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3570758">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>In this paper, we ask if "legitimate" administrative costs are less of a disincentive to investment than costs that arise due to corruption. To answer this, we carried out a framed laboratory experiment in Nairobi, Kenya. The results suggest that our participants viewed corruption as just another cost of doing business. Relative to a treatment with no costs, the negative effect on investment of a treatment which featured the possibility of corruption was statistically indistinguishable from that of a treatment with "legitimate" administrative costs. We also experimented with giving participants in some treatments signals regarding the actual extent of corruption and participant expectations thereof in previous sessions. We find some evidence that the objective information actually increased investment without changing the participants' own expectations regarding corruption. This finding of a reassurance effect of information provision has implications for the behavior of agents in a corrupt environment.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Exponential-Growth Prediction Bias and Compliance with Safety Measures in the Times of COVID-19</div>
+    <div class="paper-journal">Social Science and Medicine, 2020</div>
+    <div class="paper-authors">with Priyama Majumdar and <a href="https://sites.google.com/view/joydeep100/home">Joydeep Bhattacharya</a></div>
+    <div class="paper-links">
+      <a href="https://doi.org/10.1016/j.socscimed.2020.113473">Published</a>
+      <a href="https://arxiv.org/abs/2005.01273">arXiv</a>
+      <a href="https://www.bbc.com/future/article/20200812-exponential-growth-bias-the-numerical-error-behind-covid-19" class="media-link">BBC</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>We conduct a unique, Amazon MTurk-based global experiment to investigate the importance of an exponential-growth prediction bias (EGPB) in understanding why the COVID-19 outbreak has exploded. We define prediction bias as the systematic error arising from faulty prediction of the number of cases x-weeks hence when presented with y-weeks of prior, actual data on the same. Our design permits us to identify the root of this under-prediction as an EGPB arising from the general tendency to underestimate the speed at which exponential processes unfold. Our data reveals that the "degree of convexity" reflected in the predicted path of the disease is significantly and substantially lower than the actual path. The bias is significantly higher for respondents from countries at a later stage relative to those at an early stage of disease progression. We find that individuals who exhibit EGPB are also more likely to reveal markedly reduced compliance with the WHO-recommended safety measures, find general violations of safety protocols less alarming, and show greater faith in their government's actions. A simple behavioral nudge which shows prior data in terms of raw numbers, as opposed to a graph, causally reduces EGPB.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Feedback Spillovers Across Tasks, Self-Confidence and Competitiveness</div>
+    <div class="paper-journal">Games and Economic Behavior, 2020</div>
+    <div class="paper-authors">with <a href="http://pure.au.dk/portal/en/persons/nabanita-datta-gupta(171b9553-8497-4953-b3bc-731c8abd5dd9).html">Nabanita Datta Gupta</a> and <a href="https://www.gate.cnrs.fr/spip.php?article197&lang=fr">Marie Claire Villeval</a></div>
+    <div class="paper-links">
+      <a href="https://www.sciencedirect.com/science/article/pii/S0899825620300944">Published</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3157516">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>Is success in a task used strategically by individuals to motivate their beliefs prior to taking action in a subsequent, unrelated, task? Also, is the distortion of beliefs reinforced for individuals who have lower status in society? Conducting an artefactual field experiment in India, we show that success when competing in a task increases the performers' self-confidence and competitiveness in the subsequent task. We also find that such spillovers affect the self-confidence of low-status individuals more than that of high-status individuals. Receiving good news under Affirmative Action, however, boosts confidence across tasks regardless of the caste status.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">The Spillover Effects of Affirmative Action on Competitiveness and Unethical Behavior</div>
+    <div class="paper-journal">European Economic Review, 2018</div>
+    <div class="paper-authors">with Nabanita Datta Gupta and Marie Claire Villeval</div>
+    <div class="paper-links">
+      <a href="https://doi.org/10.1016/j.euroecorev.2017.10.022">Published</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2875822">SSRN</a>
+      <a href="https://www.dropbox.com/s/ww6m701ypjpvscw/Slides_Spillover_Ritwik.pdf?dl=0">Slides</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>We conduct an artefactual field experiment to examine various spillover effects of Affirmative Action policies in the context of castes in India. We test a) if individuals who enter tournaments in the presence of an Affirmative Action policy remain competitive after the policy has been removed, and b) whether having been exposed to the policy generates unethical behavior and spite against subjects from the category who has benefited from the policy. We find that this policy substantially increases the beliefs on being a winner and the competitiveness of the backward caste members. However, we find no spillover effect on confidence and competitiveness once Affirmative Action is withdrawn. Furthermore, the discrimination by the dominant category against the backward category is not significantly aggravated by Affirmative Action, except when individuals learn that they have lost the previous competition.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">On the Interpretation of World Values Survey Trust Question — Global Expectations vs. Local Beliefs</div>
+    <div class="paper-journal">European Journal of Political Economy, 2018</div>
+    <div class="paper-links">
+      <a href="https://doi.org/10.1016/j.ejpoleco.2018.04.008">Published</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2769180">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>How should we interpret the World Values Survey (WVS) trust question? We conduct an experiment in India, a low trust country, to correlate the WVS trust question with trust decisions in an incentivized Trust Game. Evidence supports findings from one strand of the fractured literature — the WVS trust question captures expectations about others' trustworthiness, though not always. We show that WVS trust question correlates with globally determined stable expectations but does not correlate with short term locally determined fluctuations in beliefs about trustworthiness. One implication of our study is that survey based methods may not be used to measure contextualized beliefs.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">On Monetary and Non-Monetary Interventions to Combat Corruption</div>
+    <div class="paper-journal">Journal of Economic Behavior &amp; Organization, 2018</div>
+    <div class="paper-authors">with <a href="https://sites.google.com/site/arnabuofa/">Arnab Mitra</a></div>
+    <div class="paper-links">
+      <a href="https://doi.org/10.1016/j.jebo.2018.01.004">Published</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3091142">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>We study the relative effectiveness of extrinsic monetary disincentives and intrinsic non-monetary disincentives to corruption, using a harassment bribery game. In doing so, we also test the Beckerian prediction that at the same level of expected payoff, a low probability of detection with high fine is a stronger deterrent to corruption than a high probability of detection with low fine. Results show that: (a) a low probability of detection with high fine reduces both the amount and the likelihood of bribe demand, (b) a high probability of detection with low fine has no effect on bribe demand, (c) normative appeals of ethics education has a small effect on the likelihood but not on the amount of bribe demand, when measured immediately after the intervention, (d) the effect of ethics education vanishes when measured four weeks after the intervention.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Corruption, Norm Violation and the Decay in Social Capital</div>
+    <div class="paper-journal">Journal of Public Economics, 2016</div>
+    <div class="paper-links">
+      <a href="http://www.sciencedirect.com/science/article/pii/S0047272716300135">Published</a>
+      <a href="http://ftp.iza.org/dp9859.pdf">IZA</a>
+      <a href="https://drive.google.com/file/d/0B5DlJ0oiZvZ9Snh5S1FXZ3Mxbkk/view?usp=sharing">Slides</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>The paper studies the link between corruption and social capital (measured as trust), using data from a lab experiment. Subjects play either a harassment bribery game or a strategically identical but differently framed ultimatum game, followed by a trust game. In a second experiment, we elicit social appropriateness norm of actions in the bribery game and the ultimatum game treatments. Our experimental design allows us to examine whether subjects, who have been asked to pay a bribe, are less likely to trust than those in an isomorphic role in the ultimatum game. We also uncover the underlying mechanism behind any such behavioral spillover. Results suggest that a) there is a negative spillover effect of corruption on trust and the effect increases with decrease in social appropriateness norm of the bribe demand; b) lower trust in the bribery game treatment is explained by lower expected return on trust; c) surprisingly, for both the bribery and the ultimatum game treatments, social appropriateness norm violation engenders the decay in trust through its adverse effect on belief about trustworthiness.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">On the Interpretation of Bribery in Laboratory Corruption Games: Moral Frames and Social Norms</div>
+    <div class="paper-journal">Experimental Economics, 2016</div>
+    <div class="paper-links">
+      <a href="http://link.springer.com/article/10.1007%2Fs10683-015-9436-1">Published</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>Past studies on laboratory corruption games have not been able to find consistent evidence that subjects make "immoral" decisions. A possible reason, and also a critique of laboratory corruption games, is that the experiment may fail to trigger the intended immorality frame in the minds of the participants. To test this idea, we compare behavior in a harassment bribery game with a strategically identical but neutrally framed ultimatum game. The results show that fewer people, both as briber and bribee, engage in corruption in the bribery frame than in the alternative and the average bribe amount is lesser in the former than in the latter. These suggest that moral costs are indeed at work. A third treatment, which relabels the bribery game in neutral language, indicates that the observed treatment effect arises not from the neutral language of the ultimatum game but from a change in the sense of entitlement between the bribery and ultimatum game frames. We also elicit the shared perceptions of appropriateness of the actions or social norm under the two frames, and show that the social norm governing the bribery game frame and the ultimatum game frame are indeed different and that the perceived sense of social appropriateness plays a crucial role in determining actual behavior.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Awareness Programs and Change in Taste-Based Caste Prejudice</div>
+    <div class="paper-journal">PLoS ONE, 2015</div>
+    <div class="paper-authors">with Nabanita Datta Gupta</div>
+    <div class="paper-links">
+      <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118546&type=printable">Published</a>
+      <a href="http://www.iza.org/en/webcontent/publications/papers/viewAbstract?dp_id=8446">IZA</a>
+      <a href="http://ideasforindia.in/article.aspx?article_id=377" class="media-link">Ideas for India</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>Becker's theory of taste-based discrimination predicts that relative employment of the discriminated social group will improve if there is a decrease in the level of prejudice for the marginally discriminating employer. In this paper we experimentally test this prediction offered by Becker (1971) in the context of caste in India, with management students (potential employers in the near future) as subjects. First, we measure caste prejudice and show that awareness through a TV social program reduces implicit prejudice against the lower caste and the reduction is sustained over time. Second, we find that the treatment reduces the prejudice levels of those in the left tail of the prejudice distribution — the group which can potentially affect real outcomes as predicted by the theory. And finally, a larger share of the treatment group subjects exhibit favorable opinion about reservation in jobs for the lower caste.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">On Self Selection of the Corrupt into the Public Sector</div>
+    <div class="paper-journal">Economics Letters, 2015</div>
+    <div class="paper-authors">with Tushi Baul and Tanya Rosenblat</div>
+    <div class="paper-links">
+      <a href="http://dx.doi.org/10.1016/j.econlet.2014.12.020">Published</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>Do corrupt people self select themselves in professions where the scope of corruption is high? We conduct a corruption experiment with private sector job aspirants and aspirants of Indian bureaucracy. The game models embezzlement of resources in which "supervisors" evaluate the performance of "workers" and then pay them. We find that aspirant bureaucrats indulge in more corruption than private sector aspirants but the likelihood of being corrupt is same across two sectors.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Linking Teacher and Student Absenteeism — The Role of Shared Goods in Reducing Absenteeism</div>
+    <div class="paper-journal">Economics of Education Review, 2012</div>
+    <div class="paper-authors">with Elizabeth M. King, <a href="http://www2.econ.iastate.edu/faculty/orazem/">Peter Orazem</a>, and Elizabeth M. Paterno</div>
+    <div class="paper-links">
+      <a href="http://www.sciencedirect.com/science/article/pii/S0272775712000325">Published</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>A theoretical model is advanced that demonstrates that, if teacher and student attendance generate a shared good, then teacher and student attendance will be mutually reinforcing. Using data from the Northwest Frontier Province of Pakistan, empirical evidence supporting that proposition is advanced. Controlling for the endogeneity of teacher and student attendance, the most powerful factor raising teacher attendance is the attendance of the children in the school, and the most important factor influencing child attendance is the presence of the teacher. The results suggest that one important avenue to be explored in developing policies to reduce teacher absenteeism is to focus on raising the attendance of children.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WORKING PAPERS -->
+<div class="section" id="working-papers">
+  <h2 class="section-title">Working Papers</h2>
+
+  <div class="paper">
+    <div class="paper-title">Effect of Social Information on Competition Choice</div>
+    <div class="paper-journal">Revise &amp; Resubmit, Journal of Economic Behavior and Organization</div>
+    <div class="paper-authors">with <a href="https://sites.google.com/monash.edu/lata-gangadharan/home">Lata Gangadharan</a>, Anand Kumar, and <a href="https://srinivasanmurali.weebly.com/">Srinivasan Murali</a></div>
+    <div class="paper-oneliner">Social information about peers' competition choices strategically influences individuals' willingness to compete — observing lower competition rates among others increases one's own likelihood to compete.</div>
+    <div class="paper-links">
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4590161">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>We show that social information about competition choices influences individuals' willingness to compete. In a laboratory experiment, participants perform a real-effort task under piece-rate and tournament incentives, and subsequently participate in two choice rounds. We vary the information provided between the two choice rounds across three treatments. We find that social information on the proportion of participants that choose to compete in the first round affects the willingness to compete in the second round. Salience of payment schemes does not explain this result. Observing a lower willingness to compete by others increases the likelihood of one's own willingness to compete. This suggests that participants strategically choose to compete based on their treatment induced belief about the average ability of other participants, consistent with predictions from a rational model of Bayesian learning. This effect is particularly strong for women.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Affirmative Action and Application Strategies: Evidence from Field Experiments in Colombia</div>
+    <div class="paper-authors">with <a href="https://www.uni-goettingen.de/en/120944.html">Marcela Ibanez</a>, <a href="https://gerhardriener.github.io/">Gerhard Riener</a>, and <a href="https://www.sites.google.com/site/sohamsahoo/">Soham Sahoo</a></div>
+    <div class="paper-oneliner">Affirmative-action policies encourage women to invest more effort and express greater emotion in job applications, but these signals paradoxically alter women's self-presentation in ways that reduce their attractiveness to both human and AI evaluators.</div>
+    <div class="paper-links">
+      <a href="https://www.dice.hhu.de/fileadmin/redaktion/Fakultaeten/Wirtschaftswissenschaftliche_Fakultaet/DICE/Discussion_Paper/362_Banerjee_Ibanez_Riener_Sahoo.pdf">Working Paper</a>
+      <a href="https://www.dropbox.com/s/71tggxi868z9htj/AA_Colombia_Slides.pdf?dl=0">Slides</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>Affirmative action changes incentives at all stages of the employment process. In this paper, we study the effects of affirmative action statements in job ads on i) the effort expended on the application process and ii) the manifestation of emotions, as measured by the textual analysis of the content of the motivation letter. We use data from two field experiments conducted in Colombia. We find that in the Control condition, women spend less time in the application process relative to men. Besides, female motivation letters exhibit lower levels of emotion, as measured by valence, arousal, and dominance. However, those differences vanish in the affirmative action treatment when we announced to job-seekers that half of the positions were reserved for women. In the Affirmative Action condition, the time dedicated by women significantly increased and the motivation letters written by the female candidates showed a significant increase in the expression of positive emotions. The results indicate that affirmative action policies can have significant encouraging effects on both effort and appeal of job applications of women, thereby reducing the gender gap in these outcomes.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Getting Peers to Learn from Each Other: Evidence from a Randomized Teamwork-Based Intervention</div>
+    <div class="paper-journal">Revise &amp; Resubmit, International Economic Review</div>
+    <div class="paper-authors">with Niels-Hugo Blunch, Daniele Cassese, <a href="http://pure.au.dk/portal/en/persons/nabanita-datta-gupta(171b9553-8497-4953-b3bc-731c8abd5dd9).html">Nabanita Datta Gupta</a>, and Paolo Pin</div>
+    <div class="paper-oneliner">Structured peer-based cooperative learning (Jigsaw method) with co-coaching significantly improves learning outcomes for middle school students.</div>
+    <div class="paper-links">
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5240293">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>The effect of peer interactions on student learning remains inconclusive. To investigate, we randomly assigned 10,000 middle school students in 37 schools in Karnataka, India, to different peer-learning treatments in Math and English. Teamwork with co-coaching improved Math scores by 0.25 standard deviations, especially for lower-ability students, while unstructured teamwork and incentive treatments had weaker effects. These findings highlight the importance of structured peer interactions in enhancing learning outcomes. We develop theoretical conditions under which teamwork with co-coaching outperforms unstructured teamwork as a peer-learning method, emphasizing the role of institutional design in maximizing peer effects in education.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OTHER WRITING -->
+<div class="section" id="other">
+  <h2 class="section-title">Other Writing</h2>
+
+  <div class="paper">
+    <div class="paper-title">Stopping the Rot I: A Review of Models and Experimental Methods of Corruption Experiments</div>
+    <div class="paper-authors">with Utteeyo Dasgupta and Satarupa Mitra</div>
+    <div class="paper-journal">in The Political Economy of Corruption — Emerging Issues, Routledge, forthcoming</div>
+    <div class="paper-links">
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4180666">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>In a two-part review, we focus on the behavioral experimental literature on corruption from the past decade with a particular focus on papers that offer behavioral insights into corrupt decision-making. In this first chapter, we restrict attention to the prominent theoretical models that have been used in the literature to lay out the framework of analysis in the corruption literature. We then discuss the important methodological issues related to the measurement of corruption, especially when using lab experiments.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Stopping the Rot II: Consequences, Causes and Policy Lessons from the Recent Experiments on Corruption</div>
+    <div class="paper-authors">with Utteeyo Dasgupta and Satarupa Mitra</div>
+    <div class="paper-journal">in The Political Economy of Corruption — Emerging Issues, Routledge, forthcoming</div>
+    <div class="paper-links">
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4180686">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>In this second chapter of the two-chapter review on corruption research, we start with a discussion of the consequences of corruption. We follow up with the fundamental causes of corruption that are identified in the literature, which also serves to anchor the subsequent section that examines the recent advances on the policy levers designed to fight corruption using experimental methods. We end with some thoughts on avenues for future research.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Beyond Headline GDP Growth — Trends in Income and Consumption Inequality</div>
+    <div class="paper-authors">with Prerana Maheshwari</div>
+    <div class="paper-journal">Economic and Political Weekly, 2020</div>
+    <div class="paper-links">
+      <a href="https://www.epw.in/journal/2020/51/commentary/beyond-headline-gdp-growth.html">Published</a>
+      <a href="https://www.dropbox.com/s/9yfw6p4kge5q1n1/EPW_BanerjeeMaheshwari.pdf?dl=0">Ungated</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>Income and consumption share data for the 20-year period 1991–2011 shows that there exists a large difference in the growth rates for various deciles of the income distribution in India. These differences have led to sharp increases in income and consumption inequality. The article also shows that consumption inequality has grown faster than income inequality. These findings clearly show that the focus on one headline GDP growth rate number may hide several important trends in the economy.</p>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="paper-title">Predicting Food Price Inflation Through Online Prices in India</div>
+    <div class="paper-authors">with Nished Singhal and Chetan Subramanian</div>
+    <div class="paper-journal">Economic and Political Weekly, 2018</div>
+    <div class="paper-links">
+      <a href="https://www.epw.in/journal/2018/23/notes/predicting-food-price-infl-ation-through-online-prices-india.html#">Published</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+    </div>
+    <div class="abstract-content">
+      <p>An online price index is constructed using food and beverage data from a major Indian e-commerce retailer, tracking prices from April 2015 to July 2016. The index successfully tracks the official Consumer Price Index at both aggregate and subgroup levels, with a correlation coefficient of 0.935. Using a weighted median methodology improves the correlation further by dampening volatility from seasonal items. Online prices represent a quick and efficient source of price data that can provide a cheap but credible signal of inflationary pressures on a real-time basis.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- CASES -->
+<div class="section" id="cases">
+  <h2 class="section-title">Cases</h2>
+
+  <div class="paper">
+    <div class="paper-title">Predicting Inflation Through Online Prices</div>
+    <div class="paper-authors">with Nished Singhal, Chetan Subramanian, and Menaka Rao</div>
+    <div class="paper-journal">Harvard Business Publishing Case, 2019</div>
+    <div class="paper-links">
+      <a href="https://hbr.org/product/predicting-inflation-through-online-prices/IMB763-PDF-ENG">HBP</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+  <div class="contact-col">
+    <h3>Contact</h3>
+    <p>
+      <a href="mailto:ritwikbanerjee@iimb.ac.in">ritwikbanerjee@iimb.ac.in</a><br><br>
+      A 201, Main Building<br>
+      Indian Institute of Management Bangalore<br>
+      Bannerghatta Main Road<br>
+      Bengaluru, Karnataka 560076
+    </p>
+  </div>
+  <div class="contact-col">
+    <h3>Elsewhere</h3>
+    <p>
+      <a href="https://scholar.google.com/citations?user=chDrbKAAAAAJ&hl=nl&oi=ao" target="_blank">Google Scholar</a><br>
+      <a href="https://twitter.com/rit_ban" target="_blank">Twitter</a><br>
+      <a href="https://www.linkedin.com/in/ritwik-banerjee-6029abba/" target="_blank">LinkedIn</a>
+    </p>
+  </div>
+</div>
+
+<script>
+function toggleAbstract(btn) {
+  const content = btn.closest('.paper').querySelector('.abstract-content');
+  content.classList.toggle('open');
+  btn.textContent = content.classList.contains('open') ? 'Abstract ▴' : 'Abstract ▾';
+}
+</script>
+
+</body>
+</html>

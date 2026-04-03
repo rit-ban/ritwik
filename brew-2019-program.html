@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BREW India 2019 – Program</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      background: #f8f9fa;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 40px 20px 30px;
+      background: linear-gradient(135deg, #4a1a6b, #6b2fa0, #8e44ad);
+      color: #fff;
+      border-radius: 12px;
+      margin-bottom: 32px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .header .subtitle {
+      font-size: 1.05rem;
+      margin-top: 6px;
+      opacity: 0.9;
+    }
+
+    .header .meta {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    .header .meta span {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .keynote-banner {
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .keynote-banner h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+      opacity: 0.8;
+    }
+
+    .keynote-banner p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* Sponsors */
+    .sponsors {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 28px;
+    }
+
+    .sponsors span {
+      margin: 0 8px;
+    }
+
+    /* Day heading */
+    .day-heading {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 28px 0 16px;
+    }
+
+    /* Session blocks */
+    .session-block {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .session-header {
+      padding: 12px 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .session-header .time {
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      color: #fff;
+      background: #6b2fa0;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .session-header.keynote {
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: #fff;
+    }
+
+    .session-header.keynote .time {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .session-header.break-row {
+      background: #f0f0f0;
+      color: #888;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .session-header.break-row .time {
+      background: #bbb;
+    }
+
+    .session-header.section-title {
+      background: linear-gradient(135deg, #16a085, #1abc9c);
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .session-header.section-title .time {
+      background: rgba(0,0,0,0.15);
+    }
+
+    .session-header.phd-workshop {
+      background: #f7f3fb;
+      border-left: 4px solid #8e44ad;
+    }
+
+    .session-header.phd-workshop .time {
+      background: #8e44ad;
+    }
+
+    /* Talk rows */
+    .talk {
+      padding: 12px 20px 12px 20px;
+      border-top: 1px solid #f0f0f0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .talk .time {
+      flex-shrink: 0;
+      width: 100px;
+      font-size: 0.82rem;
+      color: #8e44ad;
+      font-weight: 600;
+      padding-top: 2px;
+    }
+
+    .talk .details {
+      flex: 1;
+    }
+
+    .talk .title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #2c3e50;
+      margin-bottom: 3px;
+    }
+
+    .talk .authors {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .talk .authors .presenter {
+      font-weight: 600;
+      color: #444;
+    }
+
+    .talk:hover {
+      background: #faf8fd;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      margin-top: 32px;
+      font-size: 0.82rem;
+      color: #999;
+      border-top: 1px solid #eee;
+    }
+
+    .footer a {
+      color: #8e44ad;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.5rem; }
+      .talk { flex-direction: column; gap: 4px; }
+      .talk .time { width: auto; }
+      .container { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>BREW, India 2019</h1>
+      <div class="subtitle">Behavioral Research in Economics Workshop</div>
+      <div class="meta">
+        <span>IIM Ahmedabad, India</span> &middot;
+        <span>December 16&ndash;17, 2019</span>
+      </div>
+      <div class="keynote-banner">
+        <h3>Keynote Speakers</h3>
+        <p>Prof. Antonio Penta <span style="opacity:0.75">(Universitat Pompeu Fabra)</span></p>
+        <p>Prof. Nikos Nikiforakis <span style="opacity:0.75">(NYU Abu Dhabi)</span></p>
+      </div>
+    </div>
+
+    <!-- Sponsors -->
+    <div class="sponsors">
+      Sponsored by: <span>IIM Ahmedabad</span> &middot; <span>SABE</span> &middot; <span>IIM Bangalore</span>
+    </div>
+
+    <!-- ==================== DAY 1 ==================== -->
+    <div class="day-heading">Day 1 &mdash; Monday, December 16, 2019</div>
+
+    <!-- PhD Workshop -->
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">09:00 &ndash; 11:30</span>
+        PhD Workshop
+      </div>
+      <div class="session-header phd-workshop">
+        <span class="time">09:00 &ndash; 09:45</span>
+        Lecture 1: Jeevant Rampal (IIM Ahmedabad)
+      </div>
+      <div class="session-header phd-workshop">
+        <span class="time">09:45 &ndash; 10:30</span>
+        Lecture 2: Anujit Chakraborty (UC Davis)
+      </div>
+      <div class="session-header phd-workshop">
+        <span class="time">10:45 &ndash; 11:30</span>
+        Lecture 3: Ritwik Banerjee (IIM Bangalore)
+      </div>
+    </div>
+
+    <!-- Break -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">11:30 &ndash; 11:45</span>
+        Coffee / Tea Break
+      </div>
+    </div>
+
+    <!-- Session 1 -->
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">11:45 &ndash; 01:15</span>
+        Session 1 &mdash; PhD Students' Express Talks
+      </div>
+
+      <div class="talk">
+        <div class="time">11:45 &ndash; 12:00</div>
+        <div class="details">
+          <div class="title">&ldquo;Selling to a naive (agent, manager) pair&rdquo;</div>
+          <div class="authors"><span class="presenter">Kolagani Paramahamsa</span> (ISI Delhi), Debasis Mishra (ISI Delhi)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">12:00 &ndash; 12:15</div>
+        <div class="details">
+          <div class="title">&ldquo;Do adolescents display differential competitive and social preferences based on the relative economic status of others?&rdquo;</div>
+          <div class="authors"><span class="presenter">Anuvinda P</span> (JNU, New Delhi), Sujoy Chakravarty (JNU, New Delhi)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">12:15 &ndash; 12:30</div>
+        <div class="details">
+          <div class="title">&ldquo;Torn between want and should: A model of behavioral choices&rdquo;</div>
+          <div class="authors"><span class="presenter">Raghvi Garg</span> (Ashoka University), Abhinash Borah (Ashoka University)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">12:30 &ndash; 12:45</div>
+        <div class="details">
+          <div class="title">&ldquo;The Apple doesn&rsquo;t fall far from the tree: Identifying the role of ethnicity and culture in philanthropic behaviour&rdquo;</div>
+          <div class="authors"><span class="presenter">Nilanjan Bhattacharya</span> (IIT Kanpur), Debayan Pakrashi (IIT Kanpur), Sarani Saha (IIT Kanpur)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">12:45 &ndash; 01:00</div>
+        <div class="details">
+          <div class="title">&ldquo;Electoral gift giving: An experimental analysis&rdquo;</div>
+          <div class="authors"><span class="presenter">Junofy Anto Rozarina</span> (University of Zurich, Switzerland)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">01:00 &ndash; 01:15</div>
+        <div class="details">
+          <div class="title">&ldquo;Poverty Identity and Preference for Challenge: Evidence from the U.S. and India&rdquo;</div>
+          <div class="authors"><span class="presenter">Aishwarya Deshpande</span> (Indian School of Business, Hyderabad)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lunch -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">01:15 &ndash; 02:30</span>
+        Lunch
+      </div>
+    </div>
+
+    <!-- Keynote 1 -->
+    <div class="session-block">
+      <div class="session-header keynote">
+        <span class="time">02:30 &ndash; 03:30</span>
+        Keynote 1 &mdash; Prof. Antonio Penta (Universitat Pompeu Fabra)
+      </div>
+    </div>
+
+    <!-- Break -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">03:30 &ndash; 03:45</span>
+        Coffee / Tea Break
+      </div>
+    </div>
+
+    <!-- Session 2 -->
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">03:45 &ndash; 05:45</span>
+        Session 2 &mdash; Decision Theory and Experiments
+      </div>
+
+      <div class="talk">
+        <div class="time">03:45 &ndash; 04:15</div>
+        <div class="details">
+          <div class="title">&ldquo;A systematic test of the Independence Axiom: Around Certainty&rdquo;</div>
+          <div class="authors"><span class="presenter">Ritesh Jain</span> (Institute of Economics, Academia Sinica), Kirby Nielsen (Stanford University)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">04:15 &ndash; 04:45</div>
+        <div class="details">
+          <div class="title">&ldquo;Costly Social Learning and Rational Inattention&rdquo;</div>
+          <div class="authors"><span class="presenter">Srijita Ghosh</span> (Ashoka University)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">04:45 &ndash; 05:15</div>
+        <div class="details">
+          <div class="title">&ldquo;Risky decision under laboratory deadline with experience and indirect self-selection&rdquo;</div>
+          <div class="authors"><span class="presenter">Priyodorshi Banerjee</span> (Indian Statistical Institute, Kolkata), Tanmoy Das (Xavier University, Bhubaneshwar)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">05:15 &ndash; 05:45</div>
+        <div class="details">
+          <div class="title">&ldquo;The Role of Heterogeneous Risk Preferences, Discount Rates, and Earnings Expectations in College Major Choice&rdquo;</div>
+          <div class="authors"><span class="presenter">Arpita Patnaik</span> (University of Wisconsin-Madison), Joanna Venator (UWM), Mathew Wiswall (UWM), Basit Zafar (Arizona State University)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conference Dinner -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">07:00 &ndash; 09:00</span>
+        Conference Dinner
+      </div>
+    </div>
+
+    <!-- ==================== DAY 2 ==================== -->
+    <div class="day-heading">Day 2 &mdash; Tuesday, December 17, 2019</div>
+
+    <!-- Keynote 2 -->
+    <div class="session-block">
+      <div class="session-header keynote">
+        <span class="time">09:00 &ndash; 10:00</span>
+        Keynote 2 &mdash; Prof. Nikos Nikiforakis (NYU Abu Dhabi)
+      </div>
+    </div>
+
+    <!-- Session 3 -->
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">10:00 &ndash; 11:30</span>
+        Session 3 &mdash; Field Experiments
+      </div>
+
+      <div class="talk">
+        <div class="time">10:00 &ndash; 10:30</div>
+        <div class="details">
+          <div class="title">&ldquo;On Extrinsic And Intrinsic Incentives To Control Rice Straw Burning: Experimental Evidence From India&rdquo;</div>
+          <div class="authors"><span class="presenter">Adrian Lopes</span> (American University of Sharjah, UAE), Dina Tasneem (American University of Sharjah, UAE), Ajalavat Viriyavipart (American University of Sharjah, UAE)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">10:30 &ndash; 11:00</div>
+        <div class="details">
+          <div class="title">&ldquo;Be Best! : Do SMS Reminders Improve Banking Agent Performance in Rural India?&rdquo;</div>
+          <div class="authors"><span class="presenter">Krishanu Chakraborty</span>, Karan Nagpal, and Andres L&rsquo; Parrado (all affiliated with IDinsight)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">11:00 &ndash; 11:30</div>
+        <div class="details">
+          <div class="title">&ldquo;Evaluating low-touch nudges to promote latrine use in rural India&rdquo;</div>
+          <div class="authors"><span class="presenter">Sebastian Lucek</span> (IDinsight India), Pulkit Agarwal, Steven Brownstone, Karan Nagpal, Divya Nair, Ritika Rastogi, Vinod Kumar Sharma (all affiliated with IDinsight India)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Break -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">11:30 &ndash; 11:45</span>
+        Coffee / Tea Break
+      </div>
+    </div>
+
+    <!-- Session 4 -->
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">11:45 &ndash; 01:15</span>
+        Session 4 &mdash; Social Preferences
+      </div>
+
+      <div class="talk">
+        <div class="time">11:45 &ndash; 12:15</div>
+        <div class="details">
+          <div class="title">&ldquo;Fairness is flexible: A study of competing focal points&rdquo;</div>
+          <div class="authors"><span class="presenter">Subrato Banerjee</span> (Queensland University of Technology), Priyanka Kothari (Indian Statistical Institute), Prabal Roy Chowdhury (Indian Statistical Institute)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">12:15 &ndash; 12:45</div>
+        <div class="details">
+          <div class="title">&ldquo;Religiosity and Trust&rdquo;</div>
+          <div class="authors"><span class="presenter">Deepti Goel</span> (Azim Premji University, Bangalore), Thair Ahmad MD. (Azim Premji University, Bangalore)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">12:45 &ndash; 01:15</div>
+        <div class="details">
+          <div class="title">&ldquo;Rewards, Detection and Dishonesty: A Laboratory Experiment in India&rdquo;</div>
+          <div class="authors"><span class="presenter">Sujoy Chakravarty</span> (Jawaharlal Nehru University, New Delhi), M. Kaushik (University of Massachusetts, Amherst, USA), V. Singh (IIT Delhi)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lunch -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">01:15 &ndash; 02:30</span>
+        Lunch
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      BREW, India 2019 &middot; Organized by IIM Ahmedabad, SABE &amp; IIM Bangalore<br>
+      <a href="https://sites.google.com/view/brewindia/" target="_blank">https://sites.google.com/view/brewindia/</a>
+    </div>
+
+  </div>
+</body>
+</html>

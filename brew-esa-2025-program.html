@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BREW-ESA 2025 – Program</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #2c3e50; background: #f8f9fa; line-height: 1.5; }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+    .header { text-align: center; padding: 40px 20px 30px; background: linear-gradient(135deg, #6b1117, #b01116, #d4373c); color: #fff; border-radius: 12px; margin-bottom: 32px; }
+    .header h1 { font-size: 2rem; font-weight: 700; }
+    .header .subtitle { font-size: 1.05rem; margin-top: 6px; opacity: 0.9; }
+    .header .co-org { font-size: 0.92rem; margin-top: 8px; opacity: 0.8; }
+    .header .meta { margin-top: 14px; font-size: 0.95rem; opacity: 0.85; }
+    .header .meta span { display: inline-block; margin: 0 10px; }
+    .keynote-banner { background: rgba(255,255,255,0.15); border-radius: 8px; padding: 14px 20px; margin-top: 20px; display: inline-block; }
+    .keynote-banner h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; opacity: 0.8; }
+    .keynote-banner p { font-size: 1rem; font-weight: 500; }
+    .sponsors { text-align: center; font-size: 0.85rem; color: #777; margin-bottom: 28px; }
+    .day-heading { background: linear-gradient(135deg, #6b1117, #b01116); color: #fff; padding: 14px 24px; border-radius: 8px; font-size: 1.15rem; font-weight: 600; margin: 28px 0 16px; }
+    .session-block { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 16px; overflow: hidden; }
+    .session-header { padding: 12px 20px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 12px; }
+    .session-header .time { flex-shrink: 0; font-size: 0.85rem; color: #fff; background: #b01116; padding: 3px 10px; border-radius: 4px; font-weight: 600; }
+    .session-header.keynote { background: linear-gradient(135deg, #2c3e50, #34495e); color: #fff; }
+    .session-header.keynote .time { background: rgba(0,0,0,0.2); }
+    .session-header.break-row { background: #f0f0f0; color: #888; font-style: italic; font-weight: 500; }
+    .session-header.break-row .time { background: #bbb; }
+    .session-header.section-title { background: linear-gradient(135deg, #16a085, #1abc9c); color: #fff; font-size: 1rem; }
+    .session-header.section-title .time { background: rgba(0,0,0,0.15); }
+    .session-header.mentorship { background: linear-gradient(135deg, #8e44ad, #9b59b6); color: #fff; }
+    .session-header.mentorship .time { background: rgba(0,0,0,0.2); }
+    .parallel-wrap { display: flex; gap: 16px; }
+    .parallel-wrap .session-block { flex: 1; margin-bottom: 0; }
+    .parallel-wrap-outer { margin-bottom: 16px; }
+    .talk { padding: 10px 20px; border-top: 1px solid #f0f0f0; }
+    .talk .title { font-weight: 600; font-size: 0.9rem; color: #2c3e50; margin-bottom: 2px; }
+    .talk .authors { font-size: 0.84rem; color: #666; }
+    .talk .authors .presenter { font-weight: 600; color: #444; }
+    .talk .affiliation { font-size: 0.8rem; color: #999; font-style: italic; }
+    .talk:hover { background: #fdf5f5; }
+    .footer { text-align: center; padding: 24px; margin-top: 32px; font-size: 0.82rem; color: #999; border-top: 1px solid #eee; }
+    .footer a { color: #b01116; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    @media (max-width: 700px) {
+      .header h1 { font-size: 1.5rem; }
+      .container { padding: 12px; }
+      .parallel-wrap { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>BREW-ESA 2025</h1>
+    <div class="subtitle">Behavioral Research in Economics Workshop, India</div>
+    <div class="co-org">Co-organized with the Economic Science Association (ESA)</div>
+    <div class="meta">
+      <span>MDI Gurgaon, India</span> &middot;
+      <span>December 15&ndash;17, 2025</span>
+    </div>
+    <div class="keynote-banner">
+      <h3>Plenary Speakers</h3>
+      <p>Prof. Hannah Schildberg-H&ouml;risch <span style="opacity:0.75">(University of D&uuml;sseldorf)</span></p>
+      <p>Prof. PJ Healy <span style="opacity:0.75">(Ohio State University)</span></p>
+    </div>
+  </div>
+
+  <div class="sponsors">
+    Hosted by: MDI Gurgaon &middot; Co-organized with: ESA
+  </div>
+
+  <!-- ==================== DAY 1 ==================== -->
+  <div class="day-heading">Day 1 &mdash; Monday, December 15, 2025</div>
+
+  <div class="session-block">
+    <div class="session-header break-row"><span class="time">09:15 &ndash; 09:30</span> Inauguration</div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header keynote"><span class="time">09:30 &ndash; 10:00</span> Inaugural Talk by Prof. Arvind Sahay, Director, MDI Gurgaon &mdash; &ldquo;Behavioral Science Applications in Business &amp; Policy: Why It Matters&rdquo;</div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header keynote"><span class="time">10:00 &ndash; 11:00</span> Plenary 1: Prof. Hannah Schildberg-H&ouml;risch (University of D&uuml;sseldorf) &mdash; &ldquo;Early Origins of Economic Behavior: Experimental Evidence on Sensitive Periods and the Role of Adversity in the Formation of Children&rsquo;s Economic Preferences&rdquo;</div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row"><span class="time">11:00 &ndash; 11:15</span> Tea/Coffee Break</div>
+  </div>
+
+  <!-- Session 1 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">11:15 &ndash; 12:45</span> Session 1A: Bargaining &amp; Conflict Resolution [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Zero-Sum Salience and Inequality Acceptance&rdquo;</div><div class="authors"><span class="presenter">Moumita Deb</span>, Stefan Trautmann, Christoph Vanberg</div><div class="affiliation">University of Heidelberg</div></div>
+        <div class="talk"><div class="title">&ldquo;On bargaining about axioms&rdquo;</div><div class="authors"><span class="presenter">Robert Veszteg</span>, Noemi Navarro</div><div class="affiliation">Waseda University</div></div>
+        <div class="talk"><div class="title">&ldquo;Which way to coordinate: An experimental study&rdquo;</div><div class="authors"><span class="presenter">Bradley Ruffle</span>, Todd Kaplan, Richard Li</div><div class="affiliation">McMaster University</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">11:15 &ndash; 12:45</span> Session 1B: Contests [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;Lottery Based Auctions&rdquo;</div><div class="authors"><span class="presenter">Jeevant Rampal</span>, Charles Noussair, Rahul Sharma</div><div class="affiliation">IIM Ahmedabad</div></div>
+        <div class="talk"><div class="title">&ldquo;A Theory of Appeasement&rdquo;</div><div class="authors"><span class="presenter">Swapnendu Banerjee</span>, Soumyarup Saha, Arindam Pal</div><div class="affiliation">Jadavpur University</div></div>
+        <div class="talk"><div class="title">&ldquo;Battle or Bargain? Experimental evidence on conflict and compromise&rdquo;</div><div class="authors"><span class="presenter">Vasudha Chopra</span>, Saumya Deojain</div><div class="affiliation">Plaksha University</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">12:45 &ndash; 02:00</span> Lunch</div></div>
+
+  <!-- Session 2 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">02:00 &ndash; 04:00</span> Session 2A: Social Norms &amp; Cooperation [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Interpreting Intolerance&rdquo;</div><div class="authors"><span class="presenter">Ritwik Banerjee</span>, Lata Gangadharan, Marie Claire Villeval</div><div class="affiliation">IIM Bangalore</div></div>
+        <div class="talk"><div class="title">&ldquo;Debunking Myths: Ancestral Narratives and Intergroup Cooperation in India&rdquo;</div><div class="authors"><span class="presenter">Alessandro Saia</span>, Ahmed R., Mendola M., Ghidoni R., Piasenti S.</div><div class="affiliation">University of Bologna</div></div>
+        <div class="talk"><div class="title">&ldquo;Media and Empowerment: Community Radios in India&rdquo;</div><div class="authors"><span class="presenter">Pushkar Maitra</span>, Tom Lane, Rajesh Ramachandran, Smriti Sharma</div><div class="affiliation">Monash University</div></div>
+        <div class="talk"><div class="title">&ldquo;The Role of Social Norms in Organ Donation Policy: A Theoretical Analysis of Default and Priority Rules&rdquo;</div><div class="authors"><span class="presenter">Diptanu Das</span></div><div class="affiliation">Jadavpur University</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">02:00 &ndash; 04:00</span> Session 2B: Education [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;When science feels like math: Quantitative questions and the science gender gap&rdquo;</div><div class="authors"><span class="presenter">Divyanshu Jain</span>, Tarun Jain</div><div class="affiliation">IIM Ahmedabad</div></div>
+        <div class="talk"><div class="title">&ldquo;Peers, Networks, and Performance: Assessing Social Influences on Academic Outcomes in Higher Education&rdquo;</div><div class="authors"><span class="presenter">Anurag Kakkar</span>, Abhradeep Goswami, Prateet Jain, Ujjwal Anurag, Dr. Shailu Singh, Madhavi Moni K</div><div class="affiliation">Hansraj College, University of Delhi</div></div>
+        <div class="talk"><div class="title">&ldquo;Performance Observability and Private beliefs in Feedback Avoidance Among Students&rdquo;</div><div class="authors"><span class="presenter">Garima Agarwal</span>, Gerhard Riener</div><div class="affiliation">Azim Premji University</div></div>
+        <div class="talk"><div class="title">&ldquo;Improving Digital Habits Through Education: Experimental Evidence from India&rdquo;</div><div class="authors"><span class="presenter">Mridul Joshi</span>, Jalnidh Kaur, Lena Song</div><div class="affiliation">Stanford University</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">04:00 &ndash; 04:15</span> Tea/Coffee Break</div></div>
+
+  <!-- Session 3 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">04:15 &ndash; 05:45</span> Session 3A: Experiments [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Experimental Study of Revenue-Sharing Auctions&rdquo;</div><div class="authors"><span class="presenter">Shivam Baurai</span>, Debasis Mishra, Jeevant Rampal</div><div class="affiliation">IIM Ahmedabad</div></div>
+        <div class="talk"><div class="title">&ldquo;Beliefs, Overconfidence, Learning and Incentives: Evidence from a Field Experiment&rdquo;</div><div class="authors"><span class="presenter">Ashish Sachdeva</span>, Pranav Jindal</div><div class="affiliation">IIM Udaipur</div></div>
+        <div class="talk"><div class="title">&ldquo;Social Image Concerns and AI Use: A Lab Experiment&rdquo;</div><div class="authors"><span class="presenter">Deepti Bhatia</span>, Mert Gumren</div><div class="affiliation">University of Leicester</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">04:15 &ndash; 05:45</span> Session 3B: Information &amp; Media [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;Strategic News Transmission and Evolving Bias&rdquo;</div><div class="authors"><span class="presenter">Rishab Lodh</span>, Oindrila Dey</div><div class="affiliation">Indian Institute of Foreign Trade, Kolkata</div></div>
+        <div class="talk"><div class="title">&ldquo;Does social media influence self-reported preference for populism? Empirical evidence from India&rdquo;</div><div class="authors"><span class="presenter">Soumita Ganguly</span></div><div class="affiliation">IIT Bombay</div></div>
+        <div class="talk"><div class="title">&ldquo;Persuasion through content design&rdquo;</div><div class="authors"><span class="presenter">Srijita Ghosh</span>, Ayush Pant</div><div class="affiliation">Ashoka University</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">06:00 onwards</span> Networking Events</div></div>
+
+  <!-- ==================== DAY 2 ==================== -->
+  <div class="day-heading">Day 2 &mdash; Tuesday, December 16, 2025</div>
+
+  <div class="session-block">
+    <div class="session-header keynote"><span class="time">09:30 &ndash; 10:30</span> Plenary 2: Prof. PJ Healy (Ohio State University) &mdash; &ldquo;Belief Elicitation: Theory &amp; Experiments&rdquo;</div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">10:30 &ndash; 10:45</span> Tea/Coffee Break</div></div>
+
+  <!-- Session 4 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">10:45 &ndash; 12:45</span> Session 4A: Labour Markets &amp; Employment [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Employer Quality and Information Frictions in Spot Labor Markets: Evidence from India&rdquo;</div><div class="authors"><span class="presenter">Vrinda Kapoor</span></div><div class="affiliation">Cornell University</div></div>
+        <div class="talk"><div class="title">&ldquo;Merit and Job Allocation&rdquo;</div><div class="authors"><span class="presenter">Puja Bhattacharya</span>, Jeevant Rampal</div><div class="affiliation">University of Arkansas</div></div>
+        <div class="talk"><div class="title">&ldquo;(En)Gendering Marital Status in Indian Job Market: A Web-Based Field Experimental Study&rdquo;</div><div class="authors"><span class="presenter">Abu Afzal Tauheed</span></div><div class="affiliation">Masaryk University</div></div>
+        <div class="talk"><div class="title">&ldquo;&lsquo;Culture Fit&rsquo; or &lsquo;Culture Filter&rsquo;? The Role of Subjective Signals in Hiring Decisions&rdquo;</div><div class="authors"><span class="presenter">Shubham Ojha</span>, Somdeep Chatterjee, Shreya Mishra</div><div class="affiliation">IIM Calcutta</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">10:45 &ndash; 12:45</span> Session 4B: Development &amp; Financial Inclusion [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;Moving Beliefs via Informal Networks: Field Experiment in Jharkhand India on Financial Product Uptake&rdquo;</div><div class="authors"><span class="presenter">Vidhi Shah</span>, Jeevant Rampal, Anindya Chakrabarti</div><div class="affiliation">USC Marshall</div></div>
+        <div class="talk"><div class="title">&ldquo;The Missing Skyline: Causal Evidence on Upzoning from India&rsquo;s National Capital&rdquo;</div><div class="authors"><span class="presenter">Sankalp Sharma</span></div><div class="affiliation">University of Southern California</div></div>
+        <div class="talk"><div class="title">&ldquo;Saving for a Rainy Day: Nudging Women Working in Informal Sector to Save More&rdquo;</div><div class="authors"><span class="presenter">Eva Maitreyee</span>, Vanita Singh</div><div class="affiliation">MDI Gurgaon</div></div>
+        <div class="talk"><div class="title">&ldquo;Leisure today or tomorrow? The wealth effect on time preference for leisure&rdquo;</div><div class="authors"><span class="presenter">Sana Rajar</span></div><div class="affiliation">IIT Bombay</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">12:45 &ndash; 02:00</span> Lunch</div></div>
+
+  <!-- Session 5 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">02:00 &ndash; 03:30</span> Session 5A: Health Economics &amp; Healthcare [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Is there a Premium for Perceived Confidence? Evidence from Medical Consultants&rdquo;</div><div class="authors"><span class="presenter">Lata Gangadharan</span>, Nisvan Erkal, Sameen Kausar, Boon Han Koh, Zainab Najim, Matthew Roe</div><div class="affiliation">Monash University</div></div>
+        <div class="talk"><div class="title">&ldquo;Navigating Complexity: Decision Making and Satisficing in the Medical Profession&rdquo;</div><div class="authors"><span class="presenter">Khushboo</span>, Shalini Singh</div><div class="affiliation">Research Scholar</div></div>
+        <div class="talk"><div class="title">&ldquo;The Economics of Choosing Traditional Medicine: Theory and Evidence from India&rdquo;</div><div class="authors"><span class="presenter">Zincy Wei</span></div><div class="affiliation">Northwestern University</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">02:00 &ndash; 03:30</span> Session 5B: Behavioral Economics &amp; Policy [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;Bureaucrat Assignment Mechanisms: Theory and Evidence&rdquo;</div><div class="authors"><span class="presenter">Shantanu Khanna</span>, Vinay Jha, Jeevant Rampal</div><div class="affiliation">Northeastern University</div></div>
+        <div class="talk"><div class="title">&ldquo;Do Donors to Charity Really Not Care About Effectiveness?&rdquo;</div><div class="authors"><span class="presenter">Neha Agarwal</span>, Stephen Knowles</div><div class="affiliation">University of Otago</div></div>
+        <div class="talk"><div class="title">&ldquo;Dishonesty in Complex Environments: Deliberate Lies, Shortcuts, or Accidental Mistakes?&rdquo;</div><div class="authors"><span class="presenter">Sven A. Simon</span>, Pascal Nieder</div><div class="affiliation">Max Planck Institute for Tax Law and Public Finance</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">03:30 &ndash; 03:45</span> Tea/Coffee Break</div></div>
+
+  <!-- Session 6 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">03:45 &ndash; 05:15</span> Session 6A: Biases &amp; Stereotypes [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Unpacking the Description-Experience Gap: Can We Identify its Causes?&rdquo;</div><div class="authors"><span class="presenter">Rumen Kerekov</span></div><div class="affiliation">Bratislava University of Economics and Business</div></div>
+        <div class="talk"><div class="title">&ldquo;Skin Colour Stereotypes, Emotional Affect and Economic Decision-Making&rdquo;</div><div class="authors"><span class="presenter">Nishat Anjum</span>, Sujoy Chakravarty</div><div class="affiliation">Jawaharlal Nehru University</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">03:45 &ndash; 05:15</span> Session 6B: Health Behaviors &amp; Interventions [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;Parental Misperceptions on Child Nutrition in India&rdquo;</div><div class="authors"><span class="presenter">Sneha Nimmagadda</span></div><div class="affiliation">University of Southern California</div></div>
+        <div class="talk"><div class="title">&ldquo;Women, Tobacco and Autonomy: A Costly Affair&rdquo;</div><div class="authors"><span class="presenter">Archana Singh</span></div><div class="affiliation">Jawahar Lal Nehru Memorial PG College, Barabanki</div></div>
+        <div class="talk"><div class="title">&ldquo;EnergyBot: Behavioral Interventions for Peak Demand Reduction&rdquo;</div><div class="authors"><span class="presenter">Anirudh Tagat</span>, Saksham Singh, Deepansh Jagga, Yiwei Zhang</div><div class="affiliation">Monk Prayogshala</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">05:15 &ndash; 05:30</span> Tea/Coffee Break</div></div>
+
+  <div class="session-block">
+    <div class="session-header mentorship"><span class="time">05:30 &ndash; 06:30</span> Mentorship Session: &ldquo;Behavioral/Experimental Economics in the Age of AI&rdquo; &mdash; Marie Claire Villeval &amp; PJ Healy</div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">07:30 onwards</span> Conference Dinner</div></div>
+
+  <!-- ==================== DAY 3 ==================== -->
+  <div class="day-heading">Day 3 &mdash; Wednesday, December 17, 2025</div>
+
+  <!-- Session 7 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">09:30 &ndash; 11:00</span> Session 7A: Cooperation &amp; Public Goods [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Cooperation under Escalating Risk: Evidence from a Dynamic Public Goods Experiment&rdquo;</div><div class="authors"><span class="presenter">Richie Dilip Kurian</span>, Friederike Mengel, Dennie van Dolder</div><div class="affiliation">University of Essex</div></div>
+        <div class="talk"><div class="title">&ldquo;Punishment with Imperfect Monitoring reduces Cooperation and Amplifies Inequality in a Dynamic Public Goods Game&rdquo;</div><div class="authors"><span class="presenter">Sanket Sen</span>, Ananish Chaudhuri</div><div class="affiliation">University of Auckland</div></div>
+        <div class="talk"><div class="title">&ldquo;Solving normative conflicts in collective action by promoting redistribution&rdquo;</div><div class="authors"><span class="presenter">Marie Claire Villeval</span>, Lata Gangadharan, Jona Krutaj</div><div class="affiliation">GATE (CNRS)</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">09:30 &ndash; 11:00</span> Session 7B: Environmental Behavior &amp; Sustainability [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;Knowledge or Peers? Evidence from a Field Experiment on Pro-Environmental Behavior&rdquo;</div><div class="authors"><span class="presenter">Raisa Sherif</span>, Esther Blanco</div><div class="affiliation">Max Planck Society</div></div>
+        <div class="talk"><div class="title">&ldquo;Behavioral and welfare effects of reminding household to sort waste: a field experiment in India&rdquo;</div><div class="authors"><span class="presenter">Shivani Wadehra</span>, Zihan Nie</div></div>
+        <div class="talk"><div class="title">&ldquo;(Un-)scientifically Spun: Narratives, Belief Updating, and Pro-Environmental Behavior&rdquo;</div><div class="authors"><span class="presenter">Anwesha Banerjee</span>, Katharina Momsen</div><div class="affiliation">Potsdam Institute of Climate Impact Research</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">11:00 &ndash; 11:15</span> Tea/Coffee Break</div></div>
+
+  <!-- Session 8 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">11:15 &ndash; 12:45</span> Session 8A: Gender &amp; Household Economics [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Household Bargaining Difference in Matrilineal, Patrilineal &amp; Bilineal Societies: Evidence from Lab-in-the-Field Experiment&rdquo;</div><div class="authors"><span class="presenter">Shagata Mukherjee</span>, Mongoljin Batsaikhan</div><div class="affiliation">Centre for Social and Behaviour Change, Ashoka University</div></div>
+        <div class="talk"><div class="title">&ldquo;Intra-Household Resource allocation and Social Structure: A non-cooperative analysis&rdquo;</div><div class="authors"><span class="presenter">Anindita Sen</span>, Bitan Biswas</div><div class="affiliation">University of Calcutta</div></div>
+        <div class="talk"><div class="title">&ldquo;Gender Similarities in Self-Promotion: The Role of Stereotypes&rdquo;</div><div class="authors"><span class="presenter">Kalyani Chaudhuri</span></div><div class="affiliation">Ashoka University</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">11:15 &ndash; 12:45</span> Session 8B: Attribution, Culture &amp; Academic Careers [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;Asymmetries in Attribution of Success and Failure&rdquo;</div><div class="authors"><span class="presenter">Ruchi Avtar</span></div><div class="affiliation">New York University</div></div>
+        <div class="talk"><div class="title">&ldquo;The Cultural Premium: How Cultural Distance, Economic Contributions and Value Alignment Shape Immigration Attitudes&rdquo;</div><div class="authors"><span class="presenter">Priyama Majumdar</span></div><div class="affiliation">University of Warwick</div></div>
+        <div class="talk"><div class="title">&ldquo;Attribution bias by Gender&rdquo;</div><div class="authors"><span class="presenter">Karmini Sharma</span>, Lily Liu, James Fenske</div><div class="affiliation">Imperial College London</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">12:45 &ndash; 02:00</span> Lunch</div></div>
+
+  <!-- Session 9 -->
+  <div class="parallel-wrap-outer">
+    <div class="parallel-wrap">
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">02:00 &ndash; 03:30</span> Session 9A: Gender, Violence &amp; Social Norms [Auditorium]</div>
+        <div class="talk"><div class="title">&ldquo;Determinants of FIR and NC Filing Among Survivors of Violence at One Stop Centres in India&rdquo;</div><div class="authors"><span class="presenter">Navya Srivastava</span>, Aarushi Kalra, Mahima Vasisth</div><div class="affiliation">National Council of Applied Economic Research</div></div>
+        <div class="talk"><div class="title">&ldquo;Pastoralism and the Ancestral Correlates of Intimate Partner Violence&rdquo;</div><div class="authors"><span class="presenter">Shaurya Saxena</span></div><div class="affiliation">IIM Ahmedabad</div></div>
+        <div class="talk"><div class="title">&ldquo;The Leaky Pipeline: When Career Expectations Meet Social Norms&rdquo;</div><div class="authors"><span class="presenter">Ankush Asri</span></div><div class="affiliation">Chr. Michelsen Institute</div></div>
+      </div>
+      <div class="session-block">
+        <div class="session-header section-title"><span class="time">02:00 &ndash; 03:30</span> Session 9B: Research Methodology &amp; Meta-Science [Chanakya Bldg, Room 1]</div>
+        <div class="talk"><div class="title">&ldquo;Effect size, Experimenter Demand and Inference&rdquo;</div><div class="authors"><span class="presenter">Priyoma Mustafi</span>, K. Pun Winichakul, Guillermo Lezama, Marissa Lepper, Alistair Wilson, David Danz, Lise Vesterlund</div><div class="affiliation">Ahmedabad University</div></div>
+        <div class="talk"><div class="title">&ldquo;Pathways from Registration to Publication: Evidence from the AEA RCT Registry&rdquo;</div><div class="authors"><span class="presenter">Viola Asri</span>, Jessica Leight, Taisuke Imai</div><div class="affiliation">Chr. Michelsen Institute</div></div>
+        <div class="talk"><div class="title">&ldquo;Coauthorship Strategies and Gender Bias&rdquo;</div><div class="authors"><span class="presenter">Puneet Arora</span>, Ishita Tripathi, Khushi Trivedi</div><div class="affiliation">MDI Gurgaon</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="session-block"><div class="session-header break-row"><span class="time">03:30 &ndash; 03:45</span> Tea/Coffee Break</div></div>
+
+  <div class="session-block">
+    <div class="session-header break-row"><span class="time">03:45 &ndash; 04:30</span> Vote of Thanks and Closing</div>
+  </div>
+
+  <div class="footer">
+    BREW-ESA 2025 &middot; Co-organized with ESA &middot; Hosted by MDI Gurgaon<br>
+    <a href="https://sites.google.com/view/brewindia/" target="_blank">https://sites.google.com/view/brewindia/</a>
+  </div>
+
+</div>
+</body>
+</html>

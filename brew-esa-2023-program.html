@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREW-ESA 2023 — Conference Program</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f4f7;
+    color: #2c2c2c;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 16px 40px; }
+
+  /* ---- header ---- */
+  .header {
+    background: linear-gradient(135deg, #b01116 0%, #7a0b0f 100%);
+    color: #fff;
+    text-align: center;
+    padding: 44px 20px 36px;
+    border-radius: 0 0 12px 12px;
+    margin-bottom: 32px;
+  }
+  .header h1 { font-size: 2rem; font-weight: 700; letter-spacing: .5px; }
+  .header .subtitle { font-size: 1.1rem; opacity: .92; margin-top: 4px; }
+  .header .meta { margin-top: 14px; font-size: .95rem; opacity: .85; line-height: 1.6; }
+  .header .meta strong { opacity: 1; }
+  .header .organizers { margin-top: 10px; font-size: .85rem; opacity: .75; }
+
+  /* ---- day banner ---- */
+  .day-banner {
+    background: #b01116;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 36px 0 18px;
+  }
+
+  /* ---- cards ---- */
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .card-header {
+    padding: 12px 18px;
+    font-weight: 700;
+    font-size: .95rem;
+    color: #fff;
+  }
+  .card-body { padding: 16px 18px; }
+
+  /* colour coding */
+  .card-header.keynote   { background: linear-gradient(135deg, #b01116, #d4373c); }
+  .card-header.break     { background: #8a8a8a; }
+  .card-header.session-a { background: #1a7a6d; }
+  .card-header.session-b { background: #28845a; }
+  .card-header.panel     { background: linear-gradient(135deg, #b01116, #d4373c); }
+  .card-header.dinner    { background: #5c3d7a; }
+
+  /* break cards: compact */
+  .card.break-card .card-body { padding: 8px 18px; font-size: .9rem; color: #555; }
+
+  /* venue tag */
+  .venue { font-size: .82rem; font-weight: 400; opacity: .85; display: block; margin-top: 2px; }
+
+  /* paper list */
+  .paper-list { list-style: none; padding: 0; }
+  .paper-list li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: .92rem; }
+  .paper-list li:last-child { border-bottom: none; }
+  .paper-list .presenter { font-weight: 600; }
+  .paper-list .title { color: #444; }
+
+  /* parallel wrapper */
+  .parallel {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .parallel .card { flex: 1; margin-bottom: 0; }
+
+  @media (max-width: 700px) {
+    .parallel { flex-direction: column; }
+    .header h1 { font-size: 1.5rem; }
+    .header .subtitle { font-size: .97rem; }
+  }
+
+  /* footer */
+  .footer {
+    text-align: center;
+    margin-top: 36px;
+    padding: 20px;
+    font-size: .85rem;
+    color: #777;
+  }
+  .footer a { color: #b01116; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* keynote talk title */
+  .talk-title { font-style: italic; margin-top: 4px; font-size: .93rem; }
+</style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<div class="header">
+  <h1>BREW-ESA 2023</h1>
+  <div class="subtitle">Behavioral Research in Economics Workshop</div>
+  <div class="meta">
+    <strong>December 15 &ndash; 17, 2023</strong><br>
+    Indian Institute of Technology Bombay (IITB)<br>
+    Co-organized with the Economic Science Association (ESA)
+  </div>
+  <div class="organizers">Local Organizers: Subrato Banerjee (IIT Bombay) &amp; Neha Gupta (IIT Bombay)</div>
+</div>
+
+<div class="container">
+
+<!-- ========================================================== -->
+<!--                      DAY 1                                  -->
+<!-- ========================================================== -->
+<div class="day-banner">Day 1 &mdash; Friday, December 15, 2023</div>
+
+<!-- Plenary -->
+<div class="card">
+  <div class="card-header keynote">14:00 &ndash; 15:15 &nbsp;|&nbsp; Plenary Talk
+    <span class="venue">Nag Auditorium, VMCC</span>
+  </div>
+  <div class="card-body">
+    <strong>Prof. Marie-Claire Villeval</strong> (CNRS, University of Lyon)
+  </div>
+</div>
+
+<!-- Break -->
+<div class="card break-card">
+  <div class="card-header break">15:15 &ndash; 15:45 &nbsp;|&nbsp; Coffee Break</div>
+</div>
+
+<!-- Session 1A / 1B -->
+<div class="parallel">
+  <div class="card">
+    <div class="card-header session-a">15:45 &ndash; 17:25 &nbsp;|&nbsp; Session 1A: Games and Market Design
+      <span class="venue">VMCC, Seminar Room 3</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Vinay Kumar Jha</span>, Jeevant Rampal &mdash; <span class="title">&ldquo;Behavioural correlates of misrepresentation: cadre assignment problem&rdquo;</span></li>
+        <li><span class="presenter">Anna Rinaldi</span> &mdash; <span class="title">&ldquo;Vulnerability game&rdquo;</span></li>
+        <li><span class="presenter">Robert Veszteg</span> &mdash; <span class="title">&ldquo;Experimental results on the roommate problem&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header session-b">15:45 &ndash; 17:25 &nbsp;|&nbsp; Session 1B: Identity-I
+      <span class="venue">VMCC, Seminar Room 5</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Moumita Roy</span>, Puneet Arora &mdash; <span class="title">&ldquo;Are students really biased against female professors? &ndash; Experimental evidence from India&rdquo;</span></li>
+        <li><span class="presenter">Vipra Jain</span>, Subrato Banerjee, Priyanka Kothari &mdash; <span class="title">&ldquo;Salience of &lsquo;us versus them&rsquo; in coloured jersey &ndash; the case of ODI cricket&rdquo;</span></li>
+        <li><span class="presenter">Manasi Bera</span>, Amaresh Dubey, Sarika Chaudhary &mdash; <span class="title">&ldquo;Persistence of caste inequalities with institutional reforms: experiments in West Bengal&rdquo;</span></li>
+        <li><span class="presenter">Abhishek Gorsi</span>, Taniya Ghosh &mdash; <span class="title">&ldquo;Inflation expectations and keeping up with the Joneses&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ========================================================== -->
+<!--                      DAY 2                                  -->
+<!-- ========================================================== -->
+<div class="day-banner">Day 2 &mdash; Saturday, December 16, 2023</div>
+
+<!-- Session 2A / 2B -->
+<div class="parallel">
+  <div class="card">
+    <div class="card-header session-a">09:30 &ndash; 11:10 &nbsp;|&nbsp; Session 2A: Uncertainty
+      <span class="venue">VMCC, Seminar Room 3</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Mahima Mukhija</span> &mdash; <span class="title">&ldquo;Deadlines, procrastination and task quality: role of missing information regarding task difficulty&rdquo;</span></li>
+        <li><span class="presenter">Roshin Paul P</span>, Taniya Ghosh &mdash; <span class="title">&ldquo;The causes and consequences of Indian households&rsquo; inflation expectations&rdquo;</span></li>
+        <li><span class="presenter">Aranya Chakraborty</span>, Javier Escobal, Sonia Laszlo, Jim Warnick &mdash; <span class="title">&ldquo;The role of active discussion in learning about uncertain technologies&rdquo;</span></li>
+        <li><span class="presenter">Sarat Chandra Akella</span> &mdash; <span class="title">&ldquo;Ambiguity attitude: utility transformation and probability weighting&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header session-b">09:30 &ndash; 11:10 &nbsp;|&nbsp; Session 2B: Group Dynamics
+      <span class="venue">VMCC, Seminar Room 5</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Puneet Arora</span>, Lubomir Cingl, Vaclav Korbel &mdash; <span class="title">&ldquo;Stigma among prisoners: experimental evidence from the Czech prisons&rdquo;</span></li>
+        <li><span class="presenter">Rajib Prasad</span> &mdash; <span class="title">&ldquo;Comparing the effect of (cheap talk) communication and delegation in heterogeneous group contests with incomplete information: an experimental analysis&rdquo;</span></li>
+        <li><span class="presenter">Deepti Bhatia</span>, Jan Hausfeld, Urs Fischbacher, Regina Stumpf &mdash; <span class="title">&ldquo;Blame and praise: responsibility attribution patterns in decision chains&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Break -->
+<div class="card break-card">
+  <div class="card-header break">11:10 &ndash; 11:45 &nbsp;|&nbsp; Coffee Break</div>
+</div>
+
+<!-- Plenary -->
+<div class="card">
+  <div class="card-header keynote">11:45 &ndash; 13:00 &nbsp;|&nbsp; Plenary Talk
+    <span class="venue">Nag Auditorium, VMCC</span>
+  </div>
+  <div class="card-body">
+    <strong>Prof. Lata Gangadharan</strong> (Monash University)
+    <div class="talk-title">&ldquo;Using field experiments to understand behavior in developing countries&rdquo;</div>
+  </div>
+</div>
+
+<!-- Lunch -->
+<div class="card break-card">
+  <div class="card-header break">13:00 &ndash; 14:30 &nbsp;|&nbsp; Lunch</div>
+</div>
+
+<!-- Session 3A / 3B -->
+<div class="parallel">
+  <div class="card">
+    <div class="card-header session-a">14:30 &ndash; 15:45 &nbsp;|&nbsp; Session 3A: Identity-II
+      <span class="venue">VMCC, Seminar Room 3</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Shubhaa Bhattacharyya</span> &mdash; <span class="title">&ldquo;An experimental approach towards correcting behavioral biases in screen time use&rdquo;</span></li>
+        <li><span class="presenter">Satyam Kumar Rai</span>, Srijita Ghosh &mdash; <span class="title">&ldquo;Poverty and trust game: a field experiment&rdquo;</span></li>
+        <li><span class="presenter">Rakhi Saha</span>, Arijita Dutta &mdash; <span class="title">&ldquo;True son preference amongst low income groups in India: evidence from list experiment&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header session-b">14:30 &ndash; 15:45 &nbsp;|&nbsp; Session 3B: Information and Preferences
+      <span class="venue">VMCC, Seminar Room 5</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Srijita Ghosh</span> &mdash; <span class="title">&ldquo;Optimal obfuscation&rdquo;</span></li>
+        <li><span class="presenter">Vidhi Shah</span>, Jeevant Rampal, Kirby Nielsen &mdash; <span class="title">&ldquo;Information acquisition to estimate opponent&rsquo;s strategic ability&rdquo;</span></li>
+        <li><span class="presenter">Anujit Chakraborty</span> &mdash; <span class="title">&ldquo;Noisy Foresight&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Break -->
+<div class="card break-card">
+  <div class="card-header break">15:45 &ndash; 16:00 &nbsp;|&nbsp; Coffee Break</div>
+</div>
+
+<!-- Session 4A / 4B -->
+<div class="parallel">
+  <div class="card">
+    <div class="card-header session-a">16:00 &ndash; 17:15 &nbsp;|&nbsp; Session 4A: Preferences
+      <span class="venue">VMCC, Seminar Room 5</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Kriti Manocha</span>, Bhavook Bhardwaj &mdash; <span class="title">&ldquo;Rejection and acceptable correspondences&rdquo;</span></li>
+        <li><span class="presenter">Jeevant Rampal</span> &mdash; <span class="title">&ldquo;Opponent&rsquo;s Foresight and Optimal Choices&rdquo;</span></li>
+        <li><span class="presenter">Anuvinda Pulickal</span>, Sujoy Chakravarty &mdash; <span class="title">&ldquo;Economic inequality and discrimination in trust and reciprocity: experimental evidence with Indian adolescents&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header session-b">16:00 &ndash; 17:15 &nbsp;|&nbsp; Session 4B: Behavioral Finance
+      <span class="venue">VMCC, Seminar Room 3</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Shagata Mukherjee</span>, Misha Sharma, Niyati Agarwal, Akarshik Banerjee &mdash; <span class="title">&ldquo;Long-term access to microfinance does not improve intra-household bargaining power of women: experimental evidence from rural India&rdquo;</span></li>
+        <li><span class="presenter">Somroop Mukherjee</span>, Priyodorshi Banerjee, Sanmitra Ghosh &mdash; <span class="title">&ldquo;Conservatism and representativeness in a quasi-experimental setting&rdquo;</span></li>
+        <li><span class="presenter">Sourik Banerjee</span> &mdash; <span class="title">&ldquo;Resonance versus expertise &ndash; are they substitutes or complements? &ndash; An experimental study&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Dinner -->
+<div class="card">
+  <div class="card-header dinner">19:00 &ndash; 22:30 &nbsp;|&nbsp; Conference Dinner</div>
+</div>
+
+
+<!-- ========================================================== -->
+<!--                      DAY 3                                  -->
+<!-- ========================================================== -->
+<div class="day-banner">Day 3 &mdash; Sunday, December 17, 2023</div>
+
+<!-- Session 5A / 5B -->
+<div class="parallel">
+  <div class="card">
+    <div class="card-header session-a">09:30 &ndash; 10:45 &nbsp;|&nbsp; Session 5A: Prospects
+      <span class="venue">VMCC, Seminar Room 3</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Kunal Lahoti</span>, Kavita Vemuri &mdash; <span class="title">&ldquo;Understanding the effect of loss-framing in insurance purchase decisions &ndash; using a game of life like interface&rdquo;</span></li>
+        <li><span class="presenter">Subrato Banerjee</span> &mdash; <span class="title">&ldquo;Confident and wrong: the role of doubt in shaping opinion&rdquo;</span></li>
+        <li><span class="presenter">Ritwik Banerjee</span>, Satarupa Mitra, Soham Sahoo, Ashmita Gupta &mdash; <span class="title">&ldquo;Teachers&rsquo; caste bias affects students&rsquo; mental health and aspirations in Bihar, India&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header session-b">09:30 &ndash; 10:45 &nbsp;|&nbsp; Session 5B: Education and Health
+      <span class="venue">VMCC, Seminar Room 5</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Anirudh Tagat</span>, Hansika Kapoor, Akshaya Balaji &mdash; <span class="title">&ldquo;Beyond school: life skills training, socio-emotional development, and school outcomes in India&rdquo;</span></li>
+        <li><span class="presenter">Shivani Yadav</span> &mdash; <span class="title">&ldquo;Measuring physicians&rsquo; biases and prejudices: implications on health inequities&rdquo;</span></li>
+        <li><span class="presenter">Peguy Ndodjang Ngantchou</span> &mdash; <span class="title">&ldquo;Are grade incentives relevant to increase learning achievement?&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Break -->
+<div class="card break-card">
+  <div class="card-header break">10:45 &ndash; 11:15 &nbsp;|&nbsp; Coffee Break</div>
+</div>
+
+<!-- Session 6A / 6B -->
+<div class="parallel">
+  <div class="card">
+    <div class="card-header session-a">11:15 &ndash; 12:30 &nbsp;|&nbsp; Session 6A: Public Goods
+      <span class="venue">VMCC, Seminar Room 3</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Vasudha Chopra</span>, Srijita Ghosh &mdash; <span class="title">&ldquo;Environmental valuation and mental accounting: the case of food-waste management program&rdquo;</span></li>
+        <li><span class="presenter">Shivani Wadehra</span>, Zihan Nie, Francisco Alpizar &mdash; <span class="title">&ldquo;Disentangling the chicken or egg problem of household waste sorting and segregated waste collection: a randomized controlled trial in India&rdquo;</span></li>
+        <li><span class="presenter">Nitish Nigam</span>, Sibananda Senapati, Debabrata Samanta &mdash; <span class="title">&ldquo;Electric vehicles adoption: a choice experiment approach to understanding consumer behaviour&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header session-b">11:15 &ndash; 12:30 &nbsp;|&nbsp; Session 6B: Beliefs
+      <span class="venue">VMCC, Seminar Room 5</span>
+    </div>
+    <div class="card-body">
+      <ul class="paper-list">
+        <li><span class="presenter">Sargam Gupta</span>, Anuradha Saha &mdash; <span class="title">&ldquo;Macroeconomic beliefs and electoral dominance&rdquo;</span></li>
+        <li><span class="presenter">Siddarth Venkatesh</span>, Pranjal Bhushan, Abhinash Borah &mdash; <span class="title">&ldquo;Beliefs in echo chambers: identification and characterization&rdquo;</span></li>
+        <li><span class="presenter">Sakshi Upadhyay</span>, Sudipta Sarangi, Sheryl Ball &mdash; <span class="title">&ldquo;Voluntary public goods provision using a coalition mechanism: some experimental results&rdquo;</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Panel -->
+<div class="card">
+  <div class="card-header panel">12:30 &ndash; 13:00 &nbsp;|&nbsp; Panel Session
+    <span class="venue">VMCC, Seminar Room 5</span>
+  </div>
+  <div class="card-body">
+    <strong>&ldquo;Challenges and Opportunities of Behavioral Economics Research in India&rdquo;</strong>
+    <div style="margin-top:6px; font-size:.88rem; color:#666;">Open to all students and junior researchers who are within 5 years of their Ph.D.</div>
+  </div>
+</div>
+
+<!-- Lunch -->
+<div class="card break-card">
+  <div class="card-header break">13:00 &ndash; 14:00 &nbsp;|&nbsp; Lunch</div>
+</div>
+
+</div><!-- /container -->
+
+<!-- ---- footer ---- -->
+<div class="footer">
+  BREW-ESA 2023 &mdash; Behavioral Research in Economics Workshop<br>
+  <a href="https://sites.google.com/view/brewindia/" target="_blank">sites.google.com/view/brewindia</a>
+</div>
+
+</body>
+</html>

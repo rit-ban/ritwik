@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BREW India 2020 – Program</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      background: #f8f9fa;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      padding: 40px 20px 30px;
+      background: linear-gradient(135deg, #6b1117, #b01116, #d4373c);
+      color: #fff;
+      border-radius: 12px;
+      margin-bottom: 32px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .header .subtitle {
+      font-size: 1.05rem;
+      margin-top: 6px;
+      opacity: 0.9;
+    }
+
+    .header .meta {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    .header .meta span {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .header .online-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    .keynote-banner {
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .keynote-banner h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+      opacity: 0.8;
+    }
+
+    .keynote-banner p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* Sponsors */
+    .sponsors {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 28px;
+    }
+
+    .sponsors span {
+      margin: 0 8px;
+    }
+
+    /* Day heading */
+    .day-heading {
+      background: linear-gradient(135deg, #6b1117, #b01116);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 28px 0 16px;
+    }
+
+    /* Session blocks */
+    .session-block {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .session-header {
+      padding: 12px 20px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .session-header .time {
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      color: #fff;
+      background: #b01116;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .session-header.keynote {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #fff;
+    }
+
+    .session-header.keynote .time {
+      background: rgba(0,0,0,0.2);
+    }
+
+    .session-header.break-row {
+      background: #f0f0f0;
+      color: #888;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .session-header.break-row .time {
+      background: #bbb;
+    }
+
+    /* Talk rows */
+    .talk {
+      padding: 12px 20px 12px 20px;
+      border-top: 1px solid #f0f0f0;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .talk .time {
+      flex-shrink: 0;
+      width: 130px;
+      font-size: 0.82rem;
+      color: #b01116;
+      font-weight: 600;
+      padding-top: 2px;
+    }
+
+    .talk .details {
+      flex: 1;
+    }
+
+    .talk .title {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: #2c3e50;
+      margin-bottom: 3px;
+    }
+
+    .talk .authors {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .talk .authors .presenter {
+      font-weight: 600;
+      color: #444;
+    }
+
+    .talk:hover {
+      background: #fdf5f5;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px;
+      margin-top: 32px;
+      font-size: 0.82rem;
+      color: #999;
+      border-top: 1px solid #eee;
+    }
+
+    .footer a {
+      color: #b01116;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.5rem; }
+      .talk { flex-direction: column; gap: 4px; }
+      .talk .time { width: auto; }
+      .container { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>BREW, India 2020</h1>
+      <div class="subtitle">Behavioral Research in Economics Workshop</div>
+      <div class="meta">
+        <span>December 02&ndash;03, 2020</span>
+      </div>
+      <div class="online-badge">Online (IST Time Zone)</div>
+      <div class="keynote-banner">
+        <h3>Keynote Speakers</h3>
+        <p>Prof. Bertil Tungodden <span style="opacity:0.75">(NHH, Bergen, Norway)</span></p>
+        <p>Prof. Lata Gangadharan <span style="opacity:0.75">(Monash University)</span></p>
+      </div>
+    </div>
+
+    <!-- Sponsors -->
+    <div class="sponsors">
+      Sponsored by: <span>SABE</span> &middot; <span>IIM Ahmedabad</span> &middot; <span>IIM Bangalore</span><br>
+      Organizers: Ritwik Banerjee (IIM Bangalore), Anujit Chakraborty (UC Davis), Jeevant Rampal (IIM Ahmedabad)
+    </div>
+
+    <!-- ==================== DAY 1 ==================== -->
+    <div class="day-heading">Day 1 &mdash; Wednesday, December 2, 2020</div>
+
+    <!-- Welcome -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">02:45 &ndash; 03:00 PM</span>
+        Welcome
+      </div>
+    </div>
+
+    <!-- Session 1 talks -->
+    <div class="session-block">
+      <div class="talk">
+        <div class="time">03:00 &ndash; 03:20 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Turning-On Dimensional Prominence in Decision Making: Experiments and a Model&rdquo;</div>
+          <div class="authors"><span class="presenter">Amnon Maltz</span> (University of Haifa), Ayala Arad (Tel Aviv University)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">03:20 &ndash; 03:40 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Are pro-environment behaviours substitutes or complements?&rdquo;</div>
+          <div class="authors"><span class="presenter">Sherif Raisa</span> (Max Planck Institute for Tax Law and Public Finance)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">03:40 &ndash; 04:00 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Testing Methods to Enhance Longevity Awareness&rdquo;</div>
+          <div class="authors"><span class="presenter">Abigail Hurwitz</span> (The Hebrew University of Jerusalem), Olivia S. Mitchell (University of Pennsylvania), Orly Sade (Hebrew University of Jerusalem)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keynote 1 -->
+    <div class="session-block">
+      <div class="session-header keynote">
+        <span class="time">04:00 &ndash; 04:50 PM</span>
+        Keynote 1 &mdash; Prof. Bertil Tungodden (NHH, Bergen, Norway)
+      </div>
+      <div class="talk">
+        <div class="time"></div>
+        <div class="details">
+          <div class="title">&ldquo;Fairness preferences across the world: Preferences and beliefs&rdquo;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Break -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">04:50 &ndash; 05:00 PM</span>
+        Break
+      </div>
+    </div>
+
+    <!-- Session 2 talks -->
+    <div class="session-block">
+      <div class="talk">
+        <div class="time">05:00 &ndash; 05:20 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Voting with Lying Costs: Overcoming Gibbard-Satterthwaite Theorem&rdquo;</div>
+          <div class="authors"><span class="presenter">Sarvesh Bandhu</span> (Indian Statistical Institute)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">05:20 &ndash; 05:40 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Monopoly and the other: Reference-dependence in vertically differentiated markets&rdquo;</div>
+          <div class="authors"><span class="presenter">Priyanka Kothari</span> (Indian Statistical Institute), Subrato Banerjee (Indian Statistical Institute), Prabal Roy Chowdhury (Indian Statistical Institute)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">05:40 &ndash; 06:00 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Convincing Non-believers by Silence: Information Design in presence of Negative Externality&rdquo;</div>
+          <div class="authors"><span class="presenter">Srijita Ghosh</span> (Ashoka University)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== DAY 2 ==================== -->
+    <div class="day-heading">Day 2 &mdash; Thursday, December 3, 2020</div>
+
+    <!-- Session 3 talks -->
+    <div class="session-block">
+      <div class="talk">
+        <div class="time">10:00 &ndash; 10:20 AM</div>
+        <div class="details">
+          <div class="title">&ldquo;Persistence of discrimination: Theory and evidence&rdquo;</div>
+          <div class="authors"><span class="presenter">Nishtha Sharma</span> (University of California, Irvine)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">10:20 &ndash; 10:40 AM</div>
+        <div class="details">
+          <div class="title">&ldquo;To Join or not to Join: Coalition Formation in Public Good Games&rdquo;</div>
+          <div class="authors"><span class="presenter">Sakshi Upadhyay</span> (Virginia Tech)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">10:40 &ndash; 11:00 AM</div>
+        <div class="details">
+          <div class="title">&ldquo;Identity, Leadership and cooperation: An experimental analysis&rdquo;</div>
+          <div class="authors"><span class="presenter">Moumita Roy</span> (George Mason University), Daniel Houser (George Mason University)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keynote 2 -->
+    <div class="session-block">
+      <div class="session-header keynote">
+        <span class="time">11:00 &ndash; 11:50 AM</span>
+        Keynote 2 &mdash; Prof. Lata Gangadharan (Monash University)
+      </div>
+      <div class="talk">
+        <div class="time"></div>
+        <div class="details">
+          <div class="title">&ldquo;Gender and Decision Making&rdquo;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Break -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">11:50 AM &ndash; 12:00 PM</span>
+        Break
+      </div>
+    </div>
+
+    <!-- Session 4 talks -->
+    <div class="session-block">
+      <div class="talk">
+        <div class="time">12:00 &ndash; 12:20 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Competitive Games to Nudge Students: Experimental Evidence from India&rdquo;</div>
+          <div class="authors"><span class="presenter">Puneet Arora</span> (Amrut Mody School of Management), Tareena Musaddiq (University of Michigan)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">12:20 &ndash; 12:40 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Do financial incentives affect creativity? An experimental investigation&rdquo;</div>
+          <div class="authors"><span class="presenter">Debapriya Saha</span> (Jawaharlal Nehru University), Sujoy Chakravarty (Jawaharlal Nehru University), Varsha Singh (Indian Institute of Technology Delhi)</div>
+        </div>
+      </div>
+
+      <div class="talk">
+        <div class="time">12:40 &ndash; 01:00 PM</div>
+        <div class="details">
+          <div class="title">&ldquo;Learning about Ethnic Discrimination from Different Information Sources&rdquo;</div>
+          <div class="authors"><span class="presenter">Korlyakova Darya</span> (CERGE-EI in Prague)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="session-block">
+      <div class="session-header break-row">
+        <span class="time">01:00 &ndash; 01:15 PM</span>
+        Closing Remarks
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      BREW, India 2020 &middot; Organized by IIM Ahmedabad, SABE &amp; IIM Bangalore<br>
+      <a href="https://sites.google.com/view/brewindia/" target="_blank">https://sites.google.com/view/brewindia/</a>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BREW-ESA 2022 – Program</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      background: #f8f9fa;
+      line-height: 1.5;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+
+    .header {
+      text-align: center; padding: 40px 20px 30px;
+      background: linear-gradient(135deg, #6b1117, #b01116, #d4373c);
+      color: #fff; border-radius: 12px; margin-bottom: 32px;
+    }
+    .header h1 { font-size: 2rem; font-weight: 700; }
+    .header .subtitle { font-size: 1.05rem; margin-top: 6px; opacity: 0.9; }
+    .header .co-org { font-size: 0.92rem; margin-top: 8px; opacity: 0.8; }
+    .header .meta { margin-top: 14px; font-size: 0.95rem; opacity: 0.85; }
+    .header .meta span { display: inline-block; margin: 0 10px; }
+    .keynote-banner {
+      background: rgba(255,255,255,0.15); border-radius: 8px;
+      padding: 14px 20px; margin-top: 20px; display: inline-block;
+    }
+    .keynote-banner h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; opacity: 0.8; }
+    .keynote-banner p { font-size: 1rem; font-weight: 500; }
+
+    .sponsors { text-align: center; font-size: 0.85rem; color: #777; margin-bottom: 28px; }
+    .sponsors span { margin: 0 8px; }
+
+    .day-heading {
+      background: linear-gradient(135deg, #6b1117, #b01116);
+      color: #fff; padding: 14px 24px; border-radius: 8px;
+      font-size: 1.15rem; font-weight: 600; margin: 28px 0 16px;
+    }
+
+    .session-block {
+      background: #fff; border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 16px; overflow: hidden;
+    }
+    .session-header {
+      padding: 12px 20px; font-weight: 600; font-size: 0.95rem;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .session-header .time {
+      flex-shrink: 0; font-size: 0.85rem; color: #fff;
+      background: #b01116; padding: 3px 10px; border-radius: 4px; font-weight: 600;
+    }
+    .session-header.keynote {
+      background: linear-gradient(135deg, #2c3e50, #34495e); color: #fff;
+    }
+    .session-header.keynote .time { background: rgba(0,0,0,0.2); }
+    .session-header.break-row {
+      background: #f0f0f0; color: #888; font-style: italic; font-weight: 500;
+    }
+    .session-header.break-row .time { background: #bbb; }
+    .session-header.section-title {
+      background: linear-gradient(135deg, #16a085, #1abc9c);
+      color: #fff; font-size: 1rem;
+    }
+    .session-header.section-title .time { background: rgba(0,0,0,0.15); }
+    .session-header.workshop {
+      background: #f7f3fb; border-left: 4px solid #8e44ad;
+    }
+    .session-header.workshop .time { background: #8e44ad; }
+
+    .parallel-wrap {
+      display: flex; gap: 16px; padding: 0 0 0 0;
+    }
+    .parallel-wrap .session-block { flex: 1; margin-bottom: 0; }
+
+    .talk {
+      padding: 10px 20px; border-top: 1px solid #f0f0f0;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .talk .details { flex: 1; }
+    .talk .title { font-weight: 600; font-size: 0.9rem; color: #2c3e50; margin-bottom: 2px; }
+    .talk .authors { font-size: 0.84rem; color: #666; }
+    .talk .authors .presenter { font-weight: 600; color: #444; }
+    .talk:hover { background: #fdf5f5; }
+
+    .footer {
+      text-align: center; padding: 24px; margin-top: 32px;
+      font-size: 0.82rem; color: #999; border-top: 1px solid #eee;
+    }
+    .footer a { color: #b01116; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 700px) {
+      .header h1 { font-size: 1.5rem; }
+      .container { padding: 12px; }
+      .parallel-wrap { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>BREW-ESA 2022</h1>
+    <div class="subtitle">Behavioral Research in Economics Workshop</div>
+    <div class="co-org">Co-organized with the Economic Science Association (ESA)</div>
+    <div class="meta">
+      <span>IIM Bangalore, India</span> &middot;
+      <span>December 16&ndash;18, 2022</span>
+    </div>
+    <div class="keynote-banner">
+      <h3>Plenary Speakers</h3>
+      <p>Prof. Erte Xiao <span style="opacity:0.75">(Monash University)</span></p>
+      <p>Prof. Songfa Zhong <span style="opacity:0.75">(National University of Singapore)</span></p>
+      <p>Prof. Charles Noussair <span style="opacity:0.75">(University of Arizona)</span></p>
+    </div>
+  </div>
+
+  <div class="sponsors">
+    Sponsored by: <span>IIM Bangalore</span> &middot; <span>IIM Ahmedabad</span> &middot; <span>SABE</span> &middot; <span>ESA</span>
+  </div>
+
+  <!-- ==================== DAY 1 ==================== -->
+  <div class="day-heading">Day 1 &mdash; Friday, December 16, 2022</div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">09:00 &ndash; 09:10</span> Registration over Filter Kapi
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header workshop">
+      <span class="time">09:10 &ndash; 10:40</span>
+      PhD Workshop 1: Charles Noussair &mdash; &ldquo;Experimental Assets Market &ndash; An Overview Lecture&rdquo;
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">10:40 &ndash; 11:00</span> Coffee Break
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header workshop">
+      <span class="time">11:00 &ndash; 12:30</span>
+      PhD Workshop 2: Songfa Zhong &mdash; &ldquo;Stress and Economic Decision Making &ndash; An Overview Lecture&rdquo;
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">12:30 &ndash; 14:00</span> Lunch at MDC
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">14:00 &ndash; 14:10</span> Inauguration by Prof. Chetan Subramanian, Dean (Faculty), IIMB
+    </div>
+  </div>
+
+  <!-- Plenary 1 -->
+  <div class="session-block">
+    <div class="session-header keynote">
+      <span class="time">14:10 &ndash; 15:40</span>
+      Plenary Speaker: Erte Xiao (Monash University) &mdash; &ldquo;No (Intention to) Profit; No Repugnance?&rdquo;
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">15:40 &ndash; 16:00</span> Coffee Break
+    </div>
+  </div>
+
+  <!-- Session 1A / 1B -->
+  <div class="parallel-wrap">
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">16:00 &ndash; 17:20</span> Session 1A: Gender [N-001]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Ability and Gender in the Volunteer&rsquo;s Dilemma&rdquo;</div>
+        <div class="authors"><span class="presenter">Kalyani Chaudhuri</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Epistemic Discrimination against Women: Experimental Evidence from India&rdquo;</div>
+        <div class="authors"><span class="presenter">Tauhidur Rahman</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;She can fight her own battles: Experimental evidence on the effects of increasing awareness about rights and self-defense training on female empowerment in India&rdquo;</div>
+        <div class="authors"><span class="presenter">Soubhagya Sahoo</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;The role of the environment in the gender leadership gap&rdquo;</div>
+        <div class="authors"><span class="presenter">Lata Gangadharan</span></div>
+      </div></div>
+    </div>
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">16:00 &ndash; 17:20</span> Session 1B: Risk, Uncertainty &amp; Ambiguity [N-201]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Gender, Group Liability and Moral Hazard in Microfinance&rdquo;</div>
+        <div class="authors"><span class="presenter">Shagata Mukherjee</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Non-linear regret: Menu effects in risk attitudes and behavioral anomalies&rdquo;</div>
+        <div class="authors"><span class="presenter">Pranjal Bhushan</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Getting burned by frictionless financial markets&rdquo;</div>
+        <div class="authors"><span class="presenter">Anirudh Dhawan</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">19:00 &ndash; 21:30</span> Dinner at MDC Woods
+    </div>
+  </div>
+
+  <!-- ==================== DAY 2 ==================== -->
+  <div class="day-heading">Day 2 &mdash; Saturday, December 17, 2022</div>
+
+  <div class="parallel-wrap">
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">09:30 &ndash; 10:50</span> Session 2A: Communication &amp; Competition [N-001]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Does the talk matter? Cheap talk communication in heterogeneous group contests with incomplete information: Theoretical and experimental investigation&rdquo;</div>
+        <div class="authors"><span class="presenter">Rajib Prasad</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Optimal Obfuscation&rdquo;</div>
+        <div class="authors"><span class="presenter">Srijita Ghosh</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Effect of Social Information on Competition Choice&rdquo;</div>
+        <div class="authors"><span class="presenter">Anand Kumar</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;The effect of relative economic status of the competitor on self-confidence, willingness to compete and performance in a real-effort task: An experimental study with Indian adolescents&rdquo;</div>
+        <div class="authors"><span class="presenter">Sujoy Chakravarty</span></div>
+      </div></div>
+    </div>
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">09:30 &ndash; 10:50</span> Session 2B: Social Preference 1 [N-201]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Representation, Peer Pressure and Punishment in a Public Goods Game&rdquo;</div>
+        <div class="authors"><span class="presenter">Doruk Iris</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;What Happens When Everyone Knows Behavioral Economics? Implications for the Behavioral Sciences and Policy Design&rdquo;</div>
+        <div class="authors"><span class="presenter">Pallavi Shukla</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Other-regarding principal and moral hazard with multiple agents&rdquo;</div>
+        <div class="authors"><span class="presenter">Swapnendu Banerjee</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">10:50 &ndash; 11:10</span> Coffee Break
+    </div>
+  </div>
+
+  <div class="parallel-wrap">
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">11:10 &ndash; 12:30</span> Session 3A: Health, Education &amp; Labour Markets [N-001]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Increasing Employment Through the Partial Release of Information&rdquo;</div>
+        <div class="authors"><span class="presenter">Surajeet Chakravarty</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Money and more: health advice complements cash to improve child outcomes in India&rdquo;</div>
+        <div class="authors"><span class="presenter">Sowmya Dhanaraj</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Unintended effects of Alcohol Ban on Educational and Learning Outcomes of School Children&rdquo;</div>
+        <div class="authors"><span class="presenter">Narbadeshwar Mishra</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Lucky to Work&rdquo;</div>
+        <div class="authors"><span class="presenter">Puja Bhattacharya</span></div>
+      </div></div>
+    </div>
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">11:10 &ndash; 12:30</span> Session 3B: Social Preference 2 [N-201]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Social influence within clusters and stochastic choices&rdquo;</div>
+        <div class="authors"><span class="presenter">Raghvi Garg</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Samaritan&rsquo;s Curse: Are paths to hell paved by good intentions?&rdquo;</div>
+        <div class="authors"><span class="presenter">Rounak Sil</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Using Web Monetization for Incentivizing Sharing of &lsquo;Good&rsquo; Content on Social Media: Results from an online experiment in India&rdquo;</div>
+        <div class="authors"><span class="presenter">Anirudh Tagat</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">12:30 &ndash; 14:00</span> Lunch at MDC
+    </div>
+  </div>
+
+  <!-- Plenary 2 -->
+  <div class="session-block">
+    <div class="session-header keynote">
+      <span class="time">14:10 &ndash; 15:40</span>
+      Plenary Speaker: Songfa Zhong (National University of Singapore) &mdash; &ldquo;Faster and Better Decisions with Recommendation Algorithms&rdquo;
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">15:40 &ndash; 15:50</span> Coffee Break
+    </div>
+  </div>
+
+  <div class="parallel-wrap">
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">15:50 &ndash; 17:10</span> Session 4A: Social Preference 3 [N-001]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Task Characteristics and Charitable Giving&rdquo;</div>
+        <div class="authors"><span class="presenter">Divyanshu Jain</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;The Effect of Own and Recipient Economic Status on the Giving Behaviour of Adolescents: Experimental Evidence from India&rdquo;</div>
+        <div class="authors"><span class="presenter">Anuvinda P</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Trust and Socioeconomic Outcomes in India: Evidence from the World Values Survey&rdquo;</div>
+        <div class="authors"><span class="presenter">Adina Ara</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Who Should Get Money? Estimating Welfare Weights in the U.S.&rdquo;</div>
+        <div class="authors"><span class="presenter">Krishna Srinivasan</span></div>
+      </div></div>
+    </div>
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">15:50 &ndash; 17:10</span> Session 4B: Information [N-201]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Experiments in Information Acquisition and Voting&rdquo;</div>
+        <div class="authors"><span class="presenter">Moumita Deb</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Information, Beliefs and Citizen Activism: An Experiment&rdquo;</div>
+        <div class="authors"><span class="presenter">Ahana Basistha</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Competitive Disclosure of Information to a Rationally Inattentive Agent&rdquo;</div>
+        <div class="authors"><span class="presenter">Vasudha Jain</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Doubt: Insights from a cross-cultural experiment&rdquo;</div>
+        <div class="authors"><span class="presenter">Subrato Banerjee</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">18:40</span> Bus to Conference Dinner from Main Building Parking, IIMB
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">19:00 &ndash; 22:30</span> Conference Dinner at URU, Bannerghatta Main Road
+    </div>
+  </div>
+
+  <!-- ==================== DAY 3 ==================== -->
+  <div class="day-heading">Day 3 &mdash; Sunday, December 18, 2022</div>
+
+  <!-- Plenary 3 -->
+  <div class="session-block">
+    <div class="session-header keynote">
+      <span class="time">09:30 &ndash; 10:50</span>
+      Plenary Speaker: Charles Noussair (University of Arizona) &mdash; &ldquo;Emotions and Economic Decision Making&rdquo;
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">10:50 &ndash; 11:10</span> Coffee Break
+    </div>
+  </div>
+
+  <div class="parallel-wrap">
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">11:10 &ndash; 12:30</span> Session 5A: Identity &amp; Discrimination [N-001]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Attitude towards caste-based reservation and study group formation: Evidence from a business school in India&rdquo;</div>
+        <div class="authors"><span class="presenter">Saif Ali Khan</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Can Temporary Affirmative Action Improve Representation?&rdquo;</div>
+        <div class="authors"><span class="presenter">Neeraja Gupta</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Gender Peer Effects in the Workplace: A Field Experiment in Indian Call Centers&rdquo;</div>
+        <div class="authors"><span class="presenter">Deepshikha Bhateja</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Identity, Leadership and Cooperation: An experimental analysis&rdquo;</div>
+        <div class="authors"><span class="presenter">Moumita Roy</span></div>
+      </div></div>
+    </div>
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">11:10 &ndash; 12:30</span> Session 5B: Field Experiments [N-201]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Eliciting Preferences regarding the Idea of Love Marriage in Rural India: Results from a List Experiment&rdquo;</div>
+        <div class="authors"><span class="presenter">Anindita Sen</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Gender Discrimination in Online Marketplaces&rdquo;</div>
+        <div class="authors"><span class="presenter">Sher Afghan Asad</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;The Economics of Street Charity: Theory and Field Evidence&rdquo;</div>
+        <div class="authors"><span class="presenter">Nishtha Sharma</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Affirmative Action and Application Strategies: Evidence from Field Experiments in Colombia&rdquo;</div>
+        <div class="authors"><span class="presenter">Soham Sahoo</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="session-block">
+    <div class="session-header break-row">
+      <span class="time">12:30 &ndash; 14:00</span> Lunch at MDC
+    </div>
+  </div>
+
+  <div class="parallel-wrap">
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">14:00 &ndash; 15:30</span> Session 6A: Experimental Methodology [N-001]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Are we doing more harm than good? Hypothetical bias reduction techniques in potentially consequential survey settings&rdquo;</div>
+        <div class="authors"><span class="presenter">Vasudha Chopra</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Heterogeneous Agent Quantal Response Equilibrium&rdquo;</div>
+        <div class="authors"><span class="presenter">Fernando Stragliotto</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Demographic and behavioral representativeness of online labor markets&rdquo;</div>
+        <div class="authors"><span class="presenter">Satarupa Mitra</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Saliency of Maximum Marks and Effort on the Test&rdquo;</div>
+        <div class="authors"><span class="presenter">Ishita Tripathi</span></div>
+      </div></div>
+    </div>
+    <div class="session-block">
+      <div class="session-header section-title">
+        <span class="time">14:00 &ndash; 15:30</span> Session 6B: Time Preference [N-201]
+      </div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Promotion timing and effort allocation&rdquo;</div>
+        <div class="authors"><span class="presenter">Shaurya Saxena</span></div>
+      </div></div>
+      <div class="talk"><div class="details">
+        <div class="title">&ldquo;Investigating the Role of Inter Temporal Preferences in Multi-modal Comparisons for Farmers&rsquo; Investment Decisions in Sustainable Practices&rdquo;</div>
+        <div class="authors"><span class="presenter">Shalique MS</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    BREW-ESA 2022 &middot; Co-organized with ESA &middot; IIM Bangalore, IIM Ahmedabad &amp; SABE<br>
+    <a href="https://sites.google.com/view/brewindia/" target="_blank">https://sites.google.com/view/brewindia/</a>
+  </div>
+
+</div>
+</body>
+</html>
