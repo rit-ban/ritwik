@@ -231,6 +231,13 @@
     transition: color 0.2s;
   }
   .paper-title a:hover { color: tomato; }
+  #publications { counter-reset: pub-counter; }
+  #publications .paper { counter-increment: pub-counter; }
+  #publications .paper-title::before {
+    content: counter(pub-counter) ". ";
+    color: var(--text-muted);
+    font-weight: 600;
+  }
   .paper-journal {
     font-size: 14px;
     font-weight: 700;
@@ -505,6 +512,22 @@
   <h2 class="section-title">Publications</h2>
 
   <div class="paper">
+    <div class="paper-title">Effect of Social Information on Competition Choice</div>
+    <div class="paper-journal">Journal of Economic Behavior and Organization, 2026</div>
+    <div class="paper-authors">with <a href="https://sites.google.com/monash.edu/lata-gangadharan/home">Lata Gangadharan</a>, Anand Kumar, and <a href="https://srinivasanmurali.weebly.com/">Srinivasan Murali</a></div>
+    <div class="paper-oneliner">Social information about peers' competition choices strategically influences individuals' willingness to compete — observing lower competition rates among others increases one's own likelihood to compete.</div>
+    <div class="paper-links">
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6651241">SSRN</a>
+      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/8v_CXt9Wjas"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
+    </div>
+    <div class="yt-content"></div>
+    <div class="abstract-content">
+      <p>We show that social information about competition choices influences individuals' willingness to compete. In a laboratory experiment, participants perform a real-effort task under piece-rate and tournament incentives, and subsequently participate in two choice rounds. We vary the information provided between the two choice rounds across three treatments. We find that social information on the proportion of participants that choose to compete in the first round affects the willingness to compete in the second round. Salience of payment schemes does not explain this result. Observing a lower willingness to compete by others increases the likelihood of one's own willingness to compete. This suggests that participants strategically choose to compete based on their treatment induced belief about the average ability of other participants, consistent with predictions from a rational model of Bayesian learning. This effect is particularly strong for women.</p>
+    </div>
+  </div>
+
+  <div class="paper">
     <div class="paper-title">Caste Identity and Teachers' Biased Expectations: Evidence from Bihar, India</div>
     <div class="paper-journal">Journal of Development Economics, 2026</div>
     <div class="paper-authors">with <a href="https://www.tapmi.edu.in/faculty_profile/satarupa-mitra-assistant-professor/">Satarupa Mitra</a>, <a href="https://sites.google.com/site/sohamsahoo/">Soham Sahoo</a>, and <a href="https://www.adriindia.org/adri/dr-ashmita-gupta">Ashmita Gupta</a></div>
@@ -520,22 +543,6 @@
     <div class="yt-content"></div>
     <div class="abstract-content">
       <p>This paper investigates whether caste identity shapes teachers' expectations of student performance in public schools in Bihar, India. Using data that pairs students' test-based rankings with teachers' subjective assessments, we find that the gap between objective and perceived performance is systematically larger for backward caste students assigned to forward caste teachers.</p>
-    </div>
-  </div>
-
-  <div class="paper">
-    <div class="paper-title">Effect of Social Information on Competition Choice</div>
-    <div class="paper-journal">Journal of Economic Behavior and Organization, 2026</div>
-    <div class="paper-authors">with <a href="https://sites.google.com/monash.edu/lata-gangadharan/home">Lata Gangadharan</a>, Anand Kumar, and <a href="https://srinivasanmurali.weebly.com/">Srinivasan Murali</a></div>
-    <div class="paper-oneliner">Social information about peers' competition choices strategically influences individuals' willingness to compete — observing lower competition rates among others increases one's own likelihood to compete.</div>
-    <div class="paper-links">
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6651241">SSRN</a>
-      <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
-      <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/8v_CXt9Wjas"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
-    </div>
-    <div class="yt-content"></div>
-    <div class="abstract-content">
-      <p>We show that social information about competition choices influences individuals' willingness to compete. In a laboratory experiment, participants perform a real-effort task under piece-rate and tournament incentives, and subsequently participate in two choice rounds. We vary the information provided between the two choice rounds across three treatments. We find that social information on the proportion of participants that choose to compete in the first round affects the willingness to compete in the second round. Salience of payment schemes does not explain this result. Observing a lower willingness to compete by others increases the likelihood of one's own willingness to compete. This suggests that participants strategically choose to compete based on their treatment induced belief about the average ability of other participants, consistent with predictions from a rational model of Bayesian learning. This effect is particularly strong for women.</p>
     </div>
   </div>
 
