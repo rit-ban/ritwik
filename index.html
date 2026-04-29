@@ -233,8 +233,19 @@
   .paper-title a:hover { color: tomato; }
   #publications { counter-reset: pub-counter; }
   #publications .paper { counter-increment: pub-counter; }
-  #publications .paper-title::before {
-    content: counter(pub-counter) ". ";
+  #publications .paper-title::before { content: counter(pub-counter) ". "; }
+
+  #working-papers { counter-reset: wp-counter; }
+  #working-papers .paper { counter-increment: wp-counter; }
+  #working-papers .paper-title::before { content: counter(wp-counter) ". "; }
+
+  #other { counter-reset: other-counter; }
+  #other .paper { counter-increment: other-counter; }
+  #other .paper-title::before { content: counter(other-counter) ". "; }
+
+  #publications .paper-title::before,
+  #working-papers .paper-title::before,
+  #other .paper-title::before {
     color: var(--text-muted);
     font-weight: 600;
   }
