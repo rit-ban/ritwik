@@ -123,6 +123,7 @@
 
 <div class="tabs-wrapper">
   <div class="tabs">
+    <button class="tab-btn" data-edition="2026" onclick="switchTab('2026')">2026</button>
     <button class="tab-btn" data-edition="2025" onclick="switchTab('2025')">2025</button>
     <button class="tab-btn" data-edition="2024" onclick="switchTab('2024')">2024</button>
   </div>
@@ -130,7 +131,7 @@
 
 <div class="program-container">
   <div class="program-frame">
-    <iframe id="program-iframe" src="seed-2025-program.html" title="SEED Program"></iframe>
+    <iframe id="program-iframe" src="seed-2026-program.html" title="SEED Program"></iframe>
   </div>
 </div>
 
@@ -140,6 +141,7 @@
 
 <script>
 const programFiles = {
+  '2026': 'seed-2026-program.html',
   '2025': 'seed-2025-program.html',
   '2024': 'seed-2024-program.html'
 };
@@ -152,7 +154,7 @@ function switchTab(edition) {
 }
 
 const params = new URLSearchParams(window.location.search);
-const initial = params.get('edition') || '2025';
+const initial = params.get('edition') || '2026';
 switchTab(initial);
 </script>
 
