@@ -349,9 +349,24 @@
     border-color: tomato;
     text-decoration: none;
   }
-  .paper-links a.media-link {
-    background: var(--bg-alt);
+  .paper-media {
+    align-self: center;
+    font-size: 13.5px;
+    color: var(--text-secondary);
   }
+  .paper-links .paper-media a,
+  .paper-links .paper-media a:hover {
+    font-size: inherit;
+    font-weight: 400;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    letter-spacing: normal;
+    text-decoration: underline;
+    text-decoration-color: rgba(255,99,71,0.4);
+    text-underline-offset: 2px;
+  }
+  .paper-links .paper-media a:hover { text-decoration-color: tomato; }
 
   /* abstract toggle */
   .abstract-toggle {
@@ -582,9 +597,9 @@
     <div class="paper-authors">with <a href="https://sites.google.com/monash.edu/lata-gangadharan/home">Lata Gangadharan</a>, <a href="https://sites.google.com/view/anandk/home">Anand Kumar</a>, and <a href="https://srinivasanmurali.weebly.com/">Srinivasan Murali</a></div>
     <div class="paper-oneliner">Social information about peers' competition choices strategically influences individuals' willingness to compete — observing lower competition rates among others increases one's own likelihood to compete.</div>
     <div class="paper-links">
-      <a href="https://www.sciencedirect.com/science/article/pii/S0167268126001770">Journal</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6651241">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0167268126001770">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6651241">SSRN Working Paper</a>
       <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/8v_CXt9Wjas"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
     </div>
     <div class="yt-content"></div>
@@ -599,12 +614,11 @@
     <div class="paper-authors">with <a href="https://www.tapmi.edu.in/faculty_profile/satarupa-mitra-assistant-professor/">Satarupa Mitra</a>, <a href="https://sites.google.com/site/sohamsahoo/">Soham Sahoo</a>, and <a href="https://www.adriindia.org/adri/dr-ashmita-gupta">Ashmita Gupta</a></div>
     <div class="paper-oneliner">Teachers' evaluation bias is higher for backward caste students when taught by forward caste teachers.</div>
     <div class="paper-links">
-      <a href="https://doi.org/10.1016/j.jdeveco.2025.103650">Published</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535938">SSRN</a>
-      <a href="https://www.thehindu.com/news/national/bihar/caste-identity-influences-how-teachers-judge-students-in-bihar-public-schools-iimb-study/article70298670.ece" class="media-link">The Hindu</a>
-      <a href="https://www.dropbox.com/scl/fi/rwl5ndc3zlri190yo5v3q/BiharBiasClassroomIE.png?rlkey=xysf82lvkwlhnqfoq7j1tz2zz&dl=0" class="media-link">The Indian Express</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://doi.org/10.1016/j.jdeveco.2025.103650">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535938">SSRN Working Paper</a>
       <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/mKSeZRIreLk"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
+      <span class="paper-media">Media: <a href="https://www.thehindu.com/news/national/bihar/caste-identity-influences-how-teachers-judge-students-in-bihar-public-schools-iimb-study/article70298670.ece">The Hindu</a>, <a href="https://www.dropbox.com/scl/fi/rwl5ndc3zlri190yo5v3q/BiharBiasClassroomIE.png?rlkey=xysf82lvkwlhnqfoq7j1tz2zz&dl=0">The Indian Express</a></span>
     </div>
     <div class="yt-content"></div>
     <div class="abstract-content">
@@ -618,10 +632,10 @@
     <div class="paper-authors">with <a href="https://sites.google.com/view/priyomamustafi/home">Priyoma Mustafi</a></div>
     <div class="paper-oneliner">Women volunteer more for low-promotability tasks than men, but this gender gap disappears when people are rewarded with social recognition.</div>
     <div class="paper-links">
-      <a href="https://doi.org/10.1287/mnsc.2022.04017">Published</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5258078">SSRN</a>
-      <a href="https://www.dropbox.com/s/elutu1cti9x6oqc/Social_Recognition_2_0_Slides.pdf?dl=0">Slides</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://doi.org/10.1287/mnsc.2022.04017">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5258078">SSRN Working Paper</a>
+      <a href="https://www.dropbox.com/s/elutu1cti9x6oqc/Social_Recognition_2_0_Slides.pdf?dl=0">Slides</a>
       <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/Burjh2eFIWE?start=21"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
     </div>
     <div class="yt-content"></div>
@@ -635,10 +649,10 @@
     <div class="paper-journal">Journal of Economic Behavior and Organization, 2023</div>
     <div class="paper-authors">with <a href="https://sherafghanasad.com/">Sher Afghan Asad</a> and <a href="https://sites.google.com/view/joydeep100/home">Joydeep Bhattacharya</a></div>
     <div class="paper-links">
-      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167268123003566">Published</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3544269">SSRN</a>
-      <a href="https://www.dropbox.com/s/y6bvuus7dm6cwj0/Discrimination_Uploaded.pdf?dl=0">Slides</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167268123003566">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3544269">SSRN Working Paper</a>
+      <a href="https://www.dropbox.com/s/y6bvuus7dm6cwj0/Discrimination_Uploaded.pdf?dl=0">Slides</a>
     </div>
     <div class="abstract-content">
       <p>We study possible labor market discrimination by workers towards their out-group employers as manifested via social preferences (altruism and reciprocity). We run a well-powered, model-based, lab-in-the-field experiment, recruiting 6,000 white American worker subjects from Amazon's M-Turk platform for a real effort task. We also hire trainer subjects, our stand-in for employers, from a university. To worker subjects, we randomly (and unobtrusively) reveal the racial identity of the trainers, who may be white or black. We find evidence that white workers may discriminate against white employers based on altruism (working harder due to concern for the employer's well-being). However, they may discriminate based on reciprocity in favor of their white employers (working harder because of a small gift). From the perspective of black (white) employers, altruism evokes a stronger (weaker) effort response, but gift-giving has no (positive) effect. The combined effect of altruism and reciprocity on worker effort is the same for black and white employers.</p>
@@ -650,10 +664,10 @@
     <div class="paper-journal">Economica, 2023</div>
     <div class="paper-authors">with <a href="https://priyamam.github.io/priyama/">Priyama Majumdar</a></div>
     <div class="paper-links">
-      <a href="https://doi.org/10.1111/ecca.12463">Published</a>
-      <a href="http://ftp.iza.org/dp13664.pdf">IZA</a>
-      <a href="https://www.dropbox.com/s/wor2vxc69cr6bey/EGB.pdf?dl=0">Slides</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://doi.org/10.1111/ecca.12463">Published Version</a>
+      <a href="http://ftp.iza.org/dp13664.pdf">IZA Working Paper</a>
+      <a href="https://www.dropbox.com/s/wor2vxc69cr6bey/EGB.pdf?dl=0">Slides</a>
     </div>
     <div class="abstract-content">
       <p>Exponential growth bias (EGB) is the pervasive tendency of people to perceive a growth process as linear when in fact it is exponential. We document that people exhibit EGB when asked to predict the number of COVID-19 positive cases in the future. Using four experimental interventions, we examine the effect of EGB on expectations about future macroeconomic conditions, and investment choices in risky assets. In the first intervention (Step), participants make predictions in several short steps; in the second and third treatments (Feedback-N and Feedback-G), participants are given feedback about their prediction errors in the form of either numbers or graphs; and in the fourth treatment (Forecast), participants are offered a forecast range of the future number of cases, based on a statistical model. We find that Feedback-N, Feedback-G and Forecast significantly reduce EGB relative to Step. A reduction in the bias, through the interventions, also decreases risky investment and helps to moderate future economic expectations. The results suggest that nudges, such as behaviourally informed communication strategies, that correct EGB can also help to rationalize economic expectations.</p>
@@ -665,9 +679,9 @@
     <div class="paper-journal">Journal of Economic Behavior &amp; Organization, 2022</div>
     <div class="paper-authors">with <a href="https://sites.google.com/site/amaboly/">Amadou Boly</a> and <a href="https://business.dcu.ie/staff/dr-robert-gillanders/">Robert Gillanders</a></div>
     <div class="paper-links">
-      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167268122000889">Published</a>
-      <a href="http://ssrn.com/abstract=3652411">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167268122000889">Published Version</a>
+      <a href="http://ssrn.com/abstract=3652411">SSRN Working Paper</a>
     </div>
     <div class="abstract-content">
       <p>Our framed laboratory experiment analyses the causal relationship between corruption and tax evasion and explores whether deterring one may have desirable spillover effects on the other. We find that the possibility of corruption causally increases tax evasion. The data offers weak evidence that tax evasion leads to more corruption. Introducing a policy to detect and punish public officials who embezzle from tax revenues significantly reduces tax evasion on the part of citizens. However, auditing and punishing tax-evading citizens do not deter embezzlement on the part of public officials. The public good provision increases in all deterrence treatments compared to a baseline, with a "Big bang" treatment in which both tax evasion and corruption are liable to be detected and punished being the most effective. A standalone anti-corruption monitoring and punishment strategy is the next most effective policy followed by tax auditing. Thus, when faced with two "evils" regarding public good provision, allocating more resources to fight corruption may be a better policy response.</p>
@@ -679,9 +693,9 @@
     <div class="paper-journal">Public Choice, 2021</div>
     <div class="paper-authors">with <a href="https://sites.google.com/site/amaboly/">Amadou Boly</a> and <a href="https://business.dcu.ie/staff/dr-robert-gillanders/">Robert Gillanders</a></div>
     <div class="paper-links">
-      <a href="https://doi.org/10.1007/s11127-021-00913-x">Published</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3570758">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://doi.org/10.1007/s11127-021-00913-x">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3570758">SSRN Working Paper</a>
     </div>
     <div class="abstract-content">
       <p>In this paper, we ask if "legitimate" administrative costs are less of a disincentive to investment than costs that arise due to corruption. To answer this, we carried out a framed laboratory experiment in Nairobi, Kenya. The results suggest that our participants viewed corruption as just another cost of doing business. Relative to a treatment with no costs, the negative effect on investment of a treatment which featured the possibility of corruption was statistically indistinguishable from that of a treatment with "legitimate" administrative costs. We also experimented with giving participants in some treatments signals regarding the actual extent of corruption and participant expectations thereof in previous sessions. We find some evidence that the objective information actually increased investment without changing the participants' own expectations regarding corruption. This finding of a reassurance effect of information provision has implications for the behavior of agents in a corrupt environment.</p>
@@ -693,10 +707,10 @@
     <div class="paper-journal">Social Science and Medicine, 2020</div>
     <div class="paper-authors">with <a href="https://priyamam.github.io/priyama/">Priyama Majumdar</a> and <a href="https://sites.google.com/view/joydeep100/home">Joydeep Bhattacharya</a></div>
     <div class="paper-links">
-      <a href="https://doi.org/10.1016/j.socscimed.2020.113473">Published</a>
-      <a href="https://arxiv.org/abs/2005.01273">arXiv</a>
-      <a href="https://www.bbc.com/future/article/20200812-exponential-growth-bias-the-numerical-error-behind-covid-19" class="media-link">BBC</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://doi.org/10.1016/j.socscimed.2020.113473">Published Version</a>
+      <a href="https://arxiv.org/abs/2005.01273">arXiv Working Paper</a>
+      <span class="paper-media">Media: <a href="https://www.bbc.com/future/article/20200812-exponential-growth-bias-the-numerical-error-behind-covid-19">BBC</a></span>
     </div>
     <div class="abstract-content">
       <p>We conduct a unique, Amazon MTurk-based global experiment to investigate the importance of an exponential-growth prediction bias (EGPB) in understanding why the COVID-19 outbreak has exploded. We define prediction bias as the systematic error arising from faulty prediction of the number of cases x-weeks hence when presented with y-weeks of prior, actual data on the same. Our design permits us to identify the root of this under-prediction as an EGPB arising from the general tendency to underestimate the speed at which exponential processes unfold. Our data reveals that the "degree of convexity" reflected in the predicted path of the disease is significantly and substantially lower than the actual path. The bias is significantly higher for respondents from countries at a later stage relative to those at an early stage of disease progression. We find that individuals who exhibit EGPB are also more likely to reveal markedly reduced compliance with the WHO-recommended safety measures, find general violations of safety protocols less alarming, and show greater faith in their government's actions. A simple behavioral nudge which shows prior data in terms of raw numbers, as opposed to a graph, causally reduces EGPB.</p>
@@ -708,9 +722,9 @@
     <div class="paper-journal">Games and Economic Behavior, 2020</div>
     <div class="paper-authors">with <a href="http://pure.au.dk/portal/en/persons/nabanita-datta-gupta(171b9553-8497-4953-b3bc-731c8abd5dd9).html">Nabanita Datta Gupta</a> and <a href="https://www.gate.cnrs.fr/spip.php?article197&lang=fr">Marie Claire Villeval</a></div>
     <div class="paper-links">
-      <a href="https://www.sciencedirect.com/science/article/pii/S0899825620300944">Published</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3157516">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://www.sciencedirect.com/science/article/pii/S0899825620300944">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3157516">SSRN Working Paper</a>
     </div>
     <div class="abstract-content">
       <p>Is success in a task used strategically by individuals to motivate their beliefs prior to taking action in a subsequent, unrelated, task? Also, is the distortion of beliefs reinforced for individuals who have lower status in society? Conducting an artefactual field experiment in India, we show that success when competing in a task increases the performers' self-confidence and competitiveness in the subsequent task. We also find that such spillovers affect the self-confidence of low-status individuals more than that of high-status individuals. Receiving good news under Affirmative Action, however, boosts confidence across tasks regardless of the caste status.</p>
@@ -722,10 +736,10 @@
     <div class="paper-journal">European Economic Review, 2018</div>
     <div class="paper-authors">with <a href="http://pure.au.dk/portal/en/persons/nabanita-datta-gupta(171b9553-8497-4953-b3bc-731c8abd5dd9).html">Nabanita Datta Gupta</a> and <a href="https://www.gate.cnrs.fr/spip.php?article197&lang=fr">Marie Claire Villeval</a></div>
     <div class="paper-links">
-      <a href="https://doi.org/10.1016/j.euroecorev.2017.10.022">Published</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2875822">SSRN</a>
-      <a href="https://www.dropbox.com/s/ww6m701ypjpvscw/Slides_Spillover_Ritwik.pdf?dl=0">Slides</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://doi.org/10.1016/j.euroecorev.2017.10.022">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2875822">SSRN Working Paper</a>
+      <a href="https://www.dropbox.com/s/ww6m701ypjpvscw/Slides_Spillover_Ritwik.pdf?dl=0">Slides</a>
     </div>
     <div class="abstract-content">
       <p>We conduct an artefactual field experiment to examine various spillover effects of Affirmative Action policies in the context of castes in India. We test a) if individuals who enter tournaments in the presence of an Affirmative Action policy remain competitive after the policy has been removed, and b) whether having been exposed to the policy generates unethical behavior and spite against subjects from the category who has benefited from the policy. We find that this policy substantially increases the beliefs on being a winner and the competitiveness of the backward caste members. However, we find no spillover effect on confidence and competitiveness once Affirmative Action is withdrawn. Furthermore, the discrimination by the dominant category against the backward category is not significantly aggravated by Affirmative Action, except when individuals learn that they have lost the previous competition.</p>
@@ -736,9 +750,9 @@
     <div class="paper-title">On the Interpretation of World Values Survey Trust Question — Global Expectations vs. Local Beliefs</div>
     <div class="paper-journal">European Journal of Political Economy, 2018</div>
     <div class="paper-links">
-      <a href="https://doi.org/10.1016/j.ejpoleco.2018.04.008">Published</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2769180">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://doi.org/10.1016/j.ejpoleco.2018.04.008">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2769180">SSRN Working Paper</a>
     </div>
     <div class="abstract-content">
       <p>How should we interpret the World Values Survey (WVS) trust question? We conduct an experiment in India, a low trust country, to correlate the WVS trust question with trust decisions in an incentivized Trust Game. Evidence supports findings from one strand of the fractured literature — the WVS trust question captures expectations about others' trustworthiness, though not always. We show that WVS trust question correlates with globally determined stable expectations but does not correlate with short term locally determined fluctuations in beliefs about trustworthiness. One implication of our study is that survey based methods may not be used to measure contextualized beliefs.</p>
@@ -750,9 +764,9 @@
     <div class="paper-journal">Journal of Economic Behavior &amp; Organization, 2018</div>
     <div class="paper-authors">with <a href="https://sites.google.com/site/arnabuofa/">Arnab Mitra</a></div>
     <div class="paper-links">
-      <a href="https://doi.org/10.1016/j.jebo.2018.01.004">Published</a>
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3091142">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://doi.org/10.1016/j.jebo.2018.01.004">Published Version</a>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3091142">SSRN Working Paper</a>
     </div>
     <div class="abstract-content">
       <p>We study the relative effectiveness of extrinsic monetary disincentives and intrinsic non-monetary disincentives to corruption, using a harassment bribery game. In doing so, we also test the Beckerian prediction that at the same level of expected payoff, a low probability of detection with high fine is a stronger deterrent to corruption than a high probability of detection with low fine. Results show that: (a) a low probability of detection with high fine reduces both the amount and the likelihood of bribe demand, (b) a high probability of detection with low fine has no effect on bribe demand, (c) normative appeals of ethics education has a small effect on the likelihood but not on the amount of bribe demand, when measured immediately after the intervention, (d) the effect of ethics education vanishes when measured four weeks after the intervention.</p>
@@ -763,10 +777,10 @@
     <div class="paper-title">Corruption, Norm Violation and the Decay in Social Capital</div>
     <div class="paper-journal">Journal of Public Economics, 2016</div>
     <div class="paper-links">
-      <a href="http://www.sciencedirect.com/science/article/pii/S0047272716300135">Published</a>
-      <a href="http://ftp.iza.org/dp9859.pdf">IZA</a>
-      <a href="https://drive.google.com/file/d/0B5DlJ0oiZvZ9Snh5S1FXZ3Mxbkk/view?usp=sharing">Slides</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="http://www.sciencedirect.com/science/article/pii/S0047272716300135">Published Version</a>
+      <a href="http://ftp.iza.org/dp9859.pdf">IZA Working Paper</a>
+      <a href="https://drive.google.com/file/d/0B5DlJ0oiZvZ9Snh5S1FXZ3Mxbkk/view?usp=sharing">Slides</a>
     </div>
     <div class="abstract-content">
       <p>The paper studies the link between corruption and social capital (measured as trust), using data from a lab experiment. Subjects play either a harassment bribery game or a strategically identical but differently framed ultimatum game, followed by a trust game. In a second experiment, we elicit social appropriateness norm of actions in the bribery game and the ultimatum game treatments. Our experimental design allows us to examine whether subjects, who have been asked to pay a bribe, are less likely to trust than those in an isomorphic role in the ultimatum game. We also uncover the underlying mechanism behind any such behavioral spillover. Results suggest that a) there is a negative spillover effect of corruption on trust and the effect increases with decrease in social appropriateness norm of the bribe demand; b) lower trust in the bribery game treatment is explained by lower expected return on trust; c) surprisingly, for both the bribery and the ultimatum game treatments, social appropriateness norm violation engenders the decay in trust through its adverse effect on belief about trustworthiness.</p>
@@ -777,8 +791,8 @@
     <div class="paper-title">On the Interpretation of Bribery in Laboratory Corruption Games: Moral Frames and Social Norms</div>
     <div class="paper-journal">Experimental Economics, 2016</div>
     <div class="paper-links">
-      <a href="http://link.springer.com/article/10.1007%2Fs10683-015-9436-1">Published</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="http://link.springer.com/article/10.1007%2Fs10683-015-9436-1">Published Version</a>
     </div>
     <div class="abstract-content">
       <p>Past studies on laboratory corruption games have not been able to find consistent evidence that subjects make "immoral" decisions. A possible reason, and also a critique of laboratory corruption games, is that the experiment may fail to trigger the intended immorality frame in the minds of the participants. To test this idea, we compare behavior in a harassment bribery game with a strategically identical but neutrally framed ultimatum game. The results show that fewer people, both as briber and bribee, engage in corruption in the bribery frame than in the alternative and the average bribe amount is lesser in the former than in the latter. These suggest that moral costs are indeed at work. A third treatment, which relabels the bribery game in neutral language, indicates that the observed treatment effect arises not from the neutral language of the ultimatum game but from a change in the sense of entitlement between the bribery and ultimatum game frames. We also elicit the shared perceptions of appropriateness of the actions or social norm under the two frames, and show that the social norm governing the bribery game frame and the ultimatum game frame are indeed different and that the perceived sense of social appropriateness plays a crucial role in determining actual behavior.</p>
@@ -790,10 +804,10 @@
     <div class="paper-journal">PLoS ONE, 2015</div>
     <div class="paper-authors">with <a href="http://pure.au.dk/portal/en/persons/nabanita-datta-gupta(171b9553-8497-4953-b3bc-731c8abd5dd9).html">Nabanita Datta Gupta</a></div>
     <div class="paper-links">
-      <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118546&type=printable">Published</a>
-      <a href="http://www.iza.org/en/webcontent/publications/papers/viewAbstract?dp_id=8446">IZA</a>
-      <a href="http://ideasforindia.in/article.aspx?article_id=377" class="media-link">Ideas for India</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118546&type=printable">Published Version</a>
+      <a href="http://www.iza.org/en/webcontent/publications/papers/viewAbstract?dp_id=8446">IZA Working Paper</a>
+      <span class="paper-media">Media: <a href="http://ideasforindia.in/article.aspx?article_id=377">Ideas for India</a></span>
     </div>
     <div class="abstract-content">
       <p>Becker's theory of taste-based discrimination predicts that relative employment of the discriminated social group will improve if there is a decrease in the level of prejudice for the marginally discriminating employer. In this paper we experimentally test this prediction offered by Becker (1971) in the context of caste in India, with management students (potential employers in the near future) as subjects. First, we measure caste prejudice and show that awareness through a TV social program reduces implicit prejudice against the lower caste and the reduction is sustained over time. Second, we find that the treatment reduces the prejudice levels of those in the left tail of the prejudice distribution — the group which can potentially affect real outcomes as predicted by the theory. And finally, a larger share of the treatment group subjects exhibit favorable opinion about reservation in jobs for the lower caste.</p>
@@ -805,8 +819,8 @@
     <div class="paper-journal">Economics Letters, 2015</div>
     <div class="paper-authors">with Tushi Baul and Tanya Rosenblat</div>
     <div class="paper-links">
-      <a href="http://dx.doi.org/10.1016/j.econlet.2014.12.020">Published</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="http://dx.doi.org/10.1016/j.econlet.2014.12.020">Published Version</a>
     </div>
     <div class="abstract-content">
       <p>Do corrupt people self select themselves in professions where the scope of corruption is high? We conduct a corruption experiment with private sector job aspirants and aspirants of Indian bureaucracy. The game models embezzlement of resources in which "supervisors" evaluate the performance of "workers" and then pay them. We find that aspirant bureaucrats indulge in more corruption than private sector aspirants but the likelihood of being corrupt is same across two sectors.</p>
@@ -818,8 +832,8 @@
     <div class="paper-journal">Economics of Education Review, 2012</div>
     <div class="paper-authors">with Elizabeth M. King, <a href="http://www2.econ.iastate.edu/faculty/orazem/">Peter Orazem</a>, and Elizabeth M. Paterno</div>
     <div class="paper-links">
-      <a href="http://www.sciencedirect.com/science/article/pii/S0272775712000325">Published</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="http://www.sciencedirect.com/science/article/pii/S0272775712000325">Published Version</a>
     </div>
     <div class="abstract-content">
       <p>A theoretical model is advanced that demonstrates that, if teacher and student attendance generate a shared good, then teacher and student attendance will be mutually reinforcing. Using data from the Northwest Frontier Province of Pakistan, empirical evidence supporting that proposition is advanced. Controlling for the endogeneity of teacher and student attendance, the most powerful factor raising teacher attendance is the attendance of the children in the school, and the most important factor influencing child attendance is the presence of the teacher. The results suggest that one important avenue to be explored in developing policies to reduce teacher absenteeism is to focus on raising the attendance of children.</p>
@@ -836,9 +850,9 @@
     <div class="paper-authors">with <a href="https://www.uni-goettingen.de/en/120944.html">Marcela Ibanez</a>, <a href="https://gerhardriener.github.io/">Gerhard Riener</a>, and <a href="https://www.sites.google.com/site/sohamsahoo/">Soham Sahoo</a></div>
     <div class="paper-oneliner">Affirmative-action policies encourage women to invest more effort and express greater emotion in job applications, but these signals paradoxically alter women's self-presentation in ways that reduce their attractiveness to both human and AI evaluators.</div>
     <div class="paper-links">
-      <a href="https://www.dice.hhu.de/fileadmin/redaktion/Fakultaeten/Wirtschaftswissenschaftliche_Fakultaet/DICE/Discussion_Paper/362_Banerjee_Ibanez_Riener_Sahoo.pdf">Working Paper</a>
-      <a href="https://www.dropbox.com/s/71tggxi868z9htj/AA_Colombia_Slides.pdf?dl=0">Slides</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://www.dice.hhu.de/fileadmin/redaktion/Fakultaeten/Wirtschaftswissenschaftliche_Fakultaet/DICE/Discussion_Paper/362_Banerjee_Ibanez_Riener_Sahoo.pdf">DICE Working Paper</a>
+      <a href="https://www.dropbox.com/s/71tggxi868z9htj/AA_Colombia_Slides.pdf?dl=0">Slides</a>
     </div>
     <div class="abstract-content">
       <p>Affirmative action changes incentives at all stages of the employment process. In this paper, we study the effects of affirmative action statements in job ads on i) the effort expended on the application process and ii) the manifestation of emotions, as measured by the textual analysis of the content of the motivation letter. We use data from two field experiments conducted in Colombia. We find that in the Control condition, women spend less time in the application process relative to men. Besides, female motivation letters exhibit lower levels of emotion, as measured by valence, arousal, and dominance. However, those differences vanish in the affirmative action treatment when we announced to job-seekers that half of the positions were reserved for women. In the Affirmative Action condition, the time dedicated by women significantly increased and the motivation letters written by the female candidates showed a significant increase in the expression of positive emotions. The results indicate that affirmative action policies can have significant encouraging effects on both effort and appeal of job applications of women, thereby reducing the gender gap in these outcomes.</p>
@@ -851,8 +865,8 @@
     <div class="paper-authors">with Niels-Hugo Blunch, Daniele Cassese, <a href="http://pure.au.dk/portal/en/persons/nabanita-datta-gupta(171b9553-8497-4953-b3bc-731c8abd5dd9).html">Nabanita Datta Gupta</a>, and Paolo Pin</div>
     <div class="paper-oneliner">Structured peer-based cooperative learning (Jigsaw method) with co-coaching significantly improves learning outcomes for middle school students.</div>
     <div class="paper-links">
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5240293">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5240293">SSRN Working Paper</a>
       <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/eNmpXZ611d0"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
     </div>
     <div class="yt-content"></div>
@@ -871,8 +885,8 @@
     <div class="paper-authors">with <a href="https://priyamam.github.io/priyama/">Priyama Majumdar</a> and Satarupa Mitra</div>
     <div class="paper-journal">Review of Behavioral Economics, 2026, 13(2): 358–378</div>
     <div class="paper-links">
-      <a href="https://www.emerald.com/rbe/article-abstract/13/2/358/1361086/The-role-of-nudges-in-reducing-exponential-growth">Published</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://www.emerald.com/rbe/article-abstract/13/2/358/1361086/The-role-of-nudges-in-reducing-exponential-growth">Published Version</a>
     </div>
     <div class="abstract-content">
       <p>Exponential growth bias (EGB), the tendency to underestimate exponential trends, has been linked to lower compliance with safety guidelines during the COVID-19 pandemic. This study aims to use an online experiment with 631 Indian participants to evaluate the effectiveness of three behaviorally informed nudges: numerical feedback, graphical feedback, and forecast range prompts. While prior research shows that increasing the frequency of forecasting modestly reduces EGB, the authors find that combining this approach with feedback and forecast-range-based interventions eliminates the bias entirely. These reductions are associated with significant improvements in self-reported compliance and shifts in the perceived effectiveness of government crisis management, particularly concerning the central government. The results highlight the potential of low-cost, behaviorally informed interventions to strengthen public health communication and improve behavioral responses during health emergencies.</p>
@@ -884,8 +898,8 @@
     <div class="paper-authors">with Utteeyo Dasgupta and Satarupa Mitra</div>
     <div class="paper-journal">in The Political Economy of Corruption — Emerging Issues, Routledge, forthcoming</div>
     <div class="paper-links">
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4180666">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4180666">SSRN Working Paper</a>
     </div>
     <div class="abstract-content">
       <p>In a two-part review, we focus on the behavioral experimental literature on corruption from the past decade with a particular focus on papers that offer behavioral insights into corrupt decision-making. In this first chapter, we restrict attention to the prominent theoretical models that have been used in the literature to lay out the framework of analysis in the corruption literature. We then discuss the important methodological issues related to the measurement of corruption, especially when using lab experiments.</p>
@@ -897,8 +911,8 @@
     <div class="paper-authors">with Utteeyo Dasgupta and Satarupa Mitra</div>
     <div class="paper-journal">in The Political Economy of Corruption — Emerging Issues, Routledge, forthcoming</div>
     <div class="paper-links">
-      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4180686">SSRN</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4180686">SSRN Working Paper</a>
     </div>
     <div class="abstract-content">
       <p>In this second chapter of the two-chapter review on corruption research, we start with a discussion of the consequences of corruption. We follow up with the fundamental causes of corruption that are identified in the literature, which also serves to anchor the subsequent section that examines the recent advances on the policy levers designed to fight corruption using experimental methods. We end with some thoughts on avenues for future research.</p>
@@ -910,9 +924,9 @@
     <div class="paper-authors">with Prerana Maheshwari</div>
     <div class="paper-journal">Economic and Political Weekly, 2020</div>
     <div class="paper-links">
-      <a href="https://www.epw.in/journal/2020/51/commentary/beyond-headline-gdp-growth.html">Published</a>
-      <a href="https://www.dropbox.com/s/9yfw6p4kge5q1n1/EPW_BanerjeeMaheshwari.pdf?dl=0">Ungated</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://www.epw.in/journal/2020/51/commentary/beyond-headline-gdp-growth.html">Published Version</a>
+      <a href="https://www.dropbox.com/s/9yfw6p4kge5q1n1/EPW_BanerjeeMaheshwari.pdf?dl=0">Ungated Version</a>
     </div>
     <div class="abstract-content">
       <p>Income and consumption share data for the 20-year period 1991–2011 shows that there exists a large difference in the growth rates for various deciles of the income distribution in India. These differences have led to sharp increases in income and consumption inequality. The article also shows that consumption inequality has grown faster than income inequality. These findings clearly show that the focus on one headline GDP growth rate number may hide several important trends in the economy.</p>
@@ -924,8 +938,8 @@
     <div class="paper-authors">with Nished Singhal and Chetan Subramanian</div>
     <div class="paper-journal">Economic and Political Weekly, 2018</div>
     <div class="paper-links">
-      <a href="https://www.epw.in/journal/2018/23/notes/predicting-food-price-infl-ation-through-online-prices-india.html#">Published</a>
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
+      <a href="https://www.epw.in/journal/2018/23/notes/predicting-food-price-infl-ation-through-online-prices-india.html#">Published Version</a>
     </div>
     <div class="abstract-content">
       <p>An online price index is constructed using food and beverage data from a major Indian e-commerce retailer, tracking prices from April 2015 to July 2016. The index successfully tracks the official Consumer Price Index at both aggregate and subgroup levels, with a correlation coefficient of 0.935. Using a weighted median methodology improves the correlation further by dampening volatility from seasonal items. Online prices represent a quick and efficient source of price data that can provide a cheap but credible signal of inflationary pressures on a real-time basis.</p>
@@ -943,7 +957,7 @@
     <div class="paper-authors">with Nished Singhal, Chetan Subramanian, and Menaka Rao</div>
     <div class="paper-journal">Harvard Business Publishing Case, 2019</div>
     <div class="paper-links">
-      <a href="https://hbr.org/product/predicting-inflation-through-online-prices/IMB763-PDF-ENG">HBP</a>
+      <a href="https://hbr.org/product/predicting-inflation-through-online-prices/IMB763-PDF-ENG">Published Version</a>
     </div>
   </div>
 </div>
