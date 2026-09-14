@@ -350,23 +350,19 @@
     text-decoration: none;
   }
   .paper-media {
-    align-self: center;
-    font-size: 13.5px;
+    flex-basis: 100%;   /* always start a new line below the other links */
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+  }
+  .paper-media-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
     color: var(--text-secondary);
+    margin-right: -6px;
   }
-  .paper-links .paper-media a,
-  .paper-links .paper-media a:hover {
-    font-size: inherit;
-    font-weight: 400;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    letter-spacing: normal;
-    text-decoration: underline;
-    text-decoration-color: rgba(255,99,71,0.4);
-    text-underline-offset: 2px;
-  }
-  .paper-links .paper-media a:hover { text-decoration-color: tomato; }
 
   /* abstract toggle */
   .abstract-toggle {
@@ -618,7 +614,7 @@
       <a href="https://doi.org/10.1016/j.jdeveco.2025.103650">Published Version</a>
       <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5535938">SSRN Working Paper</a>
       <button class="yt-toggle" onclick="toggleYT(this)" data-yt="https://www.youtube.com/embed/mKSeZRIreLk"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path fill="var(--bg)" d="M9.545 15.568V8.432L15.818 12z"/></svg>YouTube Summary</button>
-      <span class="paper-media">Media: <a href="https://www.thehindu.com/news/national/bihar/caste-identity-influences-how-teachers-judge-students-in-bihar-public-schools-iimb-study/article70298670.ece">The Hindu</a>, <a href="https://www.dropbox.com/scl/fi/rwl5ndc3zlri190yo5v3q/BiharBiasClassroomIE.png?rlkey=xysf82lvkwlhnqfoq7j1tz2zz&dl=0">The Indian Express</a></span>
+      <span class="paper-media"><span class="paper-media-label">Media:</span> <a href="https://www.thehindu.com/news/national/bihar/caste-identity-influences-how-teachers-judge-students-in-bihar-public-schools-iimb-study/article70298670.ece">The Hindu</a> <a href="https://www.dropbox.com/scl/fi/rwl5ndc3zlri190yo5v3q/BiharBiasClassroomIE.png?rlkey=xysf82lvkwlhnqfoq7j1tz2zz&dl=0">The Indian Express</a></span>
     </div>
     <div class="yt-content"></div>
     <div class="abstract-content">
@@ -710,7 +706,7 @@
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
       <a href="https://doi.org/10.1016/j.socscimed.2020.113473">Published Version</a>
       <a href="https://arxiv.org/abs/2005.01273">arXiv Working Paper</a>
-      <span class="paper-media">Media: <a href="https://www.bbc.com/future/article/20200812-exponential-growth-bias-the-numerical-error-behind-covid-19">BBC</a></span>
+      <span class="paper-media"><span class="paper-media-label">Media:</span> <a href="https://www.bbc.com/future/article/20200812-exponential-growth-bias-the-numerical-error-behind-covid-19">BBC</a></span>
     </div>
     <div class="abstract-content">
       <p>We conduct a unique, Amazon MTurk-based global experiment to investigate the importance of an exponential-growth prediction bias (EGPB) in understanding why the COVID-19 outbreak has exploded. We define prediction bias as the systematic error arising from faulty prediction of the number of cases x-weeks hence when presented with y-weeks of prior, actual data on the same. Our design permits us to identify the root of this under-prediction as an EGPB arising from the general tendency to underestimate the speed at which exponential processes unfold. Our data reveals that the "degree of convexity" reflected in the predicted path of the disease is significantly and substantially lower than the actual path. The bias is significantly higher for respondents from countries at a later stage relative to those at an early stage of disease progression. We find that individuals who exhibit EGPB are also more likely to reveal markedly reduced compliance with the WHO-recommended safety measures, find general violations of safety protocols less alarming, and show greater faith in their government's actions. A simple behavioral nudge which shows prior data in terms of raw numbers, as opposed to a graph, causally reduces EGPB.</p>
@@ -807,7 +803,7 @@
       <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract ▾</button>
       <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0118546&type=printable">Published Version</a>
       <a href="http://www.iza.org/en/webcontent/publications/papers/viewAbstract?dp_id=8446">IZA Working Paper</a>
-      <span class="paper-media">Media: <a href="http://ideasforindia.in/article.aspx?article_id=377">Ideas for India</a></span>
+      <span class="paper-media"><span class="paper-media-label">Media:</span> <a href="http://ideasforindia.in/article.aspx?article_id=377">Ideas for India</a></span>
     </div>
     <div class="abstract-content">
       <p>Becker's theory of taste-based discrimination predicts that relative employment of the discriminated social group will improve if there is a decrease in the level of prejudice for the marginally discriminating employer. In this paper we experimentally test this prediction offered by Becker (1971) in the context of caste in India, with management students (potential employers in the near future) as subjects. First, we measure caste prejudice and show that awareness through a TV social program reduces implicit prejudice against the lower caste and the reduction is sustained over time. Second, we find that the treatment reduces the prejudice levels of those in the left tail of the prejudice distribution — the group which can potentially affect real outcomes as predicted by the theory. And finally, a larger share of the treatment group subjects exhibit favorable opinion about reservation in jobs for the lower caste.</p>
