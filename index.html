@@ -291,12 +291,17 @@
   #working-papers .paper { counter-increment: wp-counter; }
   #working-papers .paper-title::before { content: counter(wp-counter) ". "; }
 
+  #work-in-progress { counter-reset: wip-counter; }
+  #work-in-progress .paper { counter-increment: wip-counter; }
+  #work-in-progress .paper-title::before { content: counter(wip-counter) ". "; }
+
   #other { counter-reset: other-counter; }
   #other .paper { counter-increment: other-counter; }
   #other .paper-title::before { content: counter(other-counter) ". "; }
 
   #publications .paper-title::before,
   #working-papers .paper-title::before,
+  #work-in-progress .paper-title::before,
   #other .paper-title::before {
     color: var(--text-muted);
     font-weight: 600;
@@ -504,6 +509,7 @@
         <div class="nav-dropdown-menu">
           <a href="#publications">Publications</a>
           <a href="#working-papers">Working Papers</a>
+          <a href="#work-in-progress">Work in Progress</a>
           <a href="#other">Other Writings</a>
           <a href="#cases">Cases</a>
         </div>
@@ -526,6 +532,7 @@
       <span class="mobile-section-label">Research</span>
       <a href="#publications" class="mobile-sub">Publications</a>
       <a href="#working-papers" class="mobile-sub">Working Papers</a>
+      <a href="#work-in-progress" class="mobile-sub">Work in Progress</a>
       <a href="#other" class="mobile-sub">Other Writings</a>
       <a href="#cases" class="mobile-sub">Cases</a>
       <a href="teaching.html">Teaching</a>
@@ -876,6 +883,11 @@
     <div class="paper-authors">with <a href="https://sites.google.com/site/josephfgomes/research?authuser=0">Joseph F. Gomes</a>, <a href="https://ammapanin.com/">Amma Panin</a>, and <a href="https://emmylindstam.com/">Emmy Lindstam</a></div>
     <div class="paper-journal">Draft available on request</div>
   </div>
+</div>
+
+<!-- WORK IN PROGRESS -->
+<div class="section" id="work-in-progress">
+  <h2 class="section-title">Work in Progress</h2>
 
   <div class="paper">
     <div class="paper-title">The Price of Intolerance: Suppression, Circulation and the Marketplace of Ideas</div>
