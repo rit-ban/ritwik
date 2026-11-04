@@ -63,6 +63,44 @@
   .trek-embed-date { font-size: 14px; color: var(--text-muted); margin-bottom: 12px; }
   .trek-embed iframe { width: 100%; aspect-ratio: 16/9; border: 1px solid var(--border-light); border-radius: 6px; display: block; }
 
+  /* Photo albums: one scrolling row of thumbnails with arrows, and a lightbox */
+  .strip { position: relative; }
+  .strip-track { display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .strip-track::-webkit-scrollbar { display: none; }
+  .album .photo { flex: 0 0 auto; height: 180px; position: relative; overflow: hidden; isolation: isolate; border-radius: 4px; background: var(--bg-alt); cursor: zoom-in; scroll-snap-align: start; }
+  .album .photo img { height: 100%; width: auto; display: block; transition: transform 0.6s ease, opacity 0.5s ease; }
+  .album .photo:hover img { transform: scale(1.035); }
+  .album .photo:focus-visible { outline: 2px solid tomato; outline-offset: -3px; }
+  .album.is-ready img:not(.is-loaded) { opacity: 0; }
+  .strip-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(250,249,246,0.92); color: var(--text); box-shadow: 0 2px 10px rgba(0,0,0,0.2); cursor: pointer; transition: opacity 0.2s, color 0.2s; }
+  .strip-btn:hover { color: tomato; }
+  .strip-btn:focus-visible { outline: 2px solid tomato; outline-offset: 2px; }
+  .strip-btn:disabled { opacity: 0; pointer-events: none; }
+  .strip-prev { left: 10px; }
+  .strip-next { right: 10px; }
+
+  .lightbox { position: fixed; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(18, 17, 15, 0.96); color: #f2f0eb; overflow: hidden; }
+  .lightbox::backdrop { background: rgba(18, 17, 15, 0.85); }
+  .lightbox:focus { outline: none; }
+  .lightbox[open] { display: flex; align-items: center; justify-content: center; animation: lb-in 0.25s ease; }
+  @keyframes lb-in { from { opacity: 0; } }
+  .lb-stage { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .lb-img { display: block; border-radius: 3px; box-shadow: 0 16px 48px rgba(0,0,0,0.45); user-select: none; -webkit-user-select: none; }
+  .lb-meta { display: flex; gap: 16px; font-size: 13.5px; letter-spacing: 0.03em; color: #b4b0a8; }
+  .lb-count { font-variant-numeric: tabular-nums; }
+  .lb-spin { width: 12px; height: 12px; align-self: center; border: 1.5px solid rgba(242,240,235,0.25); border-top-color: #f2f0eb; border-radius: 50%; opacity: 0; transition: opacity 0.2s; animation: lb-spin 0.8s linear infinite; }
+  .lightbox.is-loading .lb-spin { opacity: 1; }
+  @keyframes lb-spin { to { transform: rotate(360deg); } }
+  .lb-btn { position: absolute; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(255,255,255,0.08); color: #f2f0eb; cursor: pointer; transition: background 0.2s; }
+  .lb-btn:hover { background: rgba(255,255,255,0.18); }
+  .lb-btn:focus-visible { outline: 2px solid tomato; outline-offset: 2px; }
+  .lb-btn svg, .strip-btn svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .lb-close { top: 16px; right: 16px; }
+  .lb-prev, .lb-next { top: 50%; transform: translateY(-50%); }
+  .lb-prev { left: 16px; }
+  .lb-next { right: 16px; }
+  html.lb-open { overflow: hidden; }
+
   .site-footer { text-align: center; padding: 32px 24px; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border-light); margin-top: 12px; }
   .site-footer a { color: var(--text-muted); font-weight: 400; }
 
@@ -73,6 +111,9 @@
     .nav-links.mobile.open { display: flex !important; }
     .nav-links.mobile a { padding: 10px 24px; font-size: 14px; }
     .trek-grid { flex-direction: column; }
+    .album .photo { height: 140px; }
+    .lb-img { border-radius: 0; }
+    .lb-prev, .lb-next { top: auto; bottom: 12px; transform: none; }
   }
 </style>
 </head>
@@ -127,6 +168,38 @@
 <div class="section" id="treks">
   <h2 class="section-title">Treks</h2>
 
+  <!-- Photos made with: python3 Trek/make_album.py Trek/Hampta -->
+  <div class="trek-embed album">
+    <div class="trek-embed-label">Hampta Pass</div>
+    <div class="trek-embed-date">September 2026 · 20 photos</div>
+    <div class="strip">
+      <button class="strip-btn strip-prev" aria-label="Scroll photos left" disabled><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="strip-track">
+      <a class="photo" href="Trek/Hampta/IMG_6223.jpg" data-taken="2026-09-06T16:09"><img src="Trek/Hampta/IMG_6223-thumb.jpg" width="800" height="600" alt="A trekker beside a white horse on a green meadow" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6248.jpg" data-taken="2026-09-06T18:21"><img src="Trek/Hampta/IMG_6248-thumb.jpg" width="600" height="800" alt="A white horse and a chestnut horse grazing on a misty hillside" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6250.jpg" data-taken="2026-09-07T07:15"><img src="Trek/Hampta/IMG_6250-thumb.jpg" width="800" height="600" alt="Colourful tents on a grassy slope beneath a sky of small white clouds" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6251.jpg" data-taken="2026-09-07T07:26"><img src="Trek/Hampta/IMG_6251-thumb.jpg" width="800" height="600" alt="Horses grazing in a sunlit meadow below forested slopes" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6257.jpg" data-taken="2026-09-07T07:43"><img src="Trek/Hampta/IMG_6257-thumb.jpg" width="800" height="600" alt="Orange tents pitched along a green valley between steep mountain walls" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6274.jpg" data-taken="2026-09-07T09:01"><img src="Trek/Hampta/IMG_6274-thumb.jpg" width="600" height="800" alt="A trekker filling a water bottle at a small waterfall among rocks" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6297.jpg" data-taken="2026-09-07T10:54"><img src="Trek/Hampta/IMG_6297-thumb.jpg" width="800" height="600" alt="A line of trekkers crossing a boulder-strewn stream" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6328.jpg" data-taken="2026-09-07T13:14"><img src="Trek/Hampta/IMG_6328-thumb.jpg" width="600" height="800" alt="A sheep nuzzling a lamb resting among green leaves" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6336.jpg" data-taken="2026-09-07T13:16"><img src="Trek/Hampta/IMG_6336-thumb.jpg" width="600" height="800" alt="Sheep and goats coming down a narrow mountain trail" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6339.jpg" data-taken="2026-09-07T13:22"><img src="Trek/Hampta/IMG_6339-thumb.jpg" width="800" height="600" alt="Rows of red tents beside a fast river, with clouds on the ridges above" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6427.jpg" data-taken="2026-09-08T12:44"><img src="Trek/Hampta/IMG_6427-thumb.jpg" width="600" height="800" alt="A trekker standing on a rock in a boulder field below cloud-covered peaks" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6450.jpg" data-taken="2026-09-08T13:50"><img src="Trek/Hampta/IMG_6450-thumb.jpg" width="800" height="600" alt="A wide glacial valley under a blue sky, with a lone trekker on the trail" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6517.jpg" data-taken="2026-09-08T15:24"><img src="Trek/Hampta/IMG_6517-thumb.jpg" width="800" height="600" alt="Orange tents by a glacial river beneath jagged snow-streaked peaks" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6593.jpg" data-taken="2026-09-08T18:14"><img src="Trek/Hampta/IMG_6593-thumb.jpg" width="800" height="600" alt="Evening light on a rocky peak above a large flock of sheep on a boulder slope" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6605.jpg" data-taken="2026-09-08T20:10"><img src="Trek/Hampta/IMG_6605-thumb.jpg" width="800" height="600" alt="The Milky Way across a star-filled night sky" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6612.jpg" data-taken="2026-09-08T20:21"><img src="Trek/Hampta/IMG_6612-thumb.jpg" width="600" height="800" alt="The bright core of the Milky Way in a dark sky" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6667.jpg" data-taken="2026-09-09T13:38"><img src="Trek/Hampta/IMG_6667-thumb.jpg" width="600" height="800" alt="A flock of sheep and two motorcyclists passing a car on a dusty mountain road" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6685.jpg" data-taken="2026-09-09T15:49"><img src="Trek/Hampta/IMG_6685-thumb.jpg" width="800" height="600" alt="Bare, layered brown mountains under a deep blue sky" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6709.jpg" data-taken="2026-09-09T16:45"><img src="Trek/Hampta/IMG_6709-thumb.jpg" width="800" height="600" alt="Clear turquoise water over a stony lakeshore, with mountains beyond" loading="lazy"></a>
+      <a class="photo" href="Trek/Hampta/IMG_6714.jpg" data-taken="2026-09-09T16:50"><img src="Trek/Hampta/IMG_6714-thumb.jpg" width="800" height="600" alt="Two people sitting on the shore of a turquoise mountain lake" loading="lazy"></a>
+      </div>
+      <button class="strip-btn strip-next" aria-label="Scroll photos right"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+
   <div class="trek-embed">
     <div class="trek-embed-label">Pench Tiger Reserve Trek</div>
     <div class="trek-embed-date">2025</div>
@@ -155,6 +228,125 @@
 <footer class="site-footer">
   <a href="index.html">← Back to homepage</a>
 </footer>
+
+<dialog class="lightbox" aria-label="Photo viewer" tabindex="-1">
+  <button class="lb-btn lb-close" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <button class="lb-btn lb-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <figure class="lb-stage">
+    <img class="lb-img" alt="">
+    <figcaption class="lb-meta"><span class="lb-date"></span><span class="lb-count"></span><span class="lb-spin" aria-hidden="true"></span></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+</dialog>
+
+<script>
+// Photo albums. Each .album holds a.photo links: href is the full-size image,
+// data-taken is the capture time (it sets the lightbox order and the date shown).
+(function () {
+  // Thumbnail strips: the arrows scroll by most of a screenful, and each
+  // arrow hides when there is nothing more to see in its direction.
+  document.querySelectorAll('.strip').forEach(strip => {
+    const track = strip.querySelector('.strip-track');
+    const prev = strip.querySelector('.strip-prev'), next = strip.querySelector('.strip-next');
+    const update = () => {
+      prev.disabled = track.scrollLeft <= 1;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+    };
+    prev.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth * 0.8, behavior: 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' }));
+    track.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(track);
+  });
+
+  // Fade each photo in once it has loaded
+  document.querySelectorAll('.album').forEach(album => {
+    album.querySelectorAll('img').forEach(img => {
+      const done = () => img.classList.add('is-loaded');
+      if (img.complete) done(); else { img.addEventListener('load', done); img.addEventListener('error', done); }
+    });
+    album.classList.add('is-ready');
+  });
+
+  // Lightbox
+  const lb = document.querySelector('.lightbox');
+  const lbImg = lb.querySelector('.lb-img');
+  const lbDate = lb.querySelector('.lb-date'), lbCount = lb.querySelector('.lb-count');
+  let set = [], idx = 0, ratio = 4 / 3;
+
+  const fmtDate = iso => iso ? new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+
+  // Size the image to the largest box that fits the window, so the
+  // thumbnail (shown first) and the full image occupy the same space.
+  function fit() {
+    const maxW = Math.min(window.innerWidth * (window.innerWidth < 600 ? 1 : 0.9), 1800);
+    const maxH = window.innerHeight - (window.innerWidth < 600 ? 140 : 110);
+    let w = maxW, h = w / ratio;
+    if (h > maxH) { h = maxH; w = h * ratio; }
+    lbImg.style.width = w + 'px'; lbImg.style.height = h + 'px';
+  }
+
+  function show(i) {
+    idx = (i + set.length) % set.length;
+    const a = set[idx], thumb = a.querySelector('img');
+    ratio = thumb.getAttribute('width') / thumb.getAttribute('height');
+    fit();
+    // Show the already-loaded thumbnail at once, then swap in the full image
+    lbImg.src = thumb.currentSrc || thumb.src;
+    lbImg.alt = thumb.alt;
+    lbImg.animate([{ opacity: 0.3 }, { opacity: 1 }], { duration: 220, easing: 'ease-out' });
+    // (the full-resolution files are large, so a spinner shows until it is ready)
+    const want = idx, full = new Image();
+    lb.classList.add('is-loading');
+    full.onload = () => { if (want === idx) { lbImg.src = full.src; lb.classList.remove('is-loading'); } };
+    full.onerror = () => { if (want === idx) lb.classList.remove('is-loading'); };
+    full.src = a.href;
+    lbDate.textContent = fmtDate(a.dataset.taken);
+    lbCount.textContent = (idx + 1) + ' / ' + set.length;
+    // Preload the next photo so arrowing forward feels quick
+    new Image().src = set[(idx + 1) % set.length].href;
+  }
+
+  document.querySelectorAll('.album').forEach(album => {
+    const links = [...album.querySelectorAll('a.photo')].sort((a, b) => a.dataset.taken.localeCompare(b.dataset.taken));
+    links.forEach(a => a.addEventListener('click', e => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;  // let Cmd-click open the image in a new tab
+      e.preventDefault();
+      set = links;
+      document.documentElement.classList.add('lb-open');
+      lb.showModal();
+      lb.focus();  // focus the viewer itself, so no button shows a focus ring on open
+      show(links.indexOf(a));
+    }));
+  });
+
+  lb.querySelector('.lb-close').addEventListener('click', () => lb.close());
+  lb.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
+  lb.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
+  lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb-stage')) lb.close(); });
+  lb.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'ArrowRight') show(idx + 1);
+  });
+  lb.addEventListener('close', () => {
+    document.documentElement.classList.remove('lb-open');
+    lb.classList.remove('is-loading');
+    lbImg.removeAttribute('src');
+    // Leave the strip showing the photo last viewed in the lightbox
+    set[idx].scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' });
+  });
+  window.addEventListener('resize', () => { if (lb.open) fit(); });
+
+  // Swipe left / right on touch screens
+  let x0 = null;
+  lb.addEventListener('touchstart', e => { x0 = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+    x0 = null;
+  });
+})();
+</script>
 
 </body>
 </html>

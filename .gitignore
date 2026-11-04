@@ -1,0 +1,7 @@
+# Original HEIC photos stay on this computer: browsers other than Safari
+# cannot show HEIC, so the site uses the full-resolution JPEG copies that
+# Trek/make_album.py saves next to them.
+*.HEIC
+*.heic
+
+.DS_Store
